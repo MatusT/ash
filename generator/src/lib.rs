@@ -1321,6 +1321,7 @@ pub fn derive_setters(_struct: &vkxml::Struct) -> Option<Tokens> {
     let setters = members.clone().filter_map(|field| {
         let param_ident = field.param_ident();
         let param_ty_tokens = field.type_tokens();
+        let param_ty_string = param_ty_tokens.to_string();
 
         let param_ident_string = param_ident.to_string();
         if param_ident_string == "s_type" || param_ident_string == "p_next" {
@@ -1364,9 +1365,7 @@ pub fn derive_setters(_struct: &vkxml::Struct) -> Option<Tokens> {
         }
 
         // TODO: Improve in future when https://github.com/rust-lang/rust/issues/53667 is merged
-        if param_ident_string.starts_with("p_") || param_ident_string.starts_with("pp_") {
-            let param_ty_string = param_ty_tokens.to_string();
-
+        if param_ident_string.starts_with("p_") || param_ident_string.starts_with("pp_") {           
             if param_ty_string == "*const c_char" {
                 return Some(quote!{
                         pub fn #param_ident_short(mut self, #param_ident_short: &'a ::std::ffi::CStr) -> #name_builder<'a> {
@@ -1438,6 +1437,15 @@ pub fn derive_setters(_struct: &vkxml::Struct) -> Option<Tokens> {
                         }
                 });
             }
+        }
+
+        if param_ty_string == "Bool32" {
+            return Some(quote!{
+                pub fn #param_ident_short(mut self, #param_ident_short: bool) -> #name_builder<'a> {
+                    self.inner.#param_ident = #param_ident_short.into();
+                    self
+                }
+            });
         }
 
         Some(quote!{
