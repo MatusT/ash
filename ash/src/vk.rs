@@ -8273,6 +8273,13 @@ impl<'a> ApplicationInfoBuilder<'a> {
         T: ExtendsApplicationInfo,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut ApplicationInfo as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> ApplicationInfo {
@@ -8450,6 +8457,13 @@ impl<'a> DeviceQueueCreateInfoBuilder<'a> {
         T: ExtendsDeviceQueueCreateInfo,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut DeviceQueueCreateInfo as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> DeviceQueueCreateInfo {
@@ -8546,6 +8560,13 @@ impl<'a> DeviceCreateInfoBuilder<'a> {
         T: ExtendsDeviceCreateInfo,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut DeviceCreateInfo as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> DeviceCreateInfo {
@@ -8630,6 +8651,13 @@ impl<'a> InstanceCreateInfoBuilder<'a> {
         T: ExtendsInstanceCreateInfo,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut InstanceCreateInfo as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> InstanceCreateInfo {
@@ -8809,6 +8837,13 @@ impl<'a> MemoryAllocateInfoBuilder<'a> {
         T: ExtendsMemoryAllocateInfo,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut MemoryAllocateInfo as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> MemoryAllocateInfo {
@@ -9106,6 +9141,13 @@ impl<'a> MappedMemoryRangeBuilder<'a> {
         T: ExtendsMappedMemoryRange,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut MappedMemoryRange as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> MappedMemoryRange {
@@ -9403,6 +9445,13 @@ impl<'a> WriteDescriptorSetBuilder<'a> {
         T: ExtendsWriteDescriptorSet,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut WriteDescriptorSet as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> WriteDescriptorSet {
@@ -9490,6 +9539,13 @@ impl<'a> CopyDescriptorSetBuilder<'a> {
         T: ExtendsCopyDescriptorSet,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut CopyDescriptorSet as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> CopyDescriptorSet {
@@ -9571,6 +9627,13 @@ impl<'a> BufferCreateInfoBuilder<'a> {
         T: ExtendsBufferCreateInfo,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut BufferCreateInfo as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> BufferCreateInfo {
@@ -9646,6 +9709,13 @@ impl<'a> BufferViewCreateInfoBuilder<'a> {
         T: ExtendsBufferViewCreateInfo,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut BufferViewCreateInfo as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> BufferViewCreateInfo {
@@ -9850,6 +9920,13 @@ impl<'a> MemoryBarrierBuilder<'a> {
         T: ExtendsMemoryBarrier,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut MemoryBarrier as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> MemoryBarrier {
@@ -9949,6 +10026,13 @@ impl<'a> BufferMemoryBarrierBuilder<'a> {
         T: ExtendsBufferMemoryBarrier,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut BufferMemoryBarrier as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> BufferMemoryBarrier {
@@ -10057,6 +10141,13 @@ impl<'a> ImageMemoryBarrierBuilder<'a> {
         T: ExtendsImageMemoryBarrier,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut ImageMemoryBarrier as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> ImageMemoryBarrier {
@@ -10180,6 +10271,13 @@ impl<'a> ImageCreateInfoBuilder<'a> {
         T: ExtendsImageCreateInfo,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut ImageCreateInfo as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> ImageCreateInfo {
@@ -10316,6 +10414,13 @@ impl<'a> ImageViewCreateInfoBuilder<'a> {
         T: ExtendsImageViewCreateInfo,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut ImageViewCreateInfo as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> ImageViewCreateInfo {
@@ -10725,6 +10830,13 @@ impl<'a> BindSparseInfoBuilder<'a> {
         T: ExtendsBindSparseInfo,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut BindSparseInfo as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> BindSparseInfo {
@@ -11024,6 +11136,13 @@ impl<'a> ShaderModuleCreateInfoBuilder<'a> {
         T: ExtendsShaderModuleCreateInfo,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut ShaderModuleCreateInfo as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> ShaderModuleCreateInfo {
@@ -11166,6 +11285,14 @@ impl<'a> DescriptorSetLayoutCreateInfoBuilder<'a> {
         T: ExtendsDescriptorSetLayoutCreateInfo,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut DescriptorSetLayoutCreateInfo as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> DescriptorSetLayoutCreateInfo {
@@ -11275,6 +11402,13 @@ impl<'a> DescriptorPoolCreateInfoBuilder<'a> {
         T: ExtendsDescriptorPoolCreateInfo,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut DescriptorPoolCreateInfo as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> DescriptorPoolCreateInfo {
@@ -11341,6 +11475,13 @@ impl<'a> DescriptorSetAllocateInfoBuilder<'a> {
         T: ExtendsDescriptorSetAllocateInfo,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut DescriptorSetAllocateInfo as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> DescriptorSetAllocateInfo {
@@ -11518,6 +11659,14 @@ impl<'a> PipelineShaderStageCreateInfoBuilder<'a> {
         T: ExtendsPipelineShaderStageCreateInfo,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut PipelineShaderStageCreateInfo as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> PipelineShaderStageCreateInfo {
@@ -11602,6 +11751,13 @@ impl<'a> ComputePipelineCreateInfoBuilder<'a> {
         T: ExtendsComputePipelineCreateInfo,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut ComputePipelineCreateInfo as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> ComputePipelineCreateInfo {
@@ -11772,6 +11928,14 @@ impl<'a> PipelineVertexInputStateCreateInfoBuilder<'a> {
         T: ExtendsPipelineVertexInputStateCreateInfo,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut PipelineVertexInputStateCreateInfo as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> PipelineVertexInputStateCreateInfo {
@@ -11844,6 +12008,14 @@ impl<'a> PipelineInputAssemblyStateCreateInfoBuilder<'a> {
         T: ExtendsPipelineInputAssemblyStateCreateInfo,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut PipelineInputAssemblyStateCreateInfo
+                as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> PipelineInputAssemblyStateCreateInfo {
@@ -11907,6 +12079,14 @@ impl<'a> PipelineTessellationStateCreateInfoBuilder<'a> {
         T: ExtendsPipelineTessellationStateCreateInfo,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut PipelineTessellationStateCreateInfo as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> PipelineTessellationStateCreateInfo {
@@ -11999,6 +12179,14 @@ impl<'a> PipelineViewportStateCreateInfoBuilder<'a> {
         T: ExtendsPipelineViewportStateCreateInfo,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut PipelineViewportStateCreateInfo as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> PipelineViewportStateCreateInfo {
@@ -12143,6 +12331,14 @@ impl<'a> PipelineRasterizationStateCreateInfoBuilder<'a> {
         T: ExtendsPipelineRasterizationStateCreateInfo,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut PipelineRasterizationStateCreateInfo
+                as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> PipelineRasterizationStateCreateInfo {
@@ -12251,6 +12447,14 @@ impl<'a> PipelineMultisampleStateCreateInfoBuilder<'a> {
         T: ExtendsPipelineMultisampleStateCreateInfo,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut PipelineMultisampleStateCreateInfo as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> PipelineMultisampleStateCreateInfo {
@@ -12432,6 +12636,14 @@ impl<'a> PipelineColorBlendStateCreateInfoBuilder<'a> {
         T: ExtendsPipelineColorBlendStateCreateInfo,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut PipelineColorBlendStateCreateInfo as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> PipelineColorBlendStateCreateInfo {
@@ -12498,6 +12710,14 @@ impl<'a> PipelineDynamicStateCreateInfoBuilder<'a> {
         T: ExtendsPipelineDynamicStateCreateInfo,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut PipelineDynamicStateCreateInfo as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> PipelineDynamicStateCreateInfo {
@@ -12692,6 +12912,14 @@ impl<'a> PipelineDepthStencilStateCreateInfoBuilder<'a> {
         T: ExtendsPipelineDepthStencilStateCreateInfo,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut PipelineDepthStencilStateCreateInfo as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> PipelineDepthStencilStateCreateInfo {
@@ -12872,6 +13100,14 @@ impl<'a> GraphicsPipelineCreateInfoBuilder<'a> {
         T: ExtendsGraphicsPipelineCreateInfo,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut GraphicsPipelineCreateInfo as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> GraphicsPipelineCreateInfo {
@@ -12932,6 +13168,13 @@ impl<'a> PipelineCacheCreateInfoBuilder<'a> {
         T: ExtendsPipelineCacheCreateInfo,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut PipelineCacheCreateInfo as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> PipelineCacheCreateInfo {
@@ -13052,6 +13295,13 @@ impl<'a> PipelineLayoutCreateInfoBuilder<'a> {
         T: ExtendsPipelineLayoutCreateInfo,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut PipelineLayoutCreateInfo as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> PipelineLayoutCreateInfo {
@@ -13205,6 +13455,13 @@ impl<'a> SamplerCreateInfoBuilder<'a> {
         T: ExtendsSamplerCreateInfo,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut SamplerCreateInfo as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> SamplerCreateInfo {
@@ -13265,6 +13522,13 @@ impl<'a> CommandPoolCreateInfoBuilder<'a> {
         T: ExtendsCommandPoolCreateInfo,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut CommandPoolCreateInfo as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> CommandPoolCreateInfo {
@@ -13334,6 +13598,13 @@ impl<'a> CommandBufferAllocateInfoBuilder<'a> {
         T: ExtendsCommandBufferAllocateInfo,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut CommandBufferAllocateInfo as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> CommandBufferAllocateInfo {
@@ -13430,6 +13701,14 @@ impl<'a> CommandBufferInheritanceInfoBuilder<'a> {
         T: ExtendsCommandBufferInheritanceInfo,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut CommandBufferInheritanceInfo as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> CommandBufferInheritanceInfo {
@@ -13490,6 +13769,13 @@ impl<'a> CommandBufferBeginInfoBuilder<'a> {
         T: ExtendsCommandBufferBeginInfo,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut CommandBufferBeginInfo as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> CommandBufferBeginInfo {
@@ -13578,6 +13864,13 @@ impl<'a> RenderPassBeginInfoBuilder<'a> {
         T: ExtendsRenderPassBeginInfo,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut RenderPassBeginInfo as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> RenderPassBeginInfo {
@@ -14068,6 +14361,13 @@ impl<'a> RenderPassCreateInfoBuilder<'a> {
         T: ExtendsRenderPassCreateInfo,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut RenderPassCreateInfo as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> RenderPassCreateInfo {
@@ -14119,6 +14419,13 @@ impl<'a> EventCreateInfoBuilder<'a> {
         T: ExtendsEventCreateInfo,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut EventCreateInfo as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> EventCreateInfo {
@@ -14170,6 +14477,13 @@ impl<'a> FenceCreateInfoBuilder<'a> {
         T: ExtendsFenceCreateInfo,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut FenceCreateInfo as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> FenceCreateInfo {
@@ -15709,6 +16023,13 @@ impl<'a> SemaphoreCreateInfoBuilder<'a> {
         T: ExtendsSemaphoreCreateInfo,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut SemaphoreCreateInfo as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> SemaphoreCreateInfo {
@@ -15781,6 +16102,13 @@ impl<'a> QueryPoolCreateInfoBuilder<'a> {
         T: ExtendsQueryPoolCreateInfo,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut QueryPoolCreateInfo as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> QueryPoolCreateInfo {
@@ -15865,6 +16193,13 @@ impl<'a> FramebufferCreateInfoBuilder<'a> {
         T: ExtendsFramebufferCreateInfo,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut FramebufferCreateInfo as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> FramebufferCreateInfo {
@@ -16094,6 +16429,13 @@ impl<'a> SubmitInfoBuilder<'a> {
         T: ExtendsSubmitInfo,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut SubmitInfo as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> SubmitInfo {
@@ -16373,6 +16715,13 @@ impl<'a> DisplayModeCreateInfoKHRBuilder<'a> {
         T: ExtendsDisplayModeCreateInfoKHR,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut DisplayModeCreateInfoKHR as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> DisplayModeCreateInfoKHR {
@@ -16583,6 +16932,14 @@ impl<'a> DisplaySurfaceCreateInfoKHRBuilder<'a> {
         T: ExtendsDisplaySurfaceCreateInfoKHR,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut DisplaySurfaceCreateInfoKHR as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> DisplaySurfaceCreateInfoKHR {
@@ -16647,6 +17004,13 @@ impl<'a> DisplayPresentInfoKHRBuilder<'a> {
         T: ExtendsDisplayPresentInfoKHR,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut DisplayPresentInfoKHR as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> DisplayPresentInfoKHR {
@@ -16805,6 +17169,14 @@ impl<'a> AndroidSurfaceCreateInfoKHRBuilder<'a> {
         T: ExtendsAndroidSurfaceCreateInfoKHR,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut AndroidSurfaceCreateInfoKHR as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> AndroidSurfaceCreateInfoKHR {
@@ -16862,6 +17234,13 @@ impl<'a> ViSurfaceCreateInfoNNBuilder<'a> {
         T: ExtendsViSurfaceCreateInfoNN,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut ViSurfaceCreateInfoNN as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> ViSurfaceCreateInfoNN {
@@ -16928,6 +17307,14 @@ impl<'a> WaylandSurfaceCreateInfoKHRBuilder<'a> {
         T: ExtendsWaylandSurfaceCreateInfoKHR,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut WaylandSurfaceCreateInfoKHR as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> WaylandSurfaceCreateInfoKHR {
@@ -16994,6 +17381,13 @@ impl<'a> Win32SurfaceCreateInfoKHRBuilder<'a> {
         T: ExtendsWin32SurfaceCreateInfoKHR,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut Win32SurfaceCreateInfoKHR as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> Win32SurfaceCreateInfoKHR {
@@ -17060,6 +17454,13 @@ impl<'a> XlibSurfaceCreateInfoKHRBuilder<'a> {
         T: ExtendsXlibSurfaceCreateInfoKHR,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut XlibSurfaceCreateInfoKHR as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> XlibSurfaceCreateInfoKHR {
@@ -17126,6 +17527,13 @@ impl<'a> XcbSurfaceCreateInfoKHRBuilder<'a> {
         T: ExtendsXcbSurfaceCreateInfoKHR,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut XcbSurfaceCreateInfoKHR as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> XcbSurfaceCreateInfoKHR {
@@ -17189,6 +17597,14 @@ impl<'a> ImagePipeSurfaceCreateInfoFUCHSIABuilder<'a> {
         T: ExtendsImagePipeSurfaceCreateInfoFUCHSIA,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut ImagePipeSurfaceCreateInfoFUCHSIA as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> ImagePipeSurfaceCreateInfoFUCHSIA {
@@ -17391,6 +17807,13 @@ impl<'a> SwapchainCreateInfoKHRBuilder<'a> {
         T: ExtendsSwapchainCreateInfoKHR,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut SwapchainCreateInfoKHR as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> SwapchainCreateInfoKHR {
@@ -17471,6 +17894,13 @@ impl<'a> PresentInfoKHRBuilder<'a> {
         T: ExtendsPresentInfoKHR,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut PresentInfoKHR as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> PresentInfoKHR {
@@ -17555,6 +17985,14 @@ impl<'a> DebugReportCallbackCreateInfoEXTBuilder<'a> {
         T: ExtendsDebugReportCallbackCreateInfoEXT,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut DebugReportCallbackCreateInfoEXT as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> DebugReportCallbackCreateInfoEXT {
@@ -17613,6 +18051,13 @@ impl<'a> ValidationFlagsEXTBuilder<'a> {
         T: ExtendsValidationFlagsEXT,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut ValidationFlagsEXT as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> ValidationFlagsEXT {
@@ -17674,6 +18119,14 @@ impl<'a> PipelineRasterizationStateRasterizationOrderAMDBuilder<'a> {
         T: ExtendsPipelineRasterizationStateRasterizationOrderAMD,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut PipelineRasterizationStateRasterizationOrderAMD
+                as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> PipelineRasterizationStateRasterizationOrderAMD {
@@ -17743,6 +18196,14 @@ impl<'a> DebugMarkerObjectNameInfoEXTBuilder<'a> {
         T: ExtendsDebugMarkerObjectNameInfoEXT,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut DebugMarkerObjectNameInfoEXT as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> DebugMarkerObjectNameInfoEXT {
@@ -17818,6 +18279,14 @@ impl<'a> DebugMarkerObjectTagInfoEXTBuilder<'a> {
         T: ExtendsDebugMarkerObjectTagInfoEXT,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut DebugMarkerObjectTagInfoEXT as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> DebugMarkerObjectTagInfoEXT {
@@ -17878,6 +18347,13 @@ impl<'a> DebugMarkerMarkerInfoEXTBuilder<'a> {
         T: ExtendsDebugMarkerMarkerInfoEXT,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut DebugMarkerMarkerInfoEXT as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> DebugMarkerMarkerInfoEXT {
@@ -17933,6 +18409,14 @@ impl<'a> DedicatedAllocationImageCreateInfoNVBuilder<'a> {
         T: ExtendsDedicatedAllocationImageCreateInfoNV,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut DedicatedAllocationImageCreateInfoNV
+                as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> DedicatedAllocationImageCreateInfoNV {
@@ -17988,6 +18472,14 @@ impl<'a> DedicatedAllocationBufferCreateInfoNVBuilder<'a> {
         T: ExtendsDedicatedAllocationBufferCreateInfoNV,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut DedicatedAllocationBufferCreateInfoNV
+                as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> DedicatedAllocationBufferCreateInfoNV {
@@ -18046,6 +18538,14 @@ impl<'a> DedicatedAllocationMemoryAllocateInfoNVBuilder<'a> {
         T: ExtendsDedicatedAllocationMemoryAllocateInfoNV,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut DedicatedAllocationMemoryAllocateInfoNV
+                as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> DedicatedAllocationMemoryAllocateInfoNV {
@@ -18160,6 +18660,14 @@ impl<'a> ExternalMemoryImageCreateInfoNVBuilder<'a> {
         T: ExtendsExternalMemoryImageCreateInfoNV,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut ExternalMemoryImageCreateInfoNV as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> ExternalMemoryImageCreateInfoNV {
@@ -18215,6 +18723,14 @@ impl<'a> ExportMemoryAllocateInfoNVBuilder<'a> {
         T: ExtendsExportMemoryAllocateInfoNV,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut ExportMemoryAllocateInfoNV as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> ExportMemoryAllocateInfoNV {
@@ -18276,6 +18792,14 @@ impl<'a> ImportMemoryWin32HandleInfoNVBuilder<'a> {
         T: ExtendsImportMemoryWin32HandleInfoNV,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut ImportMemoryWin32HandleInfoNV as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> ImportMemoryWin32HandleInfoNV {
@@ -18337,6 +18861,14 @@ impl<'a> ExportMemoryWin32HandleInfoNVBuilder<'a> {
         T: ExtendsExportMemoryWin32HandleInfoNV,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut ExportMemoryWin32HandleInfoNV as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> ExportMemoryWin32HandleInfoNV {
@@ -18437,6 +18969,14 @@ impl<'a> Win32KeyedMutexAcquireReleaseInfoNVBuilder<'a> {
         T: ExtendsWin32KeyedMutexAcquireReleaseInfoNV,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut Win32KeyedMutexAcquireReleaseInfoNV as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> Win32KeyedMutexAcquireReleaseInfoNV {
@@ -18491,6 +19031,14 @@ impl<'a> DeviceGeneratedCommandsFeaturesNVXBuilder<'a> {
         T: ExtendsDeviceGeneratedCommandsFeaturesNVX,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut DeviceGeneratedCommandsFeaturesNVX as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> DeviceGeneratedCommandsFeaturesNVX {
@@ -18585,6 +19133,14 @@ impl<'a> DeviceGeneratedCommandsLimitsNVXBuilder<'a> {
         T: ExtendsDeviceGeneratedCommandsLimitsNVX,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut DeviceGeneratedCommandsLimitsNVX as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> DeviceGeneratedCommandsLimitsNVX {
@@ -18758,6 +19314,14 @@ impl<'a> IndirectCommandsLayoutCreateInfoNVXBuilder<'a> {
         T: ExtendsIndirectCommandsLayoutCreateInfoNVX,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut IndirectCommandsLayoutCreateInfoNVX as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> IndirectCommandsLayoutCreateInfoNVX {
@@ -18887,6 +19451,13 @@ impl<'a> CmdProcessCommandsInfoNVXBuilder<'a> {
         T: ExtendsCmdProcessCommandsInfoNVX,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut CmdProcessCommandsInfoNVX as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> CmdProcessCommandsInfoNVX {
@@ -18959,6 +19530,14 @@ impl<'a> CmdReserveSpaceForCommandsInfoNVXBuilder<'a> {
         T: ExtendsCmdReserveSpaceForCommandsInfoNVX,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut CmdReserveSpaceForCommandsInfoNVX as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> CmdReserveSpaceForCommandsInfoNVX {
@@ -19081,6 +19660,13 @@ impl<'a> ObjectTableCreateInfoNVXBuilder<'a> {
         T: ExtendsObjectTableCreateInfoNVX,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut ObjectTableCreateInfoNVX as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> ObjectTableCreateInfoNVX {
@@ -19665,6 +20251,14 @@ impl<'a> PhysicalDeviceImageFormatInfo2Builder<'a> {
         T: ExtendsPhysicalDeviceImageFormatInfo2,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut PhysicalDeviceImageFormatInfo2 as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> PhysicalDeviceImageFormatInfo2 {
@@ -19911,6 +20505,14 @@ impl<'a> PhysicalDeviceSparseImageFormatInfo2Builder<'a> {
         T: ExtendsPhysicalDeviceSparseImageFormatInfo2,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut PhysicalDeviceSparseImageFormatInfo2
+                as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> PhysicalDeviceSparseImageFormatInfo2 {
@@ -20169,6 +20771,13 @@ impl<'a> PresentRegionsKHRBuilder<'a> {
         T: ExtendsPresentRegionsKHR,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut PresentRegionsKHR as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> PresentRegionsKHR {
@@ -20424,6 +21033,14 @@ impl<'a> PhysicalDeviceExternalImageFormatInfoBuilder<'a> {
         T: ExtendsPhysicalDeviceExternalImageFormatInfo,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut PhysicalDeviceExternalImageFormatInfo
+                as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> PhysicalDeviceExternalImageFormatInfo {
@@ -20548,6 +21165,14 @@ impl<'a> PhysicalDeviceExternalBufferInfoBuilder<'a> {
         T: ExtendsPhysicalDeviceExternalBufferInfo,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut PhysicalDeviceExternalBufferInfo as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> PhysicalDeviceExternalBufferInfo {
@@ -20748,6 +21373,14 @@ impl<'a> ExternalMemoryImageCreateInfoBuilder<'a> {
         T: ExtendsExternalMemoryImageCreateInfo,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut ExternalMemoryImageCreateInfo as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> ExternalMemoryImageCreateInfo {
@@ -20803,6 +21436,14 @@ impl<'a> ExternalMemoryBufferCreateInfoBuilder<'a> {
         T: ExtendsExternalMemoryBufferCreateInfo,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut ExternalMemoryBufferCreateInfo as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> ExternalMemoryBufferCreateInfo {
@@ -20858,6 +21499,13 @@ impl<'a> ExportMemoryAllocateInfoBuilder<'a> {
         T: ExtendsExportMemoryAllocateInfo,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut ExportMemoryAllocateInfo as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> ExportMemoryAllocateInfo {
@@ -20925,6 +21573,14 @@ impl<'a> ImportMemoryWin32HandleInfoKHRBuilder<'a> {
         T: ExtendsImportMemoryWin32HandleInfoKHR,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut ImportMemoryWin32HandleInfoKHR as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> ImportMemoryWin32HandleInfoKHR {
@@ -20992,6 +21648,14 @@ impl<'a> ExportMemoryWin32HandleInfoKHRBuilder<'a> {
         T: ExtendsExportMemoryWin32HandleInfoKHR,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut ExportMemoryWin32HandleInfoKHR as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> ExportMemoryWin32HandleInfoKHR {
@@ -21106,6 +21770,14 @@ impl<'a> MemoryGetWin32HandleInfoKHRBuilder<'a> {
         T: ExtendsMemoryGetWin32HandleInfoKHR,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut MemoryGetWin32HandleInfoKHR as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> MemoryGetWin32HandleInfoKHR {
@@ -21167,6 +21839,13 @@ impl<'a> ImportMemoryFdInfoKHRBuilder<'a> {
         T: ExtendsImportMemoryFdInfoKHR,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut ImportMemoryFdInfoKHR as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> ImportMemoryFdInfoKHR {
@@ -21278,6 +21957,13 @@ impl<'a> MemoryGetFdInfoKHRBuilder<'a> {
         T: ExtendsMemoryGetFdInfoKHR,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut MemoryGetFdInfoKHR as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> MemoryGetFdInfoKHR {
@@ -21378,6 +22064,14 @@ impl<'a> Win32KeyedMutexAcquireReleaseInfoKHRBuilder<'a> {
         T: ExtendsWin32KeyedMutexAcquireReleaseInfoKHR,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut Win32KeyedMutexAcquireReleaseInfoKHR
+                as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> Win32KeyedMutexAcquireReleaseInfoKHR {
@@ -21432,6 +22126,14 @@ impl<'a> PhysicalDeviceExternalSemaphoreInfoBuilder<'a> {
         T: ExtendsPhysicalDeviceExternalSemaphoreInfo,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut PhysicalDeviceExternalSemaphoreInfo as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> PhysicalDeviceExternalSemaphoreInfo {
@@ -21559,6 +22261,13 @@ impl<'a> ExportSemaphoreCreateInfoBuilder<'a> {
         T: ExtendsExportSemaphoreCreateInfo,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut ExportSemaphoreCreateInfo as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> ExportSemaphoreCreateInfo {
@@ -21643,6 +22352,14 @@ impl<'a> ImportSemaphoreWin32HandleInfoKHRBuilder<'a> {
         T: ExtendsImportSemaphoreWin32HandleInfoKHR,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut ImportSemaphoreWin32HandleInfoKHR as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> ImportSemaphoreWin32HandleInfoKHR {
@@ -21710,6 +22427,14 @@ impl<'a> ExportSemaphoreWin32HandleInfoKHRBuilder<'a> {
         T: ExtendsExportSemaphoreWin32HandleInfoKHR,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut ExportSemaphoreWin32HandleInfoKHR as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> ExportSemaphoreWin32HandleInfoKHR {
@@ -21780,6 +22505,13 @@ impl<'a> D3D12FenceSubmitInfoKHRBuilder<'a> {
         T: ExtendsD3D12FenceSubmitInfoKHR,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut D3D12FenceSubmitInfoKHR as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> D3D12FenceSubmitInfoKHR {
@@ -21840,6 +22572,14 @@ impl<'a> SemaphoreGetWin32HandleInfoKHRBuilder<'a> {
         T: ExtendsSemaphoreGetWin32HandleInfoKHR,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut SemaphoreGetWin32HandleInfoKHR as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> SemaphoreGetWin32HandleInfoKHR {
@@ -21912,6 +22652,13 @@ impl<'a> ImportSemaphoreFdInfoKHRBuilder<'a> {
         T: ExtendsImportSemaphoreFdInfoKHR,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut ImportSemaphoreFdInfoKHR as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> ImportSemaphoreFdInfoKHR {
@@ -21972,6 +22719,13 @@ impl<'a> SemaphoreGetFdInfoKHRBuilder<'a> {
         T: ExtendsSemaphoreGetFdInfoKHR,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut SemaphoreGetFdInfoKHR as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> SemaphoreGetFdInfoKHR {
@@ -22026,6 +22780,14 @@ impl<'a> PhysicalDeviceExternalFenceInfoBuilder<'a> {
         T: ExtendsPhysicalDeviceExternalFenceInfo,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut PhysicalDeviceExternalFenceInfo as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> PhysicalDeviceExternalFenceInfo {
@@ -22153,6 +22915,13 @@ impl<'a> ExportFenceCreateInfoBuilder<'a> {
         T: ExtendsExportFenceCreateInfo,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut ExportFenceCreateInfo as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> ExportFenceCreateInfo {
@@ -22231,6 +23000,14 @@ impl<'a> ImportFenceWin32HandleInfoKHRBuilder<'a> {
         T: ExtendsImportFenceWin32HandleInfoKHR,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut ImportFenceWin32HandleInfoKHR as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> ImportFenceWin32HandleInfoKHR {
@@ -22298,6 +23075,14 @@ impl<'a> ExportFenceWin32HandleInfoKHRBuilder<'a> {
         T: ExtendsExportFenceWin32HandleInfoKHR,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut ExportFenceWin32HandleInfoKHR as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> ExportFenceWin32HandleInfoKHR {
@@ -22358,6 +23143,14 @@ impl<'a> FenceGetWin32HandleInfoKHRBuilder<'a> {
         T: ExtendsFenceGetWin32HandleInfoKHR,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut FenceGetWin32HandleInfoKHR as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> FenceGetWin32HandleInfoKHR {
@@ -22430,6 +23223,13 @@ impl<'a> ImportFenceFdInfoKHRBuilder<'a> {
         T: ExtendsImportFenceFdInfoKHR,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut ImportFenceFdInfoKHR as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> ImportFenceFdInfoKHR {
@@ -22490,6 +23290,13 @@ impl<'a> FenceGetFdInfoKHRBuilder<'a> {
         T: ExtendsFenceGetFdInfoKHR,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut FenceGetFdInfoKHR as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> FenceGetFdInfoKHR {
@@ -22704,6 +23511,14 @@ impl<'a> RenderPassMultiviewCreateInfoBuilder<'a> {
         T: ExtendsRenderPassMultiviewCreateInfo,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut RenderPassMultiviewCreateInfo as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> RenderPassMultiviewCreateInfo {
@@ -22896,6 +23711,13 @@ impl<'a> DisplayPowerInfoEXTBuilder<'a> {
         T: ExtendsDisplayPowerInfoEXT,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut DisplayPowerInfoEXT as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> DisplayPowerInfoEXT {
@@ -22950,6 +23772,13 @@ impl<'a> DeviceEventInfoEXTBuilder<'a> {
         T: ExtendsDeviceEventInfoEXT,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut DeviceEventInfoEXT as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> DeviceEventInfoEXT {
@@ -23004,6 +23833,13 @@ impl<'a> DisplayEventInfoEXTBuilder<'a> {
         T: ExtendsDisplayEventInfoEXT,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut DisplayEventInfoEXT as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> DisplayEventInfoEXT {
@@ -23059,6 +23895,14 @@ impl<'a> SwapchainCounterCreateInfoEXTBuilder<'a> {
         T: ExtendsSwapchainCounterCreateInfoEXT,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut SwapchainCounterCreateInfoEXT as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> SwapchainCounterCreateInfoEXT {
@@ -23189,6 +24033,13 @@ impl<'a> MemoryAllocateFlagsInfoBuilder<'a> {
         T: ExtendsMemoryAllocateFlagsInfo,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut MemoryAllocateFlagsInfo as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> MemoryAllocateFlagsInfo {
@@ -23252,6 +24103,13 @@ impl<'a> BindBufferMemoryInfoBuilder<'a> {
         T: ExtendsBindBufferMemoryInfo,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut BindBufferMemoryInfo as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> BindBufferMemoryInfo {
@@ -23310,6 +24168,14 @@ impl<'a> BindBufferMemoryDeviceGroupInfoBuilder<'a> {
         T: ExtendsBindBufferMemoryDeviceGroupInfo,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut BindBufferMemoryDeviceGroupInfo as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> BindBufferMemoryDeviceGroupInfo {
@@ -23373,6 +24239,13 @@ impl<'a> BindImageMemoryInfoBuilder<'a> {
         T: ExtendsBindImageMemoryInfo,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut BindImageMemoryInfo as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> BindImageMemoryInfo {
@@ -23443,6 +24316,14 @@ impl<'a> BindImageMemoryDeviceGroupInfoBuilder<'a> {
         T: ExtendsBindImageMemoryDeviceGroupInfo,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut BindImageMemoryDeviceGroupInfo as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> BindImageMemoryDeviceGroupInfo {
@@ -23507,6 +24388,14 @@ impl<'a> DeviceGroupRenderPassBeginInfoBuilder<'a> {
         T: ExtendsDeviceGroupRenderPassBeginInfo,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut DeviceGroupRenderPassBeginInfo as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> DeviceGroupRenderPassBeginInfo {
@@ -23559,6 +24448,14 @@ impl<'a> DeviceGroupCommandBufferBeginInfoBuilder<'a> {
         T: ExtendsDeviceGroupCommandBufferBeginInfo,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut DeviceGroupCommandBufferBeginInfo as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> DeviceGroupCommandBufferBeginInfo {
@@ -23641,6 +24538,13 @@ impl<'a> DeviceGroupSubmitInfoBuilder<'a> {
         T: ExtendsDeviceGroupSubmitInfo,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut DeviceGroupSubmitInfo as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> DeviceGroupSubmitInfo {
@@ -23705,6 +24609,13 @@ impl<'a> DeviceGroupBindSparseInfoBuilder<'a> {
         T: ExtendsDeviceGroupBindSparseInfo,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut DeviceGroupBindSparseInfo as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> DeviceGroupBindSparseInfo {
@@ -23768,6 +24679,14 @@ impl<'a> DeviceGroupPresentCapabilitiesKHRBuilder<'a> {
         T: ExtendsDeviceGroupPresentCapabilitiesKHR,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut DeviceGroupPresentCapabilitiesKHR as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> DeviceGroupPresentCapabilitiesKHR {
@@ -23820,6 +24739,14 @@ impl<'a> ImageSwapchainCreateInfoKHRBuilder<'a> {
         T: ExtendsImageSwapchainCreateInfoKHR,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut ImageSwapchainCreateInfoKHR as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> ImageSwapchainCreateInfoKHR {
@@ -23881,6 +24808,14 @@ impl<'a> BindImageMemorySwapchainInfoKHRBuilder<'a> {
         T: ExtendsBindImageMemorySwapchainInfoKHR,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut BindImageMemorySwapchainInfoKHR as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> BindImageMemorySwapchainInfoKHR {
@@ -23956,6 +24891,13 @@ impl<'a> AcquireNextImageInfoKHRBuilder<'a> {
         T: ExtendsAcquireNextImageInfoKHR,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut AcquireNextImageInfoKHR as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> AcquireNextImageInfoKHR {
@@ -24020,6 +24962,13 @@ impl<'a> DeviceGroupPresentInfoKHRBuilder<'a> {
         T: ExtendsDeviceGroupPresentInfoKHR,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut DeviceGroupPresentInfoKHR as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> DeviceGroupPresentInfoKHR {
@@ -24078,6 +25027,14 @@ impl<'a> DeviceGroupDeviceCreateInfoBuilder<'a> {
         T: ExtendsDeviceGroupDeviceCreateInfo,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut DeviceGroupDeviceCreateInfo as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> DeviceGroupDeviceCreateInfo {
@@ -24133,6 +25090,14 @@ impl<'a> DeviceGroupSwapchainCreateInfoKHRBuilder<'a> {
         T: ExtendsDeviceGroupSwapchainCreateInfoKHR,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut DeviceGroupSwapchainCreateInfoKHR as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> DeviceGroupSwapchainCreateInfoKHR {
@@ -24452,6 +25417,13 @@ impl<'a> HdrMetadataEXTBuilder<'a> {
         T: ExtendsHdrMetadataEXT,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut HdrMetadataEXT as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> HdrMetadataEXT {
@@ -24606,6 +25578,13 @@ impl<'a> PresentTimesInfoGOOGLEBuilder<'a> {
         T: ExtendsPresentTimesInfoGOOGLE,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut PresentTimesInfoGOOGLE as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> PresentTimesInfoGOOGLE {
@@ -24703,6 +25682,13 @@ impl<'a> IOSSurfaceCreateInfoMVKBuilder<'a> {
         T: ExtendsIOSSurfaceCreateInfoMVK,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut IOSSurfaceCreateInfoMVK as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> IOSSurfaceCreateInfoMVK {
@@ -24763,6 +25749,13 @@ impl<'a> MacOSSurfaceCreateInfoMVKBuilder<'a> {
         T: ExtendsMacOSSurfaceCreateInfoMVK,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut MacOSSurfaceCreateInfoMVK as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> MacOSSurfaceCreateInfoMVK {
@@ -24867,6 +25860,14 @@ impl<'a> PipelineViewportWScalingStateCreateInfoNVBuilder<'a> {
         T: ExtendsPipelineViewportWScalingStateCreateInfoNV,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut PipelineViewportWScalingStateCreateInfoNV
+                as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> PipelineViewportWScalingStateCreateInfoNV {
@@ -24981,6 +25982,14 @@ impl<'a> PipelineViewportSwizzleStateCreateInfoNVBuilder<'a> {
         T: ExtendsPipelineViewportSwizzleStateCreateInfoNV,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut PipelineViewportSwizzleStateCreateInfoNV
+                as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> PipelineViewportSwizzleStateCreateInfoNV {
@@ -25115,6 +26124,14 @@ impl<'a> PipelineDiscardRectangleStateCreateInfoEXTBuilder<'a> {
         T: ExtendsPipelineDiscardRectangleStateCreateInfoEXT,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut PipelineDiscardRectangleStateCreateInfoEXT
+                as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> PipelineDiscardRectangleStateCreateInfoEXT {
@@ -25282,6 +26299,14 @@ impl<'a> RenderPassInputAttachmentAspectCreateInfoBuilder<'a> {
         T: ExtendsRenderPassInputAttachmentAspectCreateInfo,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut RenderPassInputAttachmentAspectCreateInfo
+                as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> RenderPassInputAttachmentAspectCreateInfo {
@@ -25333,6 +26358,14 @@ impl<'a> PhysicalDeviceSurfaceInfo2KHRBuilder<'a> {
         T: ExtendsPhysicalDeviceSurfaceInfo2KHR,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut PhysicalDeviceSurfaceInfo2KHR as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> PhysicalDeviceSurfaceInfo2KHR {
@@ -25660,6 +26693,13 @@ impl<'a> DisplayPlaneInfo2KHRBuilder<'a> {
         T: ExtendsDisplayPlaneInfo2KHR,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut DisplayPlaneInfo2KHR as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> DisplayPlaneInfo2KHR {
@@ -25986,6 +27026,14 @@ impl<'a> BufferMemoryRequirementsInfo2Builder<'a> {
         T: ExtendsBufferMemoryRequirementsInfo2,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut BufferMemoryRequirementsInfo2 as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> BufferMemoryRequirementsInfo2 {
@@ -26037,6 +27085,14 @@ impl<'a> ImageMemoryRequirementsInfo2Builder<'a> {
         T: ExtendsImageMemoryRequirementsInfo2,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut ImageMemoryRequirementsInfo2 as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> ImageMemoryRequirementsInfo2 {
@@ -26088,6 +27144,14 @@ impl<'a> ImageSparseMemoryRequirementsInfo2Builder<'a> {
         T: ExtendsImageSparseMemoryRequirementsInfo2,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut ImageSparseMemoryRequirementsInfo2 as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> ImageSparseMemoryRequirementsInfo2 {
@@ -26373,6 +27437,14 @@ impl<'a> MemoryDedicatedAllocateInfoBuilder<'a> {
         T: ExtendsMemoryDedicatedAllocateInfo,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut MemoryDedicatedAllocateInfo as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> MemoryDedicatedAllocateInfo {
@@ -26425,6 +27497,13 @@ impl<'a> ImageViewUsageCreateInfoBuilder<'a> {
         T: ExtendsImageViewUsageCreateInfo,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut ImageViewUsageCreateInfo as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> ImageViewUsageCreateInfo {
@@ -26486,6 +27565,14 @@ impl<'a> PipelineTessellationDomainOriginStateCreateInfoBuilder<'a> {
         T: ExtendsPipelineTessellationDomainOriginStateCreateInfo,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut PipelineTessellationDomainOriginStateCreateInfo
+                as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> PipelineTessellationDomainOriginStateCreateInfo {
@@ -26542,6 +27629,14 @@ impl<'a> SamplerYcbcrConversionInfoBuilder<'a> {
         T: ExtendsSamplerYcbcrConversionInfo,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut SamplerYcbcrConversionInfo as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> SamplerYcbcrConversionInfo {
@@ -26656,6 +27751,14 @@ impl<'a> SamplerYcbcrConversionCreateInfoBuilder<'a> {
         T: ExtendsSamplerYcbcrConversionCreateInfo,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut SamplerYcbcrConversionCreateInfo as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> SamplerYcbcrConversionCreateInfo {
@@ -26711,6 +27814,13 @@ impl<'a> BindImagePlaneMemoryInfoBuilder<'a> {
         T: ExtendsBindImagePlaneMemoryInfo,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut BindImagePlaneMemoryInfo as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> BindImagePlaneMemoryInfo {
@@ -26766,6 +27876,14 @@ impl<'a> ImagePlaneMemoryRequirementsInfoBuilder<'a> {
         T: ExtendsImagePlaneMemoryRequirementsInfo,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut ImagePlaneMemoryRequirementsInfo as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> ImagePlaneMemoryRequirementsInfo {
@@ -27006,6 +28124,14 @@ impl<'a> ConditionalRenderingBeginInfoEXTBuilder<'a> {
         T: ExtendsConditionalRenderingBeginInfoEXT,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut ConditionalRenderingBeginInfoEXT as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> ConditionalRenderingBeginInfoEXT {
@@ -27058,6 +28184,13 @@ impl<'a> ProtectedSubmitInfoBuilder<'a> {
         T: ExtendsProtectedSubmitInfo,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut ProtectedSubmitInfo as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> ProtectedSubmitInfo {
@@ -27232,6 +28365,13 @@ impl<'a> DeviceQueueInfo2Builder<'a> {
         T: ExtendsDeviceQueueInfo2,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut DeviceQueueInfo2 as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> DeviceQueueInfo2 {
@@ -27305,6 +28445,14 @@ impl<'a> PipelineCoverageToColorStateCreateInfoNVBuilder<'a> {
         T: ExtendsPipelineCoverageToColorStateCreateInfoNV,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut PipelineCoverageToColorStateCreateInfoNV
+                as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> PipelineCoverageToColorStateCreateInfoNV {
@@ -27487,6 +28635,13 @@ impl<'a> SampleLocationsInfoEXTBuilder<'a> {
         T: ExtendsSampleLocationsInfoEXT,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut SampleLocationsInfoEXT as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> SampleLocationsInfoEXT {
@@ -27642,6 +28797,14 @@ impl<'a> RenderPassSampleLocationsBeginInfoEXTBuilder<'a> {
         T: ExtendsRenderPassSampleLocationsBeginInfoEXT,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut RenderPassSampleLocationsBeginInfoEXT
+                as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> RenderPassSampleLocationsBeginInfoEXT {
@@ -27709,6 +28872,14 @@ impl<'a> PipelineSampleLocationsStateCreateInfoEXTBuilder<'a> {
         T: ExtendsPipelineSampleLocationsStateCreateInfoEXT,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut PipelineSampleLocationsStateCreateInfoEXT
+                as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> PipelineSampleLocationsStateCreateInfoEXT {
@@ -27912,6 +29083,14 @@ impl<'a> SamplerReductionModeCreateInfoEXTBuilder<'a> {
         T: ExtendsSamplerReductionModeCreateInfoEXT,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut SamplerReductionModeCreateInfoEXT as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> SamplerReductionModeCreateInfoEXT {
@@ -28152,6 +29331,14 @@ impl<'a> PipelineColorBlendAdvancedStateCreateInfoEXTBuilder<'a> {
         T: ExtendsPipelineColorBlendAdvancedStateCreateInfoEXT,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut PipelineColorBlendAdvancedStateCreateInfoEXT
+                as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> PipelineColorBlendAdvancedStateCreateInfoEXT {
@@ -28377,6 +29564,14 @@ impl<'a> WriteDescriptorSetInlineUniformBlockEXTBuilder<'a> {
         T: ExtendsWriteDescriptorSetInlineUniformBlockEXT,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut WriteDescriptorSetInlineUniformBlockEXT
+                as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> WriteDescriptorSetInlineUniformBlockEXT {
@@ -28435,6 +29630,14 @@ impl<'a> DescriptorPoolInlineUniformBlockCreateInfoEXTBuilder<'a> {
         T: ExtendsDescriptorPoolInlineUniformBlockCreateInfoEXT,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut DescriptorPoolInlineUniformBlockCreateInfoEXT
+                as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> DescriptorPoolInlineUniformBlockCreateInfoEXT {
@@ -28523,6 +29726,14 @@ impl<'a> PipelineCoverageModulationStateCreateInfoNVBuilder<'a> {
         T: ExtendsPipelineCoverageModulationStateCreateInfoNV,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut PipelineCoverageModulationStateCreateInfoNV
+                as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> PipelineCoverageModulationStateCreateInfoNV {
@@ -28582,6 +29793,14 @@ impl<'a> ImageFormatListCreateInfoKHRBuilder<'a> {
         T: ExtendsImageFormatListCreateInfoKHR,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut ImageFormatListCreateInfoKHR as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> ImageFormatListCreateInfoKHR {
@@ -28648,6 +29867,14 @@ impl<'a> ValidationCacheCreateInfoEXTBuilder<'a> {
         T: ExtendsValidationCacheCreateInfoEXT,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut ValidationCacheCreateInfoEXT as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> ValidationCacheCreateInfoEXT {
@@ -28703,6 +29930,14 @@ impl<'a> ShaderModuleValidationCacheCreateInfoEXTBuilder<'a> {
         T: ExtendsShaderModuleValidationCacheCreateInfoEXT,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut ShaderModuleValidationCacheCreateInfoEXT
+                as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> ShaderModuleValidationCacheCreateInfoEXT {
@@ -28946,6 +30181,13 @@ impl<'a> NativeBufferANDROIDBuilder<'a> {
         T: ExtendsNativeBufferANDROID,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut NativeBufferANDROID as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> NativeBufferANDROID {
@@ -29158,6 +30400,14 @@ impl<'a> DeviceQueueGlobalPriorityCreateInfoEXTBuilder<'a> {
         T: ExtendsDeviceQueueGlobalPriorityCreateInfoEXT,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut DeviceQueueGlobalPriorityCreateInfoEXT
+                as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> DeviceQueueGlobalPriorityCreateInfoEXT {
@@ -29227,6 +30477,14 @@ impl<'a> DebugUtilsObjectNameInfoEXTBuilder<'a> {
         T: ExtendsDebugUtilsObjectNameInfoEXT,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut DebugUtilsObjectNameInfoEXT as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> DebugUtilsObjectNameInfoEXT {
@@ -29299,6 +30557,14 @@ impl<'a> DebugUtilsObjectTagInfoEXTBuilder<'a> {
         T: ExtendsDebugUtilsObjectTagInfoEXT,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut DebugUtilsObjectTagInfoEXT as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> DebugUtilsObjectTagInfoEXT {
@@ -29356,6 +30622,13 @@ impl<'a> DebugUtilsLabelEXTBuilder<'a> {
         T: ExtendsDebugUtilsLabelEXT,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut DebugUtilsLabelEXT as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> DebugUtilsLabelEXT {
@@ -29463,6 +30736,14 @@ impl<'a> DebugUtilsMessengerCreateInfoEXTBuilder<'a> {
         T: ExtendsDebugUtilsMessengerCreateInfoEXT,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut DebugUtilsMessengerCreateInfoEXT as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> DebugUtilsMessengerCreateInfoEXT {
@@ -29580,6 +30861,14 @@ impl<'a> DebugUtilsMessengerCallbackDataEXTBuilder<'a> {
         T: ExtendsDebugUtilsMessengerCallbackDataEXT,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut DebugUtilsMessengerCallbackDataEXT as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> DebugUtilsMessengerCallbackDataEXT {
@@ -29644,6 +30933,14 @@ impl<'a> ImportMemoryHostPointerInfoEXTBuilder<'a> {
         T: ExtendsImportMemoryHostPointerInfoEXT,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut ImportMemoryHostPointerInfoEXT as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> ImportMemoryHostPointerInfoEXT {
@@ -29948,6 +31245,14 @@ impl<'a> CalibratedTimestampInfoEXTBuilder<'a> {
         T: ExtendsCalibratedTimestampInfoEXT,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut CalibratedTimestampInfoEXT as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> CalibratedTimestampInfoEXT {
@@ -30199,6 +31504,15 @@ impl<'a> PipelineRasterizationConservativeStateCreateInfoEXTBuilder<'a> {
         T: ExtendsPipelineRasterizationConservativeStateCreateInfoEXT,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner
+                as *mut PipelineRasterizationConservativeStateCreateInfoEXT
+                as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> PipelineRasterizationConservativeStateCreateInfoEXT {
@@ -30812,6 +32126,14 @@ impl<'a> DescriptorSetLayoutBindingFlagsCreateInfoEXTBuilder<'a> {
         T: ExtendsDescriptorSetLayoutBindingFlagsCreateInfoEXT,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut DescriptorSetLayoutBindingFlagsCreateInfoEXT
+                as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> DescriptorSetLayoutBindingFlagsCreateInfoEXT {
@@ -30876,6 +32198,15 @@ impl<'a> DescriptorSetVariableDescriptorCountAllocateInfoEXTBuilder<'a> {
         T: ExtendsDescriptorSetVariableDescriptorCountAllocateInfoEXT,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner
+                as *mut DescriptorSetVariableDescriptorCountAllocateInfoEXT
+                as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> DescriptorSetVariableDescriptorCountAllocateInfoEXT {
@@ -31051,6 +32382,13 @@ impl<'a> AttachmentDescription2KHRBuilder<'a> {
         T: ExtendsAttachmentDescription2KHR,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut AttachmentDescription2KHR as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> AttachmentDescription2KHR {
@@ -31117,6 +32455,13 @@ impl<'a> AttachmentReference2KHRBuilder<'a> {
         T: ExtendsAttachmentReference2KHR,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut AttachmentReference2KHR as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> AttachmentReference2KHR {
@@ -31238,6 +32583,13 @@ impl<'a> SubpassDescription2KHRBuilder<'a> {
         T: ExtendsSubpassDescription2KHR,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut SubpassDescription2KHR as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> SubpassDescription2KHR {
@@ -31346,6 +32698,13 @@ impl<'a> SubpassDependency2KHRBuilder<'a> {
         T: ExtendsSubpassDependency2KHR,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut SubpassDependency2KHR as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> SubpassDependency2KHR {
@@ -31445,6 +32804,13 @@ impl<'a> RenderPassCreateInfo2KHRBuilder<'a> {
         T: ExtendsRenderPassCreateInfo2KHR,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut RenderPassCreateInfo2KHR as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> RenderPassCreateInfo2KHR {
@@ -31496,6 +32862,13 @@ impl<'a> SubpassBeginInfoKHRBuilder<'a> {
         T: ExtendsSubpassBeginInfoKHR,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut SubpassBeginInfoKHR as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> SubpassBeginInfoKHR {
@@ -31541,6 +32914,13 @@ impl<'a> SubpassEndInfoKHRBuilder<'a> {
         T: ExtendsSubpassEndInfoKHR,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut SubpassEndInfoKHR as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> SubpassEndInfoKHR {
@@ -31639,6 +33019,14 @@ impl<'a> PipelineVertexInputDivisorStateCreateInfoEXTBuilder<'a> {
         T: ExtendsPipelineVertexInputDivisorStateCreateInfoEXT,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut PipelineVertexInputDivisorStateCreateInfoEXT
+                as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> PipelineVertexInputDivisorStateCreateInfoEXT {
@@ -31831,6 +33219,14 @@ impl<'a> ImportAndroidHardwareBufferInfoANDROIDBuilder<'a> {
         T: ExtendsImportAndroidHardwareBufferInfoANDROID,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut ImportAndroidHardwareBufferInfoANDROID
+                as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> ImportAndroidHardwareBufferInfoANDROID {
@@ -32003,6 +33399,14 @@ impl<'a> MemoryGetAndroidHardwareBufferInfoANDROIDBuilder<'a> {
         T: ExtendsMemoryGetAndroidHardwareBufferInfoANDROID,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut MemoryGetAndroidHardwareBufferInfoANDROID
+                as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> MemoryGetAndroidHardwareBufferInfoANDROID {
@@ -32188,6 +33592,15 @@ impl<'a> CommandBufferInheritanceConditionalRenderingInfoEXTBuilder<'a> {
         T: ExtendsCommandBufferInheritanceConditionalRenderingInfoEXT,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner
+                as *mut CommandBufferInheritanceConditionalRenderingInfoEXT
+                as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> CommandBufferInheritanceConditionalRenderingInfoEXT {
@@ -32757,6 +34170,14 @@ impl<'a> ImageViewASTCDecodeModeEXTBuilder<'a> {
         T: ExtendsImageViewASTCDecodeModeEXT,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut ImageViewASTCDecodeModeEXT as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> ImageViewASTCDecodeModeEXT {
@@ -33095,6 +34516,14 @@ impl<'a> PipelineRasterizationStateStreamCreateInfoEXTBuilder<'a> {
         T: ExtendsPipelineRasterizationStateStreamCreateInfoEXT,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut PipelineRasterizationStateStreamCreateInfoEXT
+                as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> PipelineRasterizationStateStreamCreateInfoEXT {
@@ -33215,6 +34644,15 @@ impl<'a> PipelineRepresentativeFragmentTestStateCreateInfoNVBuilder<'a> {
         T: ExtendsPipelineRepresentativeFragmentTestStateCreateInfoNV,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner
+                as *mut PipelineRepresentativeFragmentTestStateCreateInfoNV
+                as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> PipelineRepresentativeFragmentTestStateCreateInfoNV {
@@ -33335,6 +34773,14 @@ impl<'a> PipelineViewportExclusiveScissorStateCreateInfoNVBuilder<'a> {
         T: ExtendsPipelineViewportExclusiveScissorStateCreateInfoNV,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut PipelineViewportExclusiveScissorStateCreateInfoNV
+                as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> PipelineViewportExclusiveScissorStateCreateInfoNV {
@@ -33698,6 +35144,14 @@ impl<'a> PipelineViewportShadingRateImageStateCreateInfoNVBuilder<'a> {
         T: ExtendsPipelineViewportShadingRateImageStateCreateInfoNV,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut PipelineViewportShadingRateImageStateCreateInfoNV
+                as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> PipelineViewportShadingRateImageStateCreateInfoNV {
@@ -34014,6 +35468,14 @@ impl<'a> PipelineViewportCoarseSampleOrderStateCreateInfoNVBuilder<'a> {
         T: ExtendsPipelineViewportCoarseSampleOrderStateCreateInfoNV,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut PipelineViewportCoarseSampleOrderStateCreateInfoNV
+                as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> PipelineViewportCoarseSampleOrderStateCreateInfoNV {
@@ -34369,6 +35831,14 @@ impl<'a> RayTracingShaderGroupCreateInfoNVBuilder<'a> {
         T: ExtendsRayTracingShaderGroupCreateInfoNV,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut RayTracingShaderGroupCreateInfoNV as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> RayTracingShaderGroupCreateInfoNV {
@@ -34480,6 +35950,14 @@ impl<'a> RayTracingPipelineCreateInfoNVBuilder<'a> {
         T: ExtendsRayTracingPipelineCreateInfoNV,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut RayTracingPipelineCreateInfoNV as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> RayTracingPipelineCreateInfoNV {
@@ -34594,6 +36072,13 @@ impl<'a> GeometryTrianglesNVBuilder<'a> {
         T: ExtendsGeometryTrianglesNV,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut GeometryTrianglesNV as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> GeometryTrianglesNV {
@@ -34663,6 +36148,13 @@ impl<'a> GeometryAABBNVBuilder<'a> {
         T: ExtendsGeometryAABBNV,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut GeometryAABBNV as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> GeometryAABBNV {
@@ -34763,6 +36255,13 @@ impl<'a> GeometryNVBuilder<'a> {
         T: ExtendsGeometryNV,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut GeometryNV as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> GeometryNV {
@@ -34841,6 +36340,14 @@ impl<'a> AccelerationStructureInfoNVBuilder<'a> {
         T: ExtendsAccelerationStructureInfoNV,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut AccelerationStructureInfoNV as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> AccelerationStructureInfoNV {
@@ -34904,6 +36411,14 @@ impl<'a> AccelerationStructureCreateInfoNVBuilder<'a> {
         T: ExtendsAccelerationStructureCreateInfoNV,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw =
+                &mut self.inner as *mut AccelerationStructureCreateInfoNV as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> AccelerationStructureCreateInfoNV {
@@ -34988,6 +36503,14 @@ impl<'a> BindAccelerationStructureMemoryInfoNVBuilder<'a> {
         T: ExtendsBindAccelerationStructureMemoryInfoNV,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut BindAccelerationStructureMemoryInfoNV
+                as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> BindAccelerationStructureMemoryInfoNV {
@@ -35046,6 +36569,14 @@ impl<'a> WriteDescriptorSetAccelerationStructureNVBuilder<'a> {
         T: ExtendsWriteDescriptorSetAccelerationStructureNV,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut WriteDescriptorSetAccelerationStructureNV
+                as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> WriteDescriptorSetAccelerationStructureNV {
@@ -35112,6 +36643,14 @@ impl<'a> AccelerationStructureMemoryRequirementsInfoNVBuilder<'a> {
         T: ExtendsAccelerationStructureMemoryRequirementsInfoNV,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut AccelerationStructureMemoryRequirementsInfoNV
+                as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> AccelerationStructureMemoryRequirementsInfoNV {
@@ -35416,6 +36955,14 @@ impl<'a> PhysicalDeviceImageDrmFormatModifierInfoEXTBuilder<'a> {
         T: ExtendsPhysicalDeviceImageDrmFormatModifierInfoEXT,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut PhysicalDeviceImageDrmFormatModifierInfoEXT
+                as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> PhysicalDeviceImageDrmFormatModifierInfoEXT {
@@ -35474,6 +37021,14 @@ impl<'a> ImageDrmFormatModifierListCreateInfoEXTBuilder<'a> {
         T: ExtendsImageDrmFormatModifierListCreateInfoEXT,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut ImageDrmFormatModifierListCreateInfoEXT
+                as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> ImageDrmFormatModifierListCreateInfoEXT {
@@ -35541,6 +37096,14 @@ impl<'a> ImageDrmFormatModifierExplicitCreateInfoEXTBuilder<'a> {
         T: ExtendsImageDrmFormatModifierExplicitCreateInfoEXT,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut ImageDrmFormatModifierExplicitCreateInfoEXT
+                as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> ImageDrmFormatModifierExplicitCreateInfoEXT {
@@ -35650,6 +37213,14 @@ impl<'a> DeviceMemoryOverallocationCreateInfoAMDBuilder<'a> {
         T: ExtendsDeviceMemoryOverallocationCreateInfoAMD,
     {
         self.inner.p_next = next as *const T as *const c_void;
+        unsafe {
+            let mut raw = &mut self.inner as *mut DeviceMemoryOverallocationCreateInfoAMD
+                as *mut BaseInStructure;
+            while (*raw).p_next != ::std::ptr::null() {
+                raw = (*raw).p_next as *mut BaseInStructure;
+            }
+            (*raw).p_next = next as *const T as *const BaseInStructure;
+        }
         self
     }
     pub fn build(self) -> DeviceMemoryOverallocationCreateInfoAMD {
@@ -51327,342 +52898,10 @@ fn display_flags(
     }
     Ok(())
 }
-impl fmt::Display for ImageLayout {
+impl fmt::Display for ConditionalRenderingFlagsEXT {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        let name = match *self {
-            Self::UNDEFINED => Some("UNDEFINED"),
-            Self::GENERAL => Some("GENERAL"),
-            Self::COLOR_ATTACHMENT_OPTIMAL => Some("COLOR_ATTACHMENT_OPTIMAL"),
-            Self::DEPTH_STENCIL_ATTACHMENT_OPTIMAL => Some("DEPTH_STENCIL_ATTACHMENT_OPTIMAL"),
-            Self::DEPTH_STENCIL_READ_ONLY_OPTIMAL => Some("DEPTH_STENCIL_READ_ONLY_OPTIMAL"),
-            Self::SHADER_READ_ONLY_OPTIMAL => Some("SHADER_READ_ONLY_OPTIMAL"),
-            Self::TRANSFER_SRC_OPTIMAL => Some("TRANSFER_SRC_OPTIMAL"),
-            Self::TRANSFER_DST_OPTIMAL => Some("TRANSFER_DST_OPTIMAL"),
-            Self::PREINITIALIZED => Some("PREINITIALIZED"),
-            Self::PRESENT_SRC_KHR => Some("PRESENT_SRC_KHR"),
-            Self::SHARED_PRESENT_KHR => Some("SHARED_PRESENT_KHR"),
-            Self::SHADING_RATE_OPTIMAL_NV => Some("SHADING_RATE_OPTIMAL_NV"),
-            Self::DEPTH_READ_ONLY_STENCIL_ATTACHMENT_OPTIMAL => {
-                Some("DEPTH_READ_ONLY_STENCIL_ATTACHMENT_OPTIMAL")
-            }
-            Self::DEPTH_ATTACHMENT_STENCIL_READ_ONLY_OPTIMAL => {
-                Some("DEPTH_ATTACHMENT_STENCIL_READ_ONLY_OPTIMAL")
-            }
-            _ => None,
-        };
-        if let Some(x) = name {
-            f.write_str(x)
-        } else {
-            write!(f, "{}", self.0)
-        }
-    }
-}
-impl fmt::Display for ValidationCheckEXT {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        let name = match *self {
-            Self::ALL => Some("ALL"),
-            Self::SHADERS => Some("SHADERS"),
-            _ => None,
-        };
-        if let Some(x) = name {
-            f.write_str(x)
-        } else {
-            write!(f, "{}", self.0)
-        }
-    }
-}
-impl fmt::Display for QueryPipelineStatisticFlags {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        const KNOWN: &[(Flags, &str)] = &[
-            (
-                QueryPipelineStatisticFlags::INPUT_ASSEMBLY_VERTICES.0,
-                "INPUT_ASSEMBLY_VERTICES",
-            ),
-            (
-                QueryPipelineStatisticFlags::INPUT_ASSEMBLY_PRIMITIVES.0,
-                "INPUT_ASSEMBLY_PRIMITIVES",
-            ),
-            (
-                QueryPipelineStatisticFlags::VERTEX_SHADER_INVOCATIONS.0,
-                "VERTEX_SHADER_INVOCATIONS",
-            ),
-            (
-                QueryPipelineStatisticFlags::GEOMETRY_SHADER_INVOCATIONS.0,
-                "GEOMETRY_SHADER_INVOCATIONS",
-            ),
-            (
-                QueryPipelineStatisticFlags::GEOMETRY_SHADER_PRIMITIVES.0,
-                "GEOMETRY_SHADER_PRIMITIVES",
-            ),
-            (
-                QueryPipelineStatisticFlags::CLIPPING_INVOCATIONS.0,
-                "CLIPPING_INVOCATIONS",
-            ),
-            (
-                QueryPipelineStatisticFlags::CLIPPING_PRIMITIVES.0,
-                "CLIPPING_PRIMITIVES",
-            ),
-            (
-                QueryPipelineStatisticFlags::FRAGMENT_SHADER_INVOCATIONS.0,
-                "FRAGMENT_SHADER_INVOCATIONS",
-            ),
-            (
-                QueryPipelineStatisticFlags::TESSELLATION_CONTROL_SHADER_PATCHES.0,
-                "TESSELLATION_CONTROL_SHADER_PATCHES",
-            ),
-            (
-                QueryPipelineStatisticFlags::TESSELLATION_EVALUATION_SHADER_INVOCATIONS.0,
-                "TESSELLATION_EVALUATION_SHADER_INVOCATIONS",
-            ),
-            (
-                QueryPipelineStatisticFlags::COMPUTE_SHADER_INVOCATIONS.0,
-                "COMPUTE_SHADER_INVOCATIONS",
-            ),
-        ];
+        const KNOWN: &[(Flags, &str)] = &[(ConditionalRenderingFlagsEXT::INVERTED.0, "INVERTED")];
         display_flags(f, KNOWN, self.0)
-    }
-}
-impl fmt::Display for SurfaceTransformFlagsKHR {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        const KNOWN: &[(Flags, &str)] = &[
-            (SurfaceTransformFlagsKHR::IDENTITY.0, "IDENTITY"),
-            (SurfaceTransformFlagsKHR::ROTATE_90.0, "ROTATE_90"),
-            (SurfaceTransformFlagsKHR::ROTATE_180.0, "ROTATE_180"),
-            (SurfaceTransformFlagsKHR::ROTATE_270.0, "ROTATE_270"),
-            (
-                SurfaceTransformFlagsKHR::HORIZONTAL_MIRROR.0,
-                "HORIZONTAL_MIRROR",
-            ),
-            (
-                SurfaceTransformFlagsKHR::HORIZONTAL_MIRROR_ROTATE_90.0,
-                "HORIZONTAL_MIRROR_ROTATE_90",
-            ),
-            (
-                SurfaceTransformFlagsKHR::HORIZONTAL_MIRROR_ROTATE_180.0,
-                "HORIZONTAL_MIRROR_ROTATE_180",
-            ),
-            (
-                SurfaceTransformFlagsKHR::HORIZONTAL_MIRROR_ROTATE_270.0,
-                "HORIZONTAL_MIRROR_ROTATE_270",
-            ),
-            (SurfaceTransformFlagsKHR::INHERIT.0, "INHERIT"),
-        ];
-        display_flags(f, KNOWN, self.0)
-    }
-}
-impl fmt::Display for RenderPassCreateFlags {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        const KNOWN: &[(Flags, &str)] =
-            &[(RenderPassCreateFlags::RESERVED_0_KHR.0, "RESERVED_0_KHR")];
-        display_flags(f, KNOWN, self.0)
-    }
-}
-impl fmt::Display for MemoryPropertyFlags {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        const KNOWN: &[(Flags, &str)] = &[
-            (MemoryPropertyFlags::DEVICE_LOCAL.0, "DEVICE_LOCAL"),
-            (MemoryPropertyFlags::HOST_VISIBLE.0, "HOST_VISIBLE"),
-            (MemoryPropertyFlags::HOST_COHERENT.0, "HOST_COHERENT"),
-            (MemoryPropertyFlags::HOST_CACHED.0, "HOST_CACHED"),
-            (MemoryPropertyFlags::LAZILY_ALLOCATED.0, "LAZILY_ALLOCATED"),
-            (MemoryPropertyFlags::PROTECTED.0, "PROTECTED"),
-        ];
-        display_flags(f, KNOWN, self.0)
-    }
-}
-impl fmt::Display for CommandPoolCreateFlags {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        const KNOWN: &[(Flags, &str)] = &[
-            (CommandPoolCreateFlags::TRANSIENT.0, "TRANSIENT"),
-            (
-                CommandPoolCreateFlags::RESET_COMMAND_BUFFER.0,
-                "RESET_COMMAND_BUFFER",
-            ),
-            (CommandPoolCreateFlags::PROTECTED.0, "PROTECTED"),
-        ];
-        display_flags(f, KNOWN, self.0)
-    }
-}
-impl fmt::Display for AccelerationStructureTypeNV {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        let name = match *self {
-            Self::TOP_LEVEL => Some("TOP_LEVEL"),
-            Self::BOTTOM_LEVEL => Some("BOTTOM_LEVEL"),
-            _ => None,
-        };
-        if let Some(x) = name {
-            f.write_str(x)
-        } else {
-            write!(f, "{}", self.0)
-        }
-    }
-}
-impl fmt::Display for ImageType {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        let name = match *self {
-            Self::TYPE_1D => Some("TYPE_1D"),
-            Self::TYPE_2D => Some("TYPE_2D"),
-            Self::TYPE_3D => Some("TYPE_3D"),
-            _ => None,
-        };
-        if let Some(x) = name {
-            f.write_str(x)
-        } else {
-            write!(f, "{}", self.0)
-        }
-    }
-}
-impl fmt::Display for QueryControlFlags {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        const KNOWN: &[(Flags, &str)] = &[(QueryControlFlags::PRECISE.0, "PRECISE")];
-        display_flags(f, KNOWN, self.0)
-    }
-}
-impl fmt::Display for ImageCreateFlags {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        const KNOWN: &[(Flags, &str)] = &[
-            (ImageCreateFlags::SPARSE_BINDING.0, "SPARSE_BINDING"),
-            (ImageCreateFlags::SPARSE_RESIDENCY.0, "SPARSE_RESIDENCY"),
-            (ImageCreateFlags::SPARSE_ALIASED.0, "SPARSE_ALIASED"),
-            (ImageCreateFlags::MUTABLE_FORMAT.0, "MUTABLE_FORMAT"),
-            (ImageCreateFlags::CUBE_COMPATIBLE.0, "CUBE_COMPATIBLE"),
-            (ImageCreateFlags::CORNER_SAMPLED_NV.0, "CORNER_SAMPLED_NV"),
-            (
-                ImageCreateFlags::SAMPLE_LOCATIONS_COMPATIBLE_DEPTH_EXT.0,
-                "SAMPLE_LOCATIONS_COMPATIBLE_DEPTH_EXT",
-            ),
-            (ImageCreateFlags::RESERVED_14_EXT.0, "RESERVED_14_EXT"),
-            (ImageCreateFlags::ALIAS.0, "ALIAS"),
-            (
-                ImageCreateFlags::SPLIT_INSTANCE_BIND_REGIONS.0,
-                "SPLIT_INSTANCE_BIND_REGIONS",
-            ),
-            (
-                ImageCreateFlags::TYPE_2D_ARRAY_COMPATIBLE.0,
-                "TYPE_2D_ARRAY_COMPATIBLE",
-            ),
-            (
-                ImageCreateFlags::BLOCK_TEXEL_VIEW_COMPATIBLE.0,
-                "BLOCK_TEXEL_VIEW_COMPATIBLE",
-            ),
-            (ImageCreateFlags::EXTENDED_USAGE.0, "EXTENDED_USAGE"),
-            (ImageCreateFlags::PROTECTED.0, "PROTECTED"),
-            (ImageCreateFlags::DISJOINT.0, "DISJOINT"),
-        ];
-        display_flags(f, KNOWN, self.0)
-    }
-}
-impl fmt::Display for ObjectType {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        let name = match *self {
-            Self::UNKNOWN => Some("UNKNOWN"),
-            Self::INSTANCE => Some("INSTANCE"),
-            Self::PHYSICAL_DEVICE => Some("PHYSICAL_DEVICE"),
-            Self::DEVICE => Some("DEVICE"),
-            Self::QUEUE => Some("QUEUE"),
-            Self::SEMAPHORE => Some("SEMAPHORE"),
-            Self::COMMAND_BUFFER => Some("COMMAND_BUFFER"),
-            Self::FENCE => Some("FENCE"),
-            Self::DEVICE_MEMORY => Some("DEVICE_MEMORY"),
-            Self::BUFFER => Some("BUFFER"),
-            Self::IMAGE => Some("IMAGE"),
-            Self::EVENT => Some("EVENT"),
-            Self::QUERY_POOL => Some("QUERY_POOL"),
-            Self::BUFFER_VIEW => Some("BUFFER_VIEW"),
-            Self::IMAGE_VIEW => Some("IMAGE_VIEW"),
-            Self::SHADER_MODULE => Some("SHADER_MODULE"),
-            Self::PIPELINE_CACHE => Some("PIPELINE_CACHE"),
-            Self::PIPELINE_LAYOUT => Some("PIPELINE_LAYOUT"),
-            Self::RENDER_PASS => Some("RENDER_PASS"),
-            Self::PIPELINE => Some("PIPELINE"),
-            Self::DESCRIPTOR_SET_LAYOUT => Some("DESCRIPTOR_SET_LAYOUT"),
-            Self::SAMPLER => Some("SAMPLER"),
-            Self::DESCRIPTOR_POOL => Some("DESCRIPTOR_POOL"),
-            Self::DESCRIPTOR_SET => Some("DESCRIPTOR_SET"),
-            Self::FRAMEBUFFER => Some("FRAMEBUFFER"),
-            Self::COMMAND_POOL => Some("COMMAND_POOL"),
-            Self::SURFACE_KHR => Some("SURFACE_KHR"),
-            Self::SWAPCHAIN_KHR => Some("SWAPCHAIN_KHR"),
-            Self::DISPLAY_KHR => Some("DISPLAY_KHR"),
-            Self::DISPLAY_MODE_KHR => Some("DISPLAY_MODE_KHR"),
-            Self::DEBUG_REPORT_CALLBACK_EXT => Some("DEBUG_REPORT_CALLBACK_EXT"),
-            Self::OBJECT_TABLE_NVX => Some("OBJECT_TABLE_NVX"),
-            Self::INDIRECT_COMMANDS_LAYOUT_NVX => Some("INDIRECT_COMMANDS_LAYOUT_NVX"),
-            Self::DEBUG_UTILS_MESSENGER_EXT => Some("DEBUG_UTILS_MESSENGER_EXT"),
-            Self::VALIDATION_CACHE_EXT => Some("VALIDATION_CACHE_EXT"),
-            Self::ACCELERATION_STRUCTURE_NV => Some("ACCELERATION_STRUCTURE_NV"),
-            Self::SAMPLER_YCBCR_CONVERSION => Some("SAMPLER_YCBCR_CONVERSION"),
-            Self::DESCRIPTOR_UPDATE_TEMPLATE => Some("DESCRIPTOR_UPDATE_TEMPLATE"),
-            _ => None,
-        };
-        if let Some(x) = name {
-            f.write_str(x)
-        } else {
-            write!(f, "{}", self.0)
-        }
-    }
-}
-impl fmt::Display for QueryType {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        let name = match *self {
-            Self::OCCLUSION => Some("OCCLUSION"),
-            Self::PIPELINE_STATISTICS => Some("PIPELINE_STATISTICS"),
-            Self::TIMESTAMP => Some("TIMESTAMP"),
-            Self::TRANSFORM_FEEDBACK_STREAM_EXT => Some("TRANSFORM_FEEDBACK_STREAM_EXT"),
-            Self::ACCELERATION_STRUCTURE_COMPACTED_SIZE_NV => {
-                Some("ACCELERATION_STRUCTURE_COMPACTED_SIZE_NV")
-            }
-            _ => None,
-        };
-        if let Some(x) = name {
-            f.write_str(x)
-        } else {
-            write!(f, "{}", self.0)
-        }
-    }
-}
-impl fmt::Display for TessellationDomainOrigin {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        let name = match *self {
-            Self::UPPER_LEFT => Some("UPPER_LEFT"),
-            Self::LOWER_LEFT => Some("LOWER_LEFT"),
-            _ => None,
-        };
-        if let Some(x) = name {
-            f.write_str(x)
-        } else {
-            write!(f, "{}", self.0)
-        }
-    }
-}
-impl fmt::Display for DescriptorSetLayoutCreateFlags {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        const KNOWN: &[(Flags, &str)] = &[
-            (
-                DescriptorSetLayoutCreateFlags::PUSH_DESCRIPTOR_KHR.0,
-                "PUSH_DESCRIPTOR_KHR",
-            ),
-            (
-                DescriptorSetLayoutCreateFlags::UPDATE_AFTER_BIND_POOL_EXT.0,
-                "UPDATE_AFTER_BIND_POOL_EXT",
-            ),
-        ];
-        display_flags(f, KNOWN, self.0)
-    }
-}
-impl fmt::Display for SamplerReductionModeEXT {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        let name = match *self {
-            Self::WEIGHTED_AVERAGE => Some("WEIGHTED_AVERAGE"),
-            Self::MIN => Some("MIN"),
-            Self::MAX => Some("MAX"),
-            _ => None,
-        };
-        if let Some(x) = name {
-            f.write_str(x)
-        } else {
-            write!(f, "{}", self.0)
-        }
     }
 }
 impl fmt::Display for ValidationCacheHeaderVersionEXT {
@@ -51678,16 +52917,19 @@ impl fmt::Display for ValidationCacheHeaderVersionEXT {
         }
     }
 }
-impl fmt::Display for ComponentSwizzle {
+impl fmt::Display for FenceImportFlags {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        const KNOWN: &[(Flags, &str)] = &[(FenceImportFlags::TEMPORARY.0, "TEMPORARY")];
+        display_flags(f, KNOWN, self.0)
+    }
+}
+impl fmt::Display for PolygonMode {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         let name = match *self {
-            Self::IDENTITY => Some("IDENTITY"),
-            Self::ZERO => Some("ZERO"),
-            Self::ONE => Some("ONE"),
-            Self::R => Some("R"),
-            Self::G => Some("G"),
-            Self::B => Some("B"),
-            Self::A => Some("A"),
+            Self::FILL => Some("FILL"),
+            Self::LINE => Some("LINE"),
+            Self::POINT => Some("POINT"),
+            Self::FILL_RECTANGLE_NV => Some("FILL_RECTANGLE_NV"),
             _ => None,
         };
         if let Some(x) = name {
@@ -51697,12 +52939,11 @@ impl fmt::Display for ComponentSwizzle {
         }
     }
 }
-impl fmt::Display for BlendOverlapEXT {
+impl fmt::Display for AttachmentStoreOp {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         let name = match *self {
-            Self::UNCORRELATED => Some("UNCORRELATED"),
-            Self::DISJOINT => Some("DISJOINT"),
-            Self::CONJOINT => Some("CONJOINT"),
+            Self::STORE => Some("STORE"),
+            Self::DONT_CARE => Some("DONT_CARE"),
             _ => None,
         };
         if let Some(x) = name {
@@ -51712,12 +52953,10 @@ impl fmt::Display for BlendOverlapEXT {
         }
     }
 }
-impl fmt::Display for VendorId {
+impl fmt::Display for DeviceEventTypeEXT {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         let name = match *self {
-            Self::VIV => Some("VIV"),
-            Self::VSI => Some("VSI"),
-            Self::KAZAN => Some("KAZAN"),
+            Self::DISPLAY_HOTPLUG => Some("DISPLAY_HOTPLUG"),
             _ => None,
         };
         if let Some(x) = name {
@@ -51727,153 +52966,18 @@ impl fmt::Display for VendorId {
         }
     }
 }
-impl fmt::Display for PipelineCacheHeaderVersion {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        let name = match *self {
-            Self::ONE => Some("ONE"),
-            _ => None,
-        };
-        if let Some(x) = name {
-            f.write_str(x)
-        } else {
-            write!(f, "{}", self.0)
-        }
-    }
-}
-impl fmt::Display for MemoryOverallocationBehaviorAMD {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        let name = match *self {
-            Self::DEFAULT => Some("DEFAULT"),
-            Self::ALLOWED => Some("ALLOWED"),
-            Self::DISALLOWED => Some("DISALLOWED"),
-            _ => None,
-        };
-        if let Some(x) = name {
-            f.write_str(x)
-        } else {
-            write!(f, "{}", self.0)
-        }
-    }
-}
-impl fmt::Display for SamplerMipmapMode {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        let name = match *self {
-            Self::NEAREST => Some("NEAREST"),
-            Self::LINEAR => Some("LINEAR"),
-            _ => None,
-        };
-        if let Some(x) = name {
-            f.write_str(x)
-        } else {
-            write!(f, "{}", self.0)
-        }
-    }
-}
-impl fmt::Display for DisplayPlaneAlphaFlagsKHR {
+impl fmt::Display for DeviceGroupPresentModeFlagsKHR {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         const KNOWN: &[(Flags, &str)] = &[
-            (DisplayPlaneAlphaFlagsKHR::OPAQUE.0, "OPAQUE"),
-            (DisplayPlaneAlphaFlagsKHR::GLOBAL.0, "GLOBAL"),
-            (DisplayPlaneAlphaFlagsKHR::PER_PIXEL.0, "PER_PIXEL"),
+            (DeviceGroupPresentModeFlagsKHR::LOCAL.0, "LOCAL"),
+            (DeviceGroupPresentModeFlagsKHR::REMOTE.0, "REMOTE"),
+            (DeviceGroupPresentModeFlagsKHR::SUM.0, "SUM"),
             (
-                DisplayPlaneAlphaFlagsKHR::PER_PIXEL_PREMULTIPLIED.0,
-                "PER_PIXEL_PREMULTIPLIED",
+                DeviceGroupPresentModeFlagsKHR::LOCAL_MULTI_DEVICE.0,
+                "LOCAL_MULTI_DEVICE",
             ),
         ];
         display_flags(f, KNOWN, self.0)
-    }
-}
-impl fmt::Display for ExternalMemoryHandleTypeFlags {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        const KNOWN : & [ ( Flags , & str ) ] = & [ ( ExternalMemoryHandleTypeFlags :: EXTERNAL_MEMORY_HANDLE_TYPE_OPAQUE_FD . 0 , "EXTERNAL_MEMORY_HANDLE_TYPE_OPAQUE_FD" ) , ( ExternalMemoryHandleTypeFlags :: EXTERNAL_MEMORY_HANDLE_TYPE_OPAQUE_WIN32 . 0 , "EXTERNAL_MEMORY_HANDLE_TYPE_OPAQUE_WIN32" ) , ( ExternalMemoryHandleTypeFlags :: EXTERNAL_MEMORY_HANDLE_TYPE_OPAQUE_WIN32_KMT . 0 , "EXTERNAL_MEMORY_HANDLE_TYPE_OPAQUE_WIN32_KMT" ) , ( ExternalMemoryHandleTypeFlags :: EXTERNAL_MEMORY_HANDLE_TYPE_D3D11_TEXTURE . 0 , "EXTERNAL_MEMORY_HANDLE_TYPE_D3D11_TEXTURE" ) , ( ExternalMemoryHandleTypeFlags :: EXTERNAL_MEMORY_HANDLE_TYPE_D3D11_TEXTURE_KMT . 0 , "EXTERNAL_MEMORY_HANDLE_TYPE_D3D11_TEXTURE_KMT" ) , ( ExternalMemoryHandleTypeFlags :: EXTERNAL_MEMORY_HANDLE_TYPE_D3D12_HEAP . 0 , "EXTERNAL_MEMORY_HANDLE_TYPE_D3D12_HEAP" ) , ( ExternalMemoryHandleTypeFlags :: EXTERNAL_MEMORY_HANDLE_TYPE_D3D12_RESOURCE . 0 , "EXTERNAL_MEMORY_HANDLE_TYPE_D3D12_RESOURCE" ) , ( ExternalMemoryHandleTypeFlags :: EXTERNAL_MEMORY_HANDLE_TYPE_DMA_BUF . 0 , "EXTERNAL_MEMORY_HANDLE_TYPE_DMA_BUF" ) , ( ExternalMemoryHandleTypeFlags :: EXTERNAL_MEMORY_HANDLE_TYPE_ANDROID_HARDWARE_BUFFER_ANDROID . 0 , "EXTERNAL_MEMORY_HANDLE_TYPE_ANDROID_HARDWARE_BUFFER_ANDROID" ) , ( ExternalMemoryHandleTypeFlags :: EXTERNAL_MEMORY_HANDLE_TYPE_HOST_ALLOCATION . 0 , "EXTERNAL_MEMORY_HANDLE_TYPE_HOST_ALLOCATION" ) , ( ExternalMemoryHandleTypeFlags :: EXTERNAL_MEMORY_HANDLE_TYPE_HOST_MAPPED_FOREIGN_MEMORY . 0 , "EXTERNAL_MEMORY_HANDLE_TYPE_HOST_MAPPED_FOREIGN_MEMORY" ) ] ;
-        display_flags(f, KNOWN, self.0)
-    }
-}
-impl fmt::Display for SubpassContents {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        let name = match *self {
-            Self::INLINE => Some("INLINE"),
-            Self::SECONDARY_COMMAND_BUFFERS => Some("SECONDARY_COMMAND_BUFFERS"),
-            _ => None,
-        };
-        if let Some(x) = name {
-            f.write_str(x)
-        } else {
-            write!(f, "{}", self.0)
-        }
-    }
-}
-impl fmt::Display for SamplerYcbcrRange {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        let name = match *self {
-            Self::ITU_FULL => Some("ITU_FULL"),
-            Self::ITU_NARROW => Some("ITU_NARROW"),
-            _ => None,
-        };
-        if let Some(x) = name {
-            f.write_str(x)
-        } else {
-            write!(f, "{}", self.0)
-        }
-    }
-}
-impl fmt::Display for ViewportCoordinateSwizzleNV {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        let name = match *self {
-            Self::POSITIVE_X => Some("POSITIVE_X"),
-            Self::NEGATIVE_X => Some("NEGATIVE_X"),
-            Self::POSITIVE_Y => Some("POSITIVE_Y"),
-            Self::NEGATIVE_Y => Some("NEGATIVE_Y"),
-            Self::POSITIVE_Z => Some("POSITIVE_Z"),
-            Self::NEGATIVE_Z => Some("NEGATIVE_Z"),
-            Self::POSITIVE_W => Some("POSITIVE_W"),
-            Self::NEGATIVE_W => Some("NEGATIVE_W"),
-            _ => None,
-        };
-        if let Some(x) = name {
-            f.write_str(x)
-        } else {
-            write!(f, "{}", self.0)
-        }
-    }
-}
-impl fmt::Display for DependencyFlags {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        const KNOWN: &[(Flags, &str)] = &[
-            (DependencyFlags::BY_REGION.0, "BY_REGION"),
-            (DependencyFlags::DEVICE_GROUP.0, "DEVICE_GROUP"),
-            (DependencyFlags::VIEW_LOCAL.0, "VIEW_LOCAL"),
-        ];
-        display_flags(f, KNOWN, self.0)
-    }
-}
-impl fmt::Display for SparseMemoryBindFlags {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        const KNOWN: &[(Flags, &str)] = &[(SparseMemoryBindFlags::METADATA.0, "METADATA")];
-        display_flags(f, KNOWN, self.0)
-    }
-}
-impl fmt::Display for DeviceQueueCreateFlags {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        const KNOWN: &[(Flags, &str)] = &[(DeviceQueueCreateFlags::PROTECTED.0, "PROTECTED")];
-        display_flags(f, KNOWN, self.0)
-    }
-}
-impl fmt::Display for PhysicalDeviceType {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        let name = match *self {
-            Self::OTHER => Some("OTHER"),
-            Self::INTEGRATED_GPU => Some("INTEGRATED_GPU"),
-            Self::DISCRETE_GPU => Some("DISCRETE_GPU"),
-            Self::VIRTUAL_GPU => Some("VIRTUAL_GPU"),
-            Self::CPU => Some("CPU"),
-            _ => None,
-        };
-        if let Some(x) = name {
-            f.write_str(x)
-        } else {
-            write!(f, "{}", self.0)
-        }
     }
 }
 impl fmt::Display for BufferUsageFlags {
@@ -51911,133 +53015,6 @@ impl fmt::Display for BufferUsageFlags {
         display_flags(f, KNOWN, self.0)
     }
 }
-impl fmt::Display for ShaderInfoTypeAMD {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        let name = match *self {
-            Self::STATISTICS => Some("STATISTICS"),
-            Self::BINARY => Some("BINARY"),
-            Self::DISASSEMBLY => Some("DISASSEMBLY"),
-            _ => None,
-        };
-        if let Some(x) = name {
-            f.write_str(x)
-        } else {
-            write!(f, "{}", self.0)
-        }
-    }
-}
-impl fmt::Display for DriverIdKHR {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        let name = match *self {
-            Self::AMD_PROPRIETARY => Some("AMD_PROPRIETARY"),
-            Self::AMD_OPEN_SOURCE => Some("AMD_OPEN_SOURCE"),
-            Self::MESA_RADV => Some("MESA_RADV"),
-            Self::NVIDIA_PROPRIETARY => Some("NVIDIA_PROPRIETARY"),
-            Self::INTEL_PROPRIETARY_WINDOWS => Some("INTEL_PROPRIETARY_WINDOWS"),
-            Self::INTEL_OPEN_SOURCE_MESA => Some("INTEL_OPEN_SOURCE_MESA"),
-            Self::IMAGINATION_PROPRIETARY => Some("IMAGINATION_PROPRIETARY"),
-            Self::QUALCOMM_PROPRIETARY => Some("QUALCOMM_PROPRIETARY"),
-            Self::ARM_PROPRIETARY => Some("ARM_PROPRIETARY"),
-            _ => None,
-        };
-        if let Some(x) = name {
-            f.write_str(x)
-        } else {
-            write!(f, "{}", self.0)
-        }
-    }
-}
-impl fmt::Display for PeerMemoryFeatureFlags {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        const KNOWN: &[(Flags, &str)] = &[
-            (PeerMemoryFeatureFlags::COPY_SRC.0, "COPY_SRC"),
-            (PeerMemoryFeatureFlags::COPY_DST.0, "COPY_DST"),
-            (PeerMemoryFeatureFlags::GENERIC_SRC.0, "GENERIC_SRC"),
-            (PeerMemoryFeatureFlags::GENERIC_DST.0, "GENERIC_DST"),
-        ];
-        display_flags(f, KNOWN, self.0)
-    }
-}
-impl fmt::Display for CommandBufferResetFlags {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        const KNOWN: &[(Flags, &str)] = &[(
-            CommandBufferResetFlags::RELEASE_RESOURCES.0,
-            "RELEASE_RESOURCES",
-        )];
-        display_flags(f, KNOWN, self.0)
-    }
-}
-impl fmt::Display for SurfaceCounterFlagsEXT {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        const KNOWN: &[(Flags, &str)] = &[(SurfaceCounterFlagsEXT::VBLANK.0, "VBLANK")];
-        display_flags(f, KNOWN, self.0)
-    }
-}
-impl fmt::Display for DisplayEventTypeEXT {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        let name = match *self {
-            Self::FIRST_PIXEL_OUT => Some("FIRST_PIXEL_OUT"),
-            _ => None,
-        };
-        if let Some(x) = name {
-            f.write_str(x)
-        } else {
-            write!(f, "{}", self.0)
-        }
-    }
-}
-impl fmt::Display for DescriptorUpdateTemplateType {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        let name = match *self {
-            Self::DESCRIPTOR_SET => Some("DESCRIPTOR_SET"),
-            _ => None,
-        };
-        if let Some(x) = name {
-            f.write_str(x)
-        } else {
-            write!(f, "{}", self.0)
-        }
-    }
-}
-impl fmt::Display for CoarseSampleOrderTypeNV {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        let name = match *self {
-            Self::DEFAULT => Some("DEFAULT"),
-            Self::CUSTOM => Some("CUSTOM"),
-            Self::PIXEL_MAJOR => Some("PIXEL_MAJOR"),
-            Self::SAMPLE_MAJOR => Some("SAMPLE_MAJOR"),
-            _ => None,
-        };
-        if let Some(x) = name {
-            f.write_str(x)
-        } else {
-            write!(f, "{}", self.0)
-        }
-    }
-}
-impl fmt::Display for PrimitiveTopology {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        let name = match *self {
-            Self::POINT_LIST => Some("POINT_LIST"),
-            Self::LINE_LIST => Some("LINE_LIST"),
-            Self::LINE_STRIP => Some("LINE_STRIP"),
-            Self::TRIANGLE_LIST => Some("TRIANGLE_LIST"),
-            Self::TRIANGLE_STRIP => Some("TRIANGLE_STRIP"),
-            Self::TRIANGLE_FAN => Some("TRIANGLE_FAN"),
-            Self::LINE_LIST_WITH_ADJACENCY => Some("LINE_LIST_WITH_ADJACENCY"),
-            Self::LINE_STRIP_WITH_ADJACENCY => Some("LINE_STRIP_WITH_ADJACENCY"),
-            Self::TRIANGLE_LIST_WITH_ADJACENCY => Some("TRIANGLE_LIST_WITH_ADJACENCY"),
-            Self::TRIANGLE_STRIP_WITH_ADJACENCY => Some("TRIANGLE_STRIP_WITH_ADJACENCY"),
-            Self::PATCH_LIST => Some("PATCH_LIST"),
-            _ => None,
-        };
-        if let Some(x) = name {
-            f.write_str(x)
-        } else {
-            write!(f, "{}", self.0)
-        }
-    }
-}
 impl fmt::Display for RasterizationOrderAMD {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         let name = match *self {
@@ -52052,26 +53029,13 @@ impl fmt::Display for RasterizationOrderAMD {
         }
     }
 }
-impl fmt::Display for SwapchainCreateFlagsKHR {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        const KNOWN: &[(Flags, &str)] = &[
-            (
-                SwapchainCreateFlagsKHR::SPLIT_INSTANCE_BIND_REGIONS.0,
-                "SPLIT_INSTANCE_BIND_REGIONS",
-            ),
-            (SwapchainCreateFlagsKHR::PROTECTED.0, "PROTECTED"),
-        ];
-        display_flags(f, KNOWN, self.0)
-    }
-}
-impl fmt::Display for SystemAllocationScope {
+impl fmt::Display for QueueGlobalPriorityEXT {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         let name = match *self {
-            Self::COMMAND => Some("COMMAND"),
-            Self::OBJECT => Some("OBJECT"),
-            Self::CACHE => Some("CACHE"),
-            Self::DEVICE => Some("DEVICE"),
-            Self::INSTANCE => Some("INSTANCE"),
+            Self::LOW => Some("LOW"),
+            Self::MEDIUM => Some("MEDIUM"),
+            Self::HIGH => Some("HIGH"),
+            Self::REALTIME => Some("REALTIME"),
             _ => None,
         };
         if let Some(x) = name {
@@ -52081,17 +53045,11 @@ impl fmt::Display for SystemAllocationScope {
         }
     }
 }
-impl fmt::Display for IndirectCommandsTokenTypeNVX {
+impl fmt::Display for FrontFace {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         let name = match *self {
-            Self::PIPELINE => Some("PIPELINE"),
-            Self::DESCRIPTOR_SET => Some("DESCRIPTOR_SET"),
-            Self::INDEX_BUFFER => Some("INDEX_BUFFER"),
-            Self::VERTEX_BUFFER => Some("VERTEX_BUFFER"),
-            Self::PUSH_CONSTANT => Some("PUSH_CONSTANT"),
-            Self::DRAW_INDEXED => Some("DRAW_INDEXED"),
-            Self::DRAW => Some("DRAW"),
-            Self::DISPATCH => Some("DISPATCH"),
+            Self::COUNTER_CLOCKWISE => Some("COUNTER_CLOCKWISE"),
+            Self::CLOCKWISE => Some("CLOCKWISE"),
             _ => None,
         };
         if let Some(x) = name {
@@ -52099,240 +53057,6 @@ impl fmt::Display for IndirectCommandsTokenTypeNVX {
         } else {
             write!(f, "{}", self.0)
         }
-    }
-}
-impl fmt::Display for ObjectEntryTypeNVX {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        let name = match *self {
-            Self::DESCRIPTOR_SET => Some("DESCRIPTOR_SET"),
-            Self::PIPELINE => Some("PIPELINE"),
-            Self::INDEX_BUFFER => Some("INDEX_BUFFER"),
-            Self::VERTEX_BUFFER => Some("VERTEX_BUFFER"),
-            Self::PUSH_CONSTANT => Some("PUSH_CONSTANT"),
-            _ => None,
-        };
-        if let Some(x) = name {
-            f.write_str(x)
-        } else {
-            write!(f, "{}", self.0)
-        }
-    }
-}
-impl fmt::Display for PipelineBindPoint {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        let name = match *self {
-            Self::GRAPHICS => Some("GRAPHICS"),
-            Self::COMPUTE => Some("COMPUTE"),
-            Self::RAY_TRACING_NV => Some("RAY_TRACING_NV"),
-            _ => None,
-        };
-        if let Some(x) = name {
-            f.write_str(x)
-        } else {
-            write!(f, "{}", self.0)
-        }
-    }
-}
-impl fmt::Display for ExternalMemoryFeatureFlagsNV {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        const KNOWN: &[(Flags, &str)] = &[
-            (
-                ExternalMemoryFeatureFlagsNV::EXTERNAL_MEMORY_FEATURE_DEDICATED_ONLY_NV.0,
-                "EXTERNAL_MEMORY_FEATURE_DEDICATED_ONLY_NV",
-            ),
-            (
-                ExternalMemoryFeatureFlagsNV::EXTERNAL_MEMORY_FEATURE_EXPORTABLE_NV.0,
-                "EXTERNAL_MEMORY_FEATURE_EXPORTABLE_NV",
-            ),
-            (
-                ExternalMemoryFeatureFlagsNV::EXTERNAL_MEMORY_FEATURE_IMPORTABLE_NV.0,
-                "EXTERNAL_MEMORY_FEATURE_IMPORTABLE_NV",
-            ),
-        ];
-        display_flags(f, KNOWN, self.0)
-    }
-}
-impl fmt::Display for RayTracingShaderGroupTypeNV {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        let name = match *self {
-            Self::GENERAL => Some("GENERAL"),
-            Self::TRIANGLES_HIT_GROUP => Some("TRIANGLES_HIT_GROUP"),
-            Self::PROCEDURAL_HIT_GROUP => Some("PROCEDURAL_HIT_GROUP"),
-            _ => None,
-        };
-        if let Some(x) = name {
-            f.write_str(x)
-        } else {
-            write!(f, "{}", self.0)
-        }
-    }
-}
-impl fmt::Display for CommandPoolResetFlags {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        const KNOWN: &[(Flags, &str)] = &[(
-            CommandPoolResetFlags::RELEASE_RESOURCES.0,
-            "RELEASE_RESOURCES",
-        )];
-        display_flags(f, KNOWN, self.0)
-    }
-}
-impl fmt::Display for SampleCountFlags {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        const KNOWN: &[(Flags, &str)] = &[
-            (SampleCountFlags::TYPE_1.0, "TYPE_1"),
-            (SampleCountFlags::TYPE_2.0, "TYPE_2"),
-            (SampleCountFlags::TYPE_4.0, "TYPE_4"),
-            (SampleCountFlags::TYPE_8.0, "TYPE_8"),
-            (SampleCountFlags::TYPE_16.0, "TYPE_16"),
-            (SampleCountFlags::TYPE_32.0, "TYPE_32"),
-            (SampleCountFlags::TYPE_64.0, "TYPE_64"),
-        ];
-        display_flags(f, KNOWN, self.0)
-    }
-}
-impl fmt::Display for PresentModeKHR {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        let name = match *self {
-            Self::IMMEDIATE => Some("IMMEDIATE"),
-            Self::MAILBOX => Some("MAILBOX"),
-            Self::FIFO => Some("FIFO"),
-            Self::FIFO_RELAXED => Some("FIFO_RELAXED"),
-            Self::SHARED_DEMAND_REFRESH => Some("SHARED_DEMAND_REFRESH"),
-            Self::SHARED_CONTINUOUS_REFRESH => Some("SHARED_CONTINUOUS_REFRESH"),
-            _ => None,
-        };
-        if let Some(x) = name {
-            f.write_str(x)
-        } else {
-            write!(f, "{}", self.0)
-        }
-    }
-}
-impl fmt::Display for ExternalSemaphoreFeatureFlags {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        const KNOWN: &[(Flags, &str)] = &[
-            (
-                ExternalSemaphoreFeatureFlags::EXTERNAL_SEMAPHORE_FEATURE_EXPORTABLE.0,
-                "EXTERNAL_SEMAPHORE_FEATURE_EXPORTABLE",
-            ),
-            (
-                ExternalSemaphoreFeatureFlags::EXTERNAL_SEMAPHORE_FEATURE_IMPORTABLE.0,
-                "EXTERNAL_SEMAPHORE_FEATURE_IMPORTABLE",
-            ),
-        ];
-        display_flags(f, KNOWN, self.0)
-    }
-}
-impl fmt::Display for VertexInputRate {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        let name = match *self {
-            Self::VERTEX => Some("VERTEX"),
-            Self::INSTANCE => Some("INSTANCE"),
-            _ => None,
-        };
-        if let Some(x) = name {
-            f.write_str(x)
-        } else {
-            write!(f, "{}", self.0)
-        }
-    }
-}
-impl fmt::Display for SamplerYcbcrModelConversion {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        let name = match *self {
-            Self::RGB_IDENTITY => Some("RGB_IDENTITY"),
-            Self::YCBCR_IDENTITY => Some("YCBCR_IDENTITY"),
-            Self::YCBCR_709 => Some("YCBCR_709"),
-            Self::YCBCR_601 => Some("YCBCR_601"),
-            Self::YCBCR_2020 => Some("YCBCR_2020"),
-            _ => None,
-        };
-        if let Some(x) = name {
-            f.write_str(x)
-        } else {
-            write!(f, "{}", self.0)
-        }
-    }
-}
-impl fmt::Display for PipelineCreateFlags {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        const KNOWN: &[(Flags, &str)] = &[
-            (
-                PipelineCreateFlags::DISABLE_OPTIMIZATION.0,
-                "DISABLE_OPTIMIZATION",
-            ),
-            (
-                PipelineCreateFlags::ALLOW_DERIVATIVES.0,
-                "ALLOW_DERIVATIVES",
-            ),
-            (PipelineCreateFlags::DERIVATIVE.0, "DERIVATIVE"),
-            (PipelineCreateFlags::DEFER_COMPILE_NV.0, "DEFER_COMPILE_NV"),
-            (
-                PipelineCreateFlags::VIEW_INDEX_FROM_DEVICE_INDEX.0,
-                "VIEW_INDEX_FROM_DEVICE_INDEX",
-            ),
-            (PipelineCreateFlags::DISPATCH_BASE.0, "DISPATCH_BASE"),
-        ];
-        display_flags(f, KNOWN, self.0)
-    }
-}
-impl fmt::Display for StencilFaceFlags {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        const KNOWN: &[(Flags, &str)] = &[
-            (StencilFaceFlags::FRONT.0, "FRONT"),
-            (StencilFaceFlags::BACK.0, "BACK"),
-            (
-                StencilFaceFlags::STENCIL_FRONT_AND_BACK.0,
-                "STENCIL_FRONT_AND_BACK",
-            ),
-        ];
-        display_flags(f, KNOWN, self.0)
-    }
-}
-impl fmt::Display for IndirectCommandsLayoutUsageFlagsNVX {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        const KNOWN: &[(Flags, &str)] = &[
-            (
-                IndirectCommandsLayoutUsageFlagsNVX::UNORDERED_SEQUENCES.0,
-                "UNORDERED_SEQUENCES",
-            ),
-            (
-                IndirectCommandsLayoutUsageFlagsNVX::SPARSE_SEQUENCES.0,
-                "SPARSE_SEQUENCES",
-            ),
-            (
-                IndirectCommandsLayoutUsageFlagsNVX::EMPTY_EXECUTIONS.0,
-                "EMPTY_EXECUTIONS",
-            ),
-            (
-                IndirectCommandsLayoutUsageFlagsNVX::INDEXED_SEQUENCES.0,
-                "INDEXED_SEQUENCES",
-            ),
-        ];
-        display_flags(f, KNOWN, self.0)
-    }
-}
-impl fmt::Display for ExternalFenceHandleTypeFlags {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        const KNOWN: &[(Flags, &str)] = &[
-            (
-                ExternalFenceHandleTypeFlags::EXTERNAL_FENCE_HANDLE_TYPE_OPAQUE_FD.0,
-                "EXTERNAL_FENCE_HANDLE_TYPE_OPAQUE_FD",
-            ),
-            (
-                ExternalFenceHandleTypeFlags::EXTERNAL_FENCE_HANDLE_TYPE_OPAQUE_WIN32.0,
-                "EXTERNAL_FENCE_HANDLE_TYPE_OPAQUE_WIN32",
-            ),
-            (
-                ExternalFenceHandleTypeFlags::EXTERNAL_FENCE_HANDLE_TYPE_OPAQUE_WIN32_KMT.0,
-                "EXTERNAL_FENCE_HANDLE_TYPE_OPAQUE_WIN32_KMT",
-            ),
-            (
-                ExternalFenceHandleTypeFlags::EXTERNAL_FENCE_HANDLE_TYPE_SYNC_FD.0,
-                "EXTERNAL_FENCE_HANDLE_TYPE_SYNC_FD",
-            ),
-        ];
-        display_flags(f, KNOWN, self.0)
     }
 }
 impl fmt::Display for SparseImageFormatFlags {
@@ -52351,306 +53075,11 @@ impl fmt::Display for SparseImageFormatFlags {
         display_flags(f, KNOWN, self.0)
     }
 }
-impl fmt::Display for DescriptorPoolCreateFlags {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        const KNOWN: &[(Flags, &str)] = &[
-            (
-                DescriptorPoolCreateFlags::FREE_DESCRIPTOR_SET.0,
-                "FREE_DESCRIPTOR_SET",
-            ),
-            (
-                DescriptorPoolCreateFlags::UPDATE_AFTER_BIND_EXT.0,
-                "UPDATE_AFTER_BIND_EXT",
-            ),
-        ];
-        display_flags(f, KNOWN, self.0)
-    }
-}
-impl fmt::Display for DebugUtilsMessageTypeFlagsEXT {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        const KNOWN: &[(Flags, &str)] = &[
-            (DebugUtilsMessageTypeFlagsEXT::GENERAL.0, "GENERAL"),
-            (DebugUtilsMessageTypeFlagsEXT::VALIDATION.0, "VALIDATION"),
-            (DebugUtilsMessageTypeFlagsEXT::PERFORMANCE.0, "PERFORMANCE"),
-        ];
-        display_flags(f, KNOWN, self.0)
-    }
-}
-impl fmt::Display for SemaphoreImportFlags {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        const KNOWN: &[(Flags, &str)] = &[(SemaphoreImportFlags::TEMPORARY.0, "TEMPORARY")];
-        display_flags(f, KNOWN, self.0)
-    }
-}
-impl fmt::Display for ColorComponentFlags {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        const KNOWN: &[(Flags, &str)] = &[
-            (ColorComponentFlags::R.0, "R"),
-            (ColorComponentFlags::G.0, "G"),
-            (ColorComponentFlags::B.0, "B"),
-            (ColorComponentFlags::A.0, "A"),
-        ];
-        display_flags(f, KNOWN, self.0)
-    }
-}
-impl fmt::Display for Format {
+impl fmt::Display for SubpassContents {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         let name = match *self {
-            Self::UNDEFINED => Some("UNDEFINED"),
-            Self::R4G4_UNORM_PACK8 => Some("R4G4_UNORM_PACK8"),
-            Self::R4G4B4A4_UNORM_PACK16 => Some("R4G4B4A4_UNORM_PACK16"),
-            Self::B4G4R4A4_UNORM_PACK16 => Some("B4G4R4A4_UNORM_PACK16"),
-            Self::R5G6B5_UNORM_PACK16 => Some("R5G6B5_UNORM_PACK16"),
-            Self::B5G6R5_UNORM_PACK16 => Some("B5G6R5_UNORM_PACK16"),
-            Self::R5G5B5A1_UNORM_PACK16 => Some("R5G5B5A1_UNORM_PACK16"),
-            Self::B5G5R5A1_UNORM_PACK16 => Some("B5G5R5A1_UNORM_PACK16"),
-            Self::A1R5G5B5_UNORM_PACK16 => Some("A1R5G5B5_UNORM_PACK16"),
-            Self::R8_UNORM => Some("R8_UNORM"),
-            Self::R8_SNORM => Some("R8_SNORM"),
-            Self::R8_USCALED => Some("R8_USCALED"),
-            Self::R8_SSCALED => Some("R8_SSCALED"),
-            Self::R8_UINT => Some("R8_UINT"),
-            Self::R8_SINT => Some("R8_SINT"),
-            Self::R8_SRGB => Some("R8_SRGB"),
-            Self::R8G8_UNORM => Some("R8G8_UNORM"),
-            Self::R8G8_SNORM => Some("R8G8_SNORM"),
-            Self::R8G8_USCALED => Some("R8G8_USCALED"),
-            Self::R8G8_SSCALED => Some("R8G8_SSCALED"),
-            Self::R8G8_UINT => Some("R8G8_UINT"),
-            Self::R8G8_SINT => Some("R8G8_SINT"),
-            Self::R8G8_SRGB => Some("R8G8_SRGB"),
-            Self::R8G8B8_UNORM => Some("R8G8B8_UNORM"),
-            Self::R8G8B8_SNORM => Some("R8G8B8_SNORM"),
-            Self::R8G8B8_USCALED => Some("R8G8B8_USCALED"),
-            Self::R8G8B8_SSCALED => Some("R8G8B8_SSCALED"),
-            Self::R8G8B8_UINT => Some("R8G8B8_UINT"),
-            Self::R8G8B8_SINT => Some("R8G8B8_SINT"),
-            Self::R8G8B8_SRGB => Some("R8G8B8_SRGB"),
-            Self::B8G8R8_UNORM => Some("B8G8R8_UNORM"),
-            Self::B8G8R8_SNORM => Some("B8G8R8_SNORM"),
-            Self::B8G8R8_USCALED => Some("B8G8R8_USCALED"),
-            Self::B8G8R8_SSCALED => Some("B8G8R8_SSCALED"),
-            Self::B8G8R8_UINT => Some("B8G8R8_UINT"),
-            Self::B8G8R8_SINT => Some("B8G8R8_SINT"),
-            Self::B8G8R8_SRGB => Some("B8G8R8_SRGB"),
-            Self::R8G8B8A8_UNORM => Some("R8G8B8A8_UNORM"),
-            Self::R8G8B8A8_SNORM => Some("R8G8B8A8_SNORM"),
-            Self::R8G8B8A8_USCALED => Some("R8G8B8A8_USCALED"),
-            Self::R8G8B8A8_SSCALED => Some("R8G8B8A8_SSCALED"),
-            Self::R8G8B8A8_UINT => Some("R8G8B8A8_UINT"),
-            Self::R8G8B8A8_SINT => Some("R8G8B8A8_SINT"),
-            Self::R8G8B8A8_SRGB => Some("R8G8B8A8_SRGB"),
-            Self::B8G8R8A8_UNORM => Some("B8G8R8A8_UNORM"),
-            Self::B8G8R8A8_SNORM => Some("B8G8R8A8_SNORM"),
-            Self::B8G8R8A8_USCALED => Some("B8G8R8A8_USCALED"),
-            Self::B8G8R8A8_SSCALED => Some("B8G8R8A8_SSCALED"),
-            Self::B8G8R8A8_UINT => Some("B8G8R8A8_UINT"),
-            Self::B8G8R8A8_SINT => Some("B8G8R8A8_SINT"),
-            Self::B8G8R8A8_SRGB => Some("B8G8R8A8_SRGB"),
-            Self::A8B8G8R8_UNORM_PACK32 => Some("A8B8G8R8_UNORM_PACK32"),
-            Self::A8B8G8R8_SNORM_PACK32 => Some("A8B8G8R8_SNORM_PACK32"),
-            Self::A8B8G8R8_USCALED_PACK32 => Some("A8B8G8R8_USCALED_PACK32"),
-            Self::A8B8G8R8_SSCALED_PACK32 => Some("A8B8G8R8_SSCALED_PACK32"),
-            Self::A8B8G8R8_UINT_PACK32 => Some("A8B8G8R8_UINT_PACK32"),
-            Self::A8B8G8R8_SINT_PACK32 => Some("A8B8G8R8_SINT_PACK32"),
-            Self::A8B8G8R8_SRGB_PACK32 => Some("A8B8G8R8_SRGB_PACK32"),
-            Self::A2R10G10B10_UNORM_PACK32 => Some("A2R10G10B10_UNORM_PACK32"),
-            Self::A2R10G10B10_SNORM_PACK32 => Some("A2R10G10B10_SNORM_PACK32"),
-            Self::A2R10G10B10_USCALED_PACK32 => Some("A2R10G10B10_USCALED_PACK32"),
-            Self::A2R10G10B10_SSCALED_PACK32 => Some("A2R10G10B10_SSCALED_PACK32"),
-            Self::A2R10G10B10_UINT_PACK32 => Some("A2R10G10B10_UINT_PACK32"),
-            Self::A2R10G10B10_SINT_PACK32 => Some("A2R10G10B10_SINT_PACK32"),
-            Self::A2B10G10R10_UNORM_PACK32 => Some("A2B10G10R10_UNORM_PACK32"),
-            Self::A2B10G10R10_SNORM_PACK32 => Some("A2B10G10R10_SNORM_PACK32"),
-            Self::A2B10G10R10_USCALED_PACK32 => Some("A2B10G10R10_USCALED_PACK32"),
-            Self::A2B10G10R10_SSCALED_PACK32 => Some("A2B10G10R10_SSCALED_PACK32"),
-            Self::A2B10G10R10_UINT_PACK32 => Some("A2B10G10R10_UINT_PACK32"),
-            Self::A2B10G10R10_SINT_PACK32 => Some("A2B10G10R10_SINT_PACK32"),
-            Self::R16_UNORM => Some("R16_UNORM"),
-            Self::R16_SNORM => Some("R16_SNORM"),
-            Self::R16_USCALED => Some("R16_USCALED"),
-            Self::R16_SSCALED => Some("R16_SSCALED"),
-            Self::R16_UINT => Some("R16_UINT"),
-            Self::R16_SINT => Some("R16_SINT"),
-            Self::R16_SFLOAT => Some("R16_SFLOAT"),
-            Self::R16G16_UNORM => Some("R16G16_UNORM"),
-            Self::R16G16_SNORM => Some("R16G16_SNORM"),
-            Self::R16G16_USCALED => Some("R16G16_USCALED"),
-            Self::R16G16_SSCALED => Some("R16G16_SSCALED"),
-            Self::R16G16_UINT => Some("R16G16_UINT"),
-            Self::R16G16_SINT => Some("R16G16_SINT"),
-            Self::R16G16_SFLOAT => Some("R16G16_SFLOAT"),
-            Self::R16G16B16_UNORM => Some("R16G16B16_UNORM"),
-            Self::R16G16B16_SNORM => Some("R16G16B16_SNORM"),
-            Self::R16G16B16_USCALED => Some("R16G16B16_USCALED"),
-            Self::R16G16B16_SSCALED => Some("R16G16B16_SSCALED"),
-            Self::R16G16B16_UINT => Some("R16G16B16_UINT"),
-            Self::R16G16B16_SINT => Some("R16G16B16_SINT"),
-            Self::R16G16B16_SFLOAT => Some("R16G16B16_SFLOAT"),
-            Self::R16G16B16A16_UNORM => Some("R16G16B16A16_UNORM"),
-            Self::R16G16B16A16_SNORM => Some("R16G16B16A16_SNORM"),
-            Self::R16G16B16A16_USCALED => Some("R16G16B16A16_USCALED"),
-            Self::R16G16B16A16_SSCALED => Some("R16G16B16A16_SSCALED"),
-            Self::R16G16B16A16_UINT => Some("R16G16B16A16_UINT"),
-            Self::R16G16B16A16_SINT => Some("R16G16B16A16_SINT"),
-            Self::R16G16B16A16_SFLOAT => Some("R16G16B16A16_SFLOAT"),
-            Self::R32_UINT => Some("R32_UINT"),
-            Self::R32_SINT => Some("R32_SINT"),
-            Self::R32_SFLOAT => Some("R32_SFLOAT"),
-            Self::R32G32_UINT => Some("R32G32_UINT"),
-            Self::R32G32_SINT => Some("R32G32_SINT"),
-            Self::R32G32_SFLOAT => Some("R32G32_SFLOAT"),
-            Self::R32G32B32_UINT => Some("R32G32B32_UINT"),
-            Self::R32G32B32_SINT => Some("R32G32B32_SINT"),
-            Self::R32G32B32_SFLOAT => Some("R32G32B32_SFLOAT"),
-            Self::R32G32B32A32_UINT => Some("R32G32B32A32_UINT"),
-            Self::R32G32B32A32_SINT => Some("R32G32B32A32_SINT"),
-            Self::R32G32B32A32_SFLOAT => Some("R32G32B32A32_SFLOAT"),
-            Self::R64_UINT => Some("R64_UINT"),
-            Self::R64_SINT => Some("R64_SINT"),
-            Self::R64_SFLOAT => Some("R64_SFLOAT"),
-            Self::R64G64_UINT => Some("R64G64_UINT"),
-            Self::R64G64_SINT => Some("R64G64_SINT"),
-            Self::R64G64_SFLOAT => Some("R64G64_SFLOAT"),
-            Self::R64G64B64_UINT => Some("R64G64B64_UINT"),
-            Self::R64G64B64_SINT => Some("R64G64B64_SINT"),
-            Self::R64G64B64_SFLOAT => Some("R64G64B64_SFLOAT"),
-            Self::R64G64B64A64_UINT => Some("R64G64B64A64_UINT"),
-            Self::R64G64B64A64_SINT => Some("R64G64B64A64_SINT"),
-            Self::R64G64B64A64_SFLOAT => Some("R64G64B64A64_SFLOAT"),
-            Self::B10G11R11_UFLOAT_PACK32 => Some("B10G11R11_UFLOAT_PACK32"),
-            Self::E5B9G9R9_UFLOAT_PACK32 => Some("E5B9G9R9_UFLOAT_PACK32"),
-            Self::D16_UNORM => Some("D16_UNORM"),
-            Self::X8_D24_UNORM_PACK32 => Some("X8_D24_UNORM_PACK32"),
-            Self::D32_SFLOAT => Some("D32_SFLOAT"),
-            Self::S8_UINT => Some("S8_UINT"),
-            Self::D16_UNORM_S8_UINT => Some("D16_UNORM_S8_UINT"),
-            Self::D24_UNORM_S8_UINT => Some("D24_UNORM_S8_UINT"),
-            Self::D32_SFLOAT_S8_UINT => Some("D32_SFLOAT_S8_UINT"),
-            Self::BC1_RGB_UNORM_BLOCK => Some("BC1_RGB_UNORM_BLOCK"),
-            Self::BC1_RGB_SRGB_BLOCK => Some("BC1_RGB_SRGB_BLOCK"),
-            Self::BC1_RGBA_UNORM_BLOCK => Some("BC1_RGBA_UNORM_BLOCK"),
-            Self::BC1_RGBA_SRGB_BLOCK => Some("BC1_RGBA_SRGB_BLOCK"),
-            Self::BC2_UNORM_BLOCK => Some("BC2_UNORM_BLOCK"),
-            Self::BC2_SRGB_BLOCK => Some("BC2_SRGB_BLOCK"),
-            Self::BC3_UNORM_BLOCK => Some("BC3_UNORM_BLOCK"),
-            Self::BC3_SRGB_BLOCK => Some("BC3_SRGB_BLOCK"),
-            Self::BC4_UNORM_BLOCK => Some("BC4_UNORM_BLOCK"),
-            Self::BC4_SNORM_BLOCK => Some("BC4_SNORM_BLOCK"),
-            Self::BC5_UNORM_BLOCK => Some("BC5_UNORM_BLOCK"),
-            Self::BC5_SNORM_BLOCK => Some("BC5_SNORM_BLOCK"),
-            Self::BC6H_UFLOAT_BLOCK => Some("BC6H_UFLOAT_BLOCK"),
-            Self::BC6H_SFLOAT_BLOCK => Some("BC6H_SFLOAT_BLOCK"),
-            Self::BC7_UNORM_BLOCK => Some("BC7_UNORM_BLOCK"),
-            Self::BC7_SRGB_BLOCK => Some("BC7_SRGB_BLOCK"),
-            Self::ETC2_R8G8B8_UNORM_BLOCK => Some("ETC2_R8G8B8_UNORM_BLOCK"),
-            Self::ETC2_R8G8B8_SRGB_BLOCK => Some("ETC2_R8G8B8_SRGB_BLOCK"),
-            Self::ETC2_R8G8B8A1_UNORM_BLOCK => Some("ETC2_R8G8B8A1_UNORM_BLOCK"),
-            Self::ETC2_R8G8B8A1_SRGB_BLOCK => Some("ETC2_R8G8B8A1_SRGB_BLOCK"),
-            Self::ETC2_R8G8B8A8_UNORM_BLOCK => Some("ETC2_R8G8B8A8_UNORM_BLOCK"),
-            Self::ETC2_R8G8B8A8_SRGB_BLOCK => Some("ETC2_R8G8B8A8_SRGB_BLOCK"),
-            Self::EAC_R11_UNORM_BLOCK => Some("EAC_R11_UNORM_BLOCK"),
-            Self::EAC_R11_SNORM_BLOCK => Some("EAC_R11_SNORM_BLOCK"),
-            Self::EAC_R11G11_UNORM_BLOCK => Some("EAC_R11G11_UNORM_BLOCK"),
-            Self::EAC_R11G11_SNORM_BLOCK => Some("EAC_R11G11_SNORM_BLOCK"),
-            Self::ASTC_4X4_UNORM_BLOCK => Some("ASTC_4X4_UNORM_BLOCK"),
-            Self::ASTC_4X4_SRGB_BLOCK => Some("ASTC_4X4_SRGB_BLOCK"),
-            Self::ASTC_5X4_UNORM_BLOCK => Some("ASTC_5X4_UNORM_BLOCK"),
-            Self::ASTC_5X4_SRGB_BLOCK => Some("ASTC_5X4_SRGB_BLOCK"),
-            Self::ASTC_5X5_UNORM_BLOCK => Some("ASTC_5X5_UNORM_BLOCK"),
-            Self::ASTC_5X5_SRGB_BLOCK => Some("ASTC_5X5_SRGB_BLOCK"),
-            Self::ASTC_6X5_UNORM_BLOCK => Some("ASTC_6X5_UNORM_BLOCK"),
-            Self::ASTC_6X5_SRGB_BLOCK => Some("ASTC_6X5_SRGB_BLOCK"),
-            Self::ASTC_6X6_UNORM_BLOCK => Some("ASTC_6X6_UNORM_BLOCK"),
-            Self::ASTC_6X6_SRGB_BLOCK => Some("ASTC_6X6_SRGB_BLOCK"),
-            Self::ASTC_8X5_UNORM_BLOCK => Some("ASTC_8X5_UNORM_BLOCK"),
-            Self::ASTC_8X5_SRGB_BLOCK => Some("ASTC_8X5_SRGB_BLOCK"),
-            Self::ASTC_8X6_UNORM_BLOCK => Some("ASTC_8X6_UNORM_BLOCK"),
-            Self::ASTC_8X6_SRGB_BLOCK => Some("ASTC_8X6_SRGB_BLOCK"),
-            Self::ASTC_8X8_UNORM_BLOCK => Some("ASTC_8X8_UNORM_BLOCK"),
-            Self::ASTC_8X8_SRGB_BLOCK => Some("ASTC_8X8_SRGB_BLOCK"),
-            Self::ASTC_10X5_UNORM_BLOCK => Some("ASTC_10X5_UNORM_BLOCK"),
-            Self::ASTC_10X5_SRGB_BLOCK => Some("ASTC_10X5_SRGB_BLOCK"),
-            Self::ASTC_10X6_UNORM_BLOCK => Some("ASTC_10X6_UNORM_BLOCK"),
-            Self::ASTC_10X6_SRGB_BLOCK => Some("ASTC_10X6_SRGB_BLOCK"),
-            Self::ASTC_10X8_UNORM_BLOCK => Some("ASTC_10X8_UNORM_BLOCK"),
-            Self::ASTC_10X8_SRGB_BLOCK => Some("ASTC_10X8_SRGB_BLOCK"),
-            Self::ASTC_10X10_UNORM_BLOCK => Some("ASTC_10X10_UNORM_BLOCK"),
-            Self::ASTC_10X10_SRGB_BLOCK => Some("ASTC_10X10_SRGB_BLOCK"),
-            Self::ASTC_12X10_UNORM_BLOCK => Some("ASTC_12X10_UNORM_BLOCK"),
-            Self::ASTC_12X10_SRGB_BLOCK => Some("ASTC_12X10_SRGB_BLOCK"),
-            Self::ASTC_12X12_UNORM_BLOCK => Some("ASTC_12X12_UNORM_BLOCK"),
-            Self::ASTC_12X12_SRGB_BLOCK => Some("ASTC_12X12_SRGB_BLOCK"),
-            Self::PVRTC1_2BPP_UNORM_BLOCK_IMG => Some("PVRTC1_2BPP_UNORM_BLOCK_IMG"),
-            Self::PVRTC1_4BPP_UNORM_BLOCK_IMG => Some("PVRTC1_4BPP_UNORM_BLOCK_IMG"),
-            Self::PVRTC2_2BPP_UNORM_BLOCK_IMG => Some("PVRTC2_2BPP_UNORM_BLOCK_IMG"),
-            Self::PVRTC2_4BPP_UNORM_BLOCK_IMG => Some("PVRTC2_4BPP_UNORM_BLOCK_IMG"),
-            Self::PVRTC1_2BPP_SRGB_BLOCK_IMG => Some("PVRTC1_2BPP_SRGB_BLOCK_IMG"),
-            Self::PVRTC1_4BPP_SRGB_BLOCK_IMG => Some("PVRTC1_4BPP_SRGB_BLOCK_IMG"),
-            Self::PVRTC2_2BPP_SRGB_BLOCK_IMG => Some("PVRTC2_2BPP_SRGB_BLOCK_IMG"),
-            Self::PVRTC2_4BPP_SRGB_BLOCK_IMG => Some("PVRTC2_4BPP_SRGB_BLOCK_IMG"),
-            Self::G8B8G8R8_422_UNORM => Some("G8B8G8R8_422_UNORM"),
-            Self::B8G8R8G8_422_UNORM => Some("B8G8R8G8_422_UNORM"),
-            Self::G8_B8_R8_3PLANE_420_UNORM => Some("G8_B8_R8_3PLANE_420_UNORM"),
-            Self::G8_B8R8_2PLANE_420_UNORM => Some("G8_B8R8_2PLANE_420_UNORM"),
-            Self::G8_B8_R8_3PLANE_422_UNORM => Some("G8_B8_R8_3PLANE_422_UNORM"),
-            Self::G8_B8R8_2PLANE_422_UNORM => Some("G8_B8R8_2PLANE_422_UNORM"),
-            Self::G8_B8_R8_3PLANE_444_UNORM => Some("G8_B8_R8_3PLANE_444_UNORM"),
-            Self::R10X6_UNORM_PACK16 => Some("R10X6_UNORM_PACK16"),
-            Self::R10X6G10X6_UNORM_2PACK16 => Some("R10X6G10X6_UNORM_2PACK16"),
-            Self::R10X6G10X6B10X6A10X6_UNORM_4PACK16 => Some("R10X6G10X6B10X6A10X6_UNORM_4PACK16"),
-            Self::G10X6B10X6G10X6R10X6_422_UNORM_4PACK16 => {
-                Some("G10X6B10X6G10X6R10X6_422_UNORM_4PACK16")
-            }
-            Self::B10X6G10X6R10X6G10X6_422_UNORM_4PACK16 => {
-                Some("B10X6G10X6R10X6G10X6_422_UNORM_4PACK16")
-            }
-            Self::G10X6_B10X6_R10X6_3PLANE_420_UNORM_3PACK16 => {
-                Some("G10X6_B10X6_R10X6_3PLANE_420_UNORM_3PACK16")
-            }
-            Self::G10X6_B10X6R10X6_2PLANE_420_UNORM_3PACK16 => {
-                Some("G10X6_B10X6R10X6_2PLANE_420_UNORM_3PACK16")
-            }
-            Self::G10X6_B10X6_R10X6_3PLANE_422_UNORM_3PACK16 => {
-                Some("G10X6_B10X6_R10X6_3PLANE_422_UNORM_3PACK16")
-            }
-            Self::G10X6_B10X6R10X6_2PLANE_422_UNORM_3PACK16 => {
-                Some("G10X6_B10X6R10X6_2PLANE_422_UNORM_3PACK16")
-            }
-            Self::G10X6_B10X6_R10X6_3PLANE_444_UNORM_3PACK16 => {
-                Some("G10X6_B10X6_R10X6_3PLANE_444_UNORM_3PACK16")
-            }
-            Self::R12X4_UNORM_PACK16 => Some("R12X4_UNORM_PACK16"),
-            Self::R12X4G12X4_UNORM_2PACK16 => Some("R12X4G12X4_UNORM_2PACK16"),
-            Self::R12X4G12X4B12X4A12X4_UNORM_4PACK16 => Some("R12X4G12X4B12X4A12X4_UNORM_4PACK16"),
-            Self::G12X4B12X4G12X4R12X4_422_UNORM_4PACK16 => {
-                Some("G12X4B12X4G12X4R12X4_422_UNORM_4PACK16")
-            }
-            Self::B12X4G12X4R12X4G12X4_422_UNORM_4PACK16 => {
-                Some("B12X4G12X4R12X4G12X4_422_UNORM_4PACK16")
-            }
-            Self::G12X4_B12X4_R12X4_3PLANE_420_UNORM_3PACK16 => {
-                Some("G12X4_B12X4_R12X4_3PLANE_420_UNORM_3PACK16")
-            }
-            Self::G12X4_B12X4R12X4_2PLANE_420_UNORM_3PACK16 => {
-                Some("G12X4_B12X4R12X4_2PLANE_420_UNORM_3PACK16")
-            }
-            Self::G12X4_B12X4_R12X4_3PLANE_422_UNORM_3PACK16 => {
-                Some("G12X4_B12X4_R12X4_3PLANE_422_UNORM_3PACK16")
-            }
-            Self::G12X4_B12X4R12X4_2PLANE_422_UNORM_3PACK16 => {
-                Some("G12X4_B12X4R12X4_2PLANE_422_UNORM_3PACK16")
-            }
-            Self::G12X4_B12X4_R12X4_3PLANE_444_UNORM_3PACK16 => {
-                Some("G12X4_B12X4_R12X4_3PLANE_444_UNORM_3PACK16")
-            }
-            Self::G16B16G16R16_422_UNORM => Some("G16B16G16R16_422_UNORM"),
-            Self::B16G16R16G16_422_UNORM => Some("B16G16R16G16_422_UNORM"),
-            Self::G16_B16_R16_3PLANE_420_UNORM => Some("G16_B16_R16_3PLANE_420_UNORM"),
-            Self::G16_B16R16_2PLANE_420_UNORM => Some("G16_B16R16_2PLANE_420_UNORM"),
-            Self::G16_B16_R16_3PLANE_422_UNORM => Some("G16_B16_R16_3PLANE_422_UNORM"),
-            Self::G16_B16R16_2PLANE_422_UNORM => Some("G16_B16R16_2PLANE_422_UNORM"),
-            Self::G16_B16_R16_3PLANE_444_UNORM => Some("G16_B16_R16_3PLANE_444_UNORM"),
+            Self::INLINE => Some("INLINE"),
+            Self::SECONDARY_COMMAND_BUFFERS => Some("SECONDARY_COMMAND_BUFFERS"),
             _ => None,
         };
         if let Some(x) = name {
@@ -52660,103 +53089,16 @@ impl fmt::Display for Format {
         }
     }
 }
-impl fmt::Display for ConditionalRenderingFlagsEXT {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        const KNOWN: &[(Flags, &str)] = &[(ConditionalRenderingFlagsEXT::INVERTED.0, "INVERTED")];
-        display_flags(f, KNOWN, self.0)
-    }
-}
-impl fmt::Display for AccessFlags {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        const KNOWN: &[(Flags, &str)] = &[
-            (
-                AccessFlags::INDIRECT_COMMAND_READ.0,
-                "INDIRECT_COMMAND_READ",
-            ),
-            (AccessFlags::INDEX_READ.0, "INDEX_READ"),
-            (
-                AccessFlags::VERTEX_ATTRIBUTE_READ.0,
-                "VERTEX_ATTRIBUTE_READ",
-            ),
-            (AccessFlags::UNIFORM_READ.0, "UNIFORM_READ"),
-            (
-                AccessFlags::INPUT_ATTACHMENT_READ.0,
-                "INPUT_ATTACHMENT_READ",
-            ),
-            (AccessFlags::SHADER_READ.0, "SHADER_READ"),
-            (AccessFlags::SHADER_WRITE.0, "SHADER_WRITE"),
-            (
-                AccessFlags::COLOR_ATTACHMENT_READ.0,
-                "COLOR_ATTACHMENT_READ",
-            ),
-            (
-                AccessFlags::COLOR_ATTACHMENT_WRITE.0,
-                "COLOR_ATTACHMENT_WRITE",
-            ),
-            (
-                AccessFlags::DEPTH_STENCIL_ATTACHMENT_READ.0,
-                "DEPTH_STENCIL_ATTACHMENT_READ",
-            ),
-            (
-                AccessFlags::DEPTH_STENCIL_ATTACHMENT_WRITE.0,
-                "DEPTH_STENCIL_ATTACHMENT_WRITE",
-            ),
-            (AccessFlags::TRANSFER_READ.0, "TRANSFER_READ"),
-            (AccessFlags::TRANSFER_WRITE.0, "TRANSFER_WRITE"),
-            (AccessFlags::HOST_READ.0, "HOST_READ"),
-            (AccessFlags::HOST_WRITE.0, "HOST_WRITE"),
-            (AccessFlags::MEMORY_READ.0, "MEMORY_READ"),
-            (AccessFlags::MEMORY_WRITE.0, "MEMORY_WRITE"),
-            (
-                AccessFlags::TRANSFORM_FEEDBACK_WRITE_EXT.0,
-                "TRANSFORM_FEEDBACK_WRITE_EXT",
-            ),
-            (
-                AccessFlags::TRANSFORM_FEEDBACK_COUNTER_READ_EXT.0,
-                "TRANSFORM_FEEDBACK_COUNTER_READ_EXT",
-            ),
-            (
-                AccessFlags::TRANSFORM_FEEDBACK_COUNTER_WRITE_EXT.0,
-                "TRANSFORM_FEEDBACK_COUNTER_WRITE_EXT",
-            ),
-            (
-                AccessFlags::CONDITIONAL_RENDERING_READ_EXT.0,
-                "CONDITIONAL_RENDERING_READ_EXT",
-            ),
-            (
-                AccessFlags::COMMAND_PROCESS_READ_NVX.0,
-                "COMMAND_PROCESS_READ_NVX",
-            ),
-            (
-                AccessFlags::COMMAND_PROCESS_WRITE_NVX.0,
-                "COMMAND_PROCESS_WRITE_NVX",
-            ),
-            (
-                AccessFlags::COLOR_ATTACHMENT_READ_NONCOHERENT_EXT.0,
-                "COLOR_ATTACHMENT_READ_NONCOHERENT_EXT",
-            ),
-            (
-                AccessFlags::SHADING_RATE_IMAGE_READ_NV.0,
-                "SHADING_RATE_IMAGE_READ_NV",
-            ),
-            (
-                AccessFlags::ACCELERATION_STRUCTURE_READ_NV.0,
-                "ACCELERATION_STRUCTURE_READ_NV",
-            ),
-            (
-                AccessFlags::ACCELERATION_STRUCTURE_WRITE_NV.0,
-                "ACCELERATION_STRUCTURE_WRITE_NV",
-            ),
-            (AccessFlags::RESERVED_24_EXT.0, "RESERVED_24_EXT"),
-        ];
-        display_flags(f, KNOWN, self.0)
-    }
-}
-impl fmt::Display for DiscardRectangleModeEXT {
+impl fmt::Display for QueryType {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         let name = match *self {
-            Self::INCLUSIVE => Some("INCLUSIVE"),
-            Self::EXCLUSIVE => Some("EXCLUSIVE"),
+            Self::OCCLUSION => Some("OCCLUSION"),
+            Self::PIPELINE_STATISTICS => Some("PIPELINE_STATISTICS"),
+            Self::TIMESTAMP => Some("TIMESTAMP"),
+            Self::TRANSFORM_FEEDBACK_STREAM_EXT => Some("TRANSFORM_FEEDBACK_STREAM_EXT"),
+            Self::ACCELERATION_STRUCTURE_COMPACTED_SIZE_NV => {
+                Some("ACCELERATION_STRUCTURE_COMPACTED_SIZE_NV")
+            }
             _ => None,
         };
         if let Some(x) = name {
@@ -52766,38 +53108,22 @@ impl fmt::Display for DiscardRectangleModeEXT {
         }
     }
 }
-impl fmt::Display for SubgroupFeatureFlags {
+impl fmt::Display for CommandPoolResetFlags {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        const KNOWN: &[(Flags, &str)] = &[
-            (SubgroupFeatureFlags::BASIC.0, "BASIC"),
-            (SubgroupFeatureFlags::VOTE.0, "VOTE"),
-            (SubgroupFeatureFlags::ARITHMETIC.0, "ARITHMETIC"),
-            (SubgroupFeatureFlags::BALLOT.0, "BALLOT"),
-            (SubgroupFeatureFlags::SHUFFLE.0, "SHUFFLE"),
-            (SubgroupFeatureFlags::SHUFFLE_RELATIVE.0, "SHUFFLE_RELATIVE"),
-            (SubgroupFeatureFlags::CLUSTERED.0, "CLUSTERED"),
-            (SubgroupFeatureFlags::QUAD.0, "QUAD"),
-            (SubgroupFeatureFlags::PARTITIONED_NV.0, "PARTITIONED_NV"),
-        ];
+        const KNOWN: &[(Flags, &str)] = &[(
+            CommandPoolResetFlags::RELEASE_RESOURCES.0,
+            "RELEASE_RESOURCES",
+        )];
         display_flags(f, KNOWN, self.0)
     }
 }
-impl fmt::Display for CompositeAlphaFlagsKHR {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        const KNOWN: &[(Flags, &str)] = &[
-            (CompositeAlphaFlagsKHR::OPAQUE.0, "OPAQUE"),
-            (CompositeAlphaFlagsKHR::PRE_MULTIPLIED.0, "PRE_MULTIPLIED"),
-            (CompositeAlphaFlagsKHR::POST_MULTIPLIED.0, "POST_MULTIPLIED"),
-            (CompositeAlphaFlagsKHR::INHERIT.0, "INHERIT"),
-        ];
-        display_flags(f, KNOWN, self.0)
-    }
-}
-impl fmt::Display for PointClippingBehavior {
+impl fmt::Display for TimeDomainEXT {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         let name = match *self {
-            Self::ALL_CLIP_PLANES => Some("ALL_CLIP_PLANES"),
-            Self::USER_CLIP_PLANES_ONLY => Some("USER_CLIP_PLANES_ONLY"),
+            Self::DEVICE => Some("DEVICE"),
+            Self::CLOCK_MONOTONIC => Some("CLOCK_MONOTONIC"),
+            Self::CLOCK_MONOTONIC_RAW => Some("CLOCK_MONOTONIC_RAW"),
+            Self::QUERY_PERFORMANCE_COUNTER => Some("QUERY_PERFORMANCE_COUNTER"),
             _ => None,
         };
         if let Some(x) = name {
@@ -52805,89 +53131,6 @@ impl fmt::Display for PointClippingBehavior {
         } else {
             write!(f, "{}", self.0)
         }
-    }
-}
-impl fmt::Display for CommandBufferUsageFlags {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        const KNOWN: &[(Flags, &str)] = &[
-            (
-                CommandBufferUsageFlags::ONE_TIME_SUBMIT.0,
-                "ONE_TIME_SUBMIT",
-            ),
-            (
-                CommandBufferUsageFlags::RENDER_PASS_CONTINUE.0,
-                "RENDER_PASS_CONTINUE",
-            ),
-            (
-                CommandBufferUsageFlags::SIMULTANEOUS_USE.0,
-                "SIMULTANEOUS_USE",
-            ),
-        ];
-        display_flags(f, KNOWN, self.0)
-    }
-}
-impl fmt::Display for ImageUsageFlags {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        const KNOWN: &[(Flags, &str)] = &[
-            (ImageUsageFlags::TRANSFER_SRC.0, "TRANSFER_SRC"),
-            (ImageUsageFlags::TRANSFER_DST.0, "TRANSFER_DST"),
-            (ImageUsageFlags::SAMPLED.0, "SAMPLED"),
-            (ImageUsageFlags::STORAGE.0, "STORAGE"),
-            (ImageUsageFlags::COLOR_ATTACHMENT.0, "COLOR_ATTACHMENT"),
-            (
-                ImageUsageFlags::DEPTH_STENCIL_ATTACHMENT.0,
-                "DEPTH_STENCIL_ATTACHMENT",
-            ),
-            (
-                ImageUsageFlags::TRANSIENT_ATTACHMENT.0,
-                "TRANSIENT_ATTACHMENT",
-            ),
-            (ImageUsageFlags::INPUT_ATTACHMENT.0, "INPUT_ATTACHMENT"),
-            (
-                ImageUsageFlags::SHADING_RATE_IMAGE_NV.0,
-                "SHADING_RATE_IMAGE_NV",
-            ),
-            (ImageUsageFlags::RESERVED_9_EXT.0, "RESERVED_9_EXT"),
-        ];
-        display_flags(f, KNOWN, self.0)
-    }
-}
-impl fmt::Display for IndexType {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        let name = match *self {
-            Self::UINT16 => Some("UINT16"),
-            Self::UINT32 => Some("UINT32"),
-            Self::NONE_NV => Some("NONE_NV"),
-            _ => None,
-        };
-        if let Some(x) = name {
-            f.write_str(x)
-        } else {
-            write!(f, "{}", self.0)
-        }
-    }
-}
-impl fmt::Display for DescriptorBindingFlagsEXT {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        const KNOWN: &[(Flags, &str)] = &[
-            (
-                DescriptorBindingFlagsEXT::UPDATE_AFTER_BIND.0,
-                "UPDATE_AFTER_BIND",
-            ),
-            (
-                DescriptorBindingFlagsEXT::UPDATE_UNUSED_WHILE_PENDING.0,
-                "UPDATE_UNUSED_WHILE_PENDING",
-            ),
-            (
-                DescriptorBindingFlagsEXT::PARTIALLY_BOUND.0,
-                "PARTIALLY_BOUND",
-            ),
-            (
-                DescriptorBindingFlagsEXT::VARIABLE_DESCRIPTOR_COUNT.0,
-                "VARIABLE_DESCRIPTOR_COUNT",
-            ),
-        ];
-        display_flags(f, KNOWN, self.0)
     }
 }
 impl fmt::Display for ExternalMemoryHandleTypeFlagsNV {
@@ -52913,48 +53156,407 @@ impl fmt::Display for ExternalMemoryHandleTypeFlagsNV {
         display_flags(f, KNOWN, self.0)
     }
 }
-impl fmt::Display for ShaderStageFlags {
+impl fmt::Display for StencilFaceFlags {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         const KNOWN: &[(Flags, &str)] = &[
-            (ShaderStageFlags::VERTEX.0, "VERTEX"),
+            (StencilFaceFlags::FRONT.0, "FRONT"),
+            (StencilFaceFlags::BACK.0, "BACK"),
             (
-                ShaderStageFlags::TESSELLATION_CONTROL.0,
-                "TESSELLATION_CONTROL",
+                StencilFaceFlags::STENCIL_FRONT_AND_BACK.0,
+                "STENCIL_FRONT_AND_BACK",
             ),
-            (
-                ShaderStageFlags::TESSELLATION_EVALUATION.0,
-                "TESSELLATION_EVALUATION",
-            ),
-            (ShaderStageFlags::GEOMETRY.0, "GEOMETRY"),
-            (ShaderStageFlags::FRAGMENT.0, "FRAGMENT"),
-            (ShaderStageFlags::COMPUTE.0, "COMPUTE"),
-            (ShaderStageFlags::ALL_GRAPHICS.0, "ALL_GRAPHICS"),
-            (ShaderStageFlags::ALL.0, "ALL"),
-            (ShaderStageFlags::RAYGEN_NV.0, "RAYGEN_NV"),
-            (ShaderStageFlags::ANY_HIT_NV.0, "ANY_HIT_NV"),
-            (ShaderStageFlags::CLOSEST_HIT_NV.0, "CLOSEST_HIT_NV"),
-            (ShaderStageFlags::MISS_NV.0, "MISS_NV"),
-            (ShaderStageFlags::INTERSECTION_NV.0, "INTERSECTION_NV"),
-            (ShaderStageFlags::CALLABLE_NV.0, "CALLABLE_NV"),
-            (ShaderStageFlags::TASK_NV.0, "TASK_NV"),
-            (ShaderStageFlags::MESH_NV.0, "MESH_NV"),
         ];
         display_flags(f, KNOWN, self.0)
     }
 }
-impl fmt::Display for ExternalFenceFeatureFlags {
+impl fmt::Display for ObjectEntryUsageFlagsNVX {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        const KNOWN: &[(Flags, &str)] = &[
+            (ObjectEntryUsageFlagsNVX::GRAPHICS.0, "GRAPHICS"),
+            (ObjectEntryUsageFlagsNVX::COMPUTE.0, "COMPUTE"),
+        ];
+        display_flags(f, KNOWN, self.0)
+    }
+}
+impl fmt::Display for SwapchainCreateFlagsKHR {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         const KNOWN: &[(Flags, &str)] = &[
             (
-                ExternalFenceFeatureFlags::EXTERNAL_FENCE_FEATURE_EXPORTABLE.0,
-                "EXTERNAL_FENCE_FEATURE_EXPORTABLE",
+                SwapchainCreateFlagsKHR::SPLIT_INSTANCE_BIND_REGIONS.0,
+                "SPLIT_INSTANCE_BIND_REGIONS",
+            ),
+            (SwapchainCreateFlagsKHR::PROTECTED.0, "PROTECTED"),
+        ];
+        display_flags(f, KNOWN, self.0)
+    }
+}
+impl fmt::Display for ShadingRatePaletteEntryNV {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        let name = match *self {
+            Self::NO_INVOCATIONS => Some("NO_INVOCATIONS"),
+            Self::TYPE_16_INVOCATIONS_PER_PIXEL => Some("TYPE_16_INVOCATIONS_PER_PIXEL"),
+            Self::TYPE_8_INVOCATIONS_PER_PIXEL => Some("TYPE_8_INVOCATIONS_PER_PIXEL"),
+            Self::TYPE_4_INVOCATIONS_PER_PIXEL => Some("TYPE_4_INVOCATIONS_PER_PIXEL"),
+            Self::TYPE_2_INVOCATIONS_PER_PIXEL => Some("TYPE_2_INVOCATIONS_PER_PIXEL"),
+            Self::TYPE_1_INVOCATION_PER_PIXEL => Some("TYPE_1_INVOCATION_PER_PIXEL"),
+            Self::TYPE_1_INVOCATION_PER_2X1_PIXELS => Some("TYPE_1_INVOCATION_PER_2X1_PIXELS"),
+            Self::TYPE_1_INVOCATION_PER_1X2_PIXELS => Some("TYPE_1_INVOCATION_PER_1X2_PIXELS"),
+            Self::TYPE_1_INVOCATION_PER_2X2_PIXELS => Some("TYPE_1_INVOCATION_PER_2X2_PIXELS"),
+            Self::TYPE_1_INVOCATION_PER_4X2_PIXELS => Some("TYPE_1_INVOCATION_PER_4X2_PIXELS"),
+            Self::TYPE_1_INVOCATION_PER_2X4_PIXELS => Some("TYPE_1_INVOCATION_PER_2X4_PIXELS"),
+            Self::TYPE_1_INVOCATION_PER_4X4_PIXELS => Some("TYPE_1_INVOCATION_PER_4X4_PIXELS"),
+            _ => None,
+        };
+        if let Some(x) = name {
+            f.write_str(x)
+        } else {
+            write!(f, "{}", self.0)
+        }
+    }
+}
+impl fmt::Display for BlendFactor {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        let name = match *self {
+            Self::ZERO => Some("ZERO"),
+            Self::ONE => Some("ONE"),
+            Self::SRC_COLOR => Some("SRC_COLOR"),
+            Self::ONE_MINUS_SRC_COLOR => Some("ONE_MINUS_SRC_COLOR"),
+            Self::DST_COLOR => Some("DST_COLOR"),
+            Self::ONE_MINUS_DST_COLOR => Some("ONE_MINUS_DST_COLOR"),
+            Self::SRC_ALPHA => Some("SRC_ALPHA"),
+            Self::ONE_MINUS_SRC_ALPHA => Some("ONE_MINUS_SRC_ALPHA"),
+            Self::DST_ALPHA => Some("DST_ALPHA"),
+            Self::ONE_MINUS_DST_ALPHA => Some("ONE_MINUS_DST_ALPHA"),
+            Self::CONSTANT_COLOR => Some("CONSTANT_COLOR"),
+            Self::ONE_MINUS_CONSTANT_COLOR => Some("ONE_MINUS_CONSTANT_COLOR"),
+            Self::CONSTANT_ALPHA => Some("CONSTANT_ALPHA"),
+            Self::ONE_MINUS_CONSTANT_ALPHA => Some("ONE_MINUS_CONSTANT_ALPHA"),
+            Self::SRC_ALPHA_SATURATE => Some("SRC_ALPHA_SATURATE"),
+            Self::SRC1_COLOR => Some("SRC1_COLOR"),
+            Self::ONE_MINUS_SRC1_COLOR => Some("ONE_MINUS_SRC1_COLOR"),
+            Self::SRC1_ALPHA => Some("SRC1_ALPHA"),
+            Self::ONE_MINUS_SRC1_ALPHA => Some("ONE_MINUS_SRC1_ALPHA"),
+            _ => None,
+        };
+        if let Some(x) = name {
+            f.write_str(x)
+        } else {
+            write!(f, "{}", self.0)
+        }
+    }
+}
+impl fmt::Display for ExternalMemoryFeatureFlags {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        const KNOWN: &[(Flags, &str)] = &[
+            (
+                ExternalMemoryFeatureFlags::EXTERNAL_MEMORY_FEATURE_DEDICATED_ONLY.0,
+                "EXTERNAL_MEMORY_FEATURE_DEDICATED_ONLY",
             ),
             (
-                ExternalFenceFeatureFlags::EXTERNAL_FENCE_FEATURE_IMPORTABLE.0,
-                "EXTERNAL_FENCE_FEATURE_IMPORTABLE",
+                ExternalMemoryFeatureFlags::EXTERNAL_MEMORY_FEATURE_EXPORTABLE.0,
+                "EXTERNAL_MEMORY_FEATURE_EXPORTABLE",
+            ),
+            (
+                ExternalMemoryFeatureFlags::EXTERNAL_MEMORY_FEATURE_IMPORTABLE.0,
+                "EXTERNAL_MEMORY_FEATURE_IMPORTABLE",
             ),
         ];
         display_flags(f, KNOWN, self.0)
+    }
+}
+impl fmt::Display for DebugUtilsMessageSeverityFlagsEXT {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        const KNOWN: &[(Flags, &str)] = &[
+            (DebugUtilsMessageSeverityFlagsEXT::VERBOSE.0, "VERBOSE"),
+            (DebugUtilsMessageSeverityFlagsEXT::INFO.0, "INFO"),
+            (DebugUtilsMessageSeverityFlagsEXT::WARNING.0, "WARNING"),
+            (DebugUtilsMessageSeverityFlagsEXT::ERROR.0, "ERROR"),
+        ];
+        display_flags(f, KNOWN, self.0)
+    }
+}
+impl fmt::Display for CompareOp {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        let name = match *self {
+            Self::NEVER => Some("NEVER"),
+            Self::LESS => Some("LESS"),
+            Self::EQUAL => Some("EQUAL"),
+            Self::LESS_OR_EQUAL => Some("LESS_OR_EQUAL"),
+            Self::GREATER => Some("GREATER"),
+            Self::NOT_EQUAL => Some("NOT_EQUAL"),
+            Self::GREATER_OR_EQUAL => Some("GREATER_OR_EQUAL"),
+            Self::ALWAYS => Some("ALWAYS"),
+            _ => None,
+        };
+        if let Some(x) = name {
+            f.write_str(x)
+        } else {
+            write!(f, "{}", self.0)
+        }
+    }
+}
+impl fmt::Display for ImageLayout {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        let name = match *self {
+            Self::UNDEFINED => Some("UNDEFINED"),
+            Self::GENERAL => Some("GENERAL"),
+            Self::COLOR_ATTACHMENT_OPTIMAL => Some("COLOR_ATTACHMENT_OPTIMAL"),
+            Self::DEPTH_STENCIL_ATTACHMENT_OPTIMAL => Some("DEPTH_STENCIL_ATTACHMENT_OPTIMAL"),
+            Self::DEPTH_STENCIL_READ_ONLY_OPTIMAL => Some("DEPTH_STENCIL_READ_ONLY_OPTIMAL"),
+            Self::SHADER_READ_ONLY_OPTIMAL => Some("SHADER_READ_ONLY_OPTIMAL"),
+            Self::TRANSFER_SRC_OPTIMAL => Some("TRANSFER_SRC_OPTIMAL"),
+            Self::TRANSFER_DST_OPTIMAL => Some("TRANSFER_DST_OPTIMAL"),
+            Self::PREINITIALIZED => Some("PREINITIALIZED"),
+            Self::PRESENT_SRC_KHR => Some("PRESENT_SRC_KHR"),
+            Self::SHARED_PRESENT_KHR => Some("SHARED_PRESENT_KHR"),
+            Self::SHADING_RATE_OPTIMAL_NV => Some("SHADING_RATE_OPTIMAL_NV"),
+            Self::DEPTH_READ_ONLY_STENCIL_ATTACHMENT_OPTIMAL => {
+                Some("DEPTH_READ_ONLY_STENCIL_ATTACHMENT_OPTIMAL")
+            }
+            Self::DEPTH_ATTACHMENT_STENCIL_READ_ONLY_OPTIMAL => {
+                Some("DEPTH_ATTACHMENT_STENCIL_READ_ONLY_OPTIMAL")
+            }
+            _ => None,
+        };
+        if let Some(x) = name {
+            f.write_str(x)
+        } else {
+            write!(f, "{}", self.0)
+        }
+    }
+}
+impl fmt::Display for PipelineStageFlags {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        const KNOWN: &[(Flags, &str)] = &[
+            (PipelineStageFlags::TOP_OF_PIPE.0, "TOP_OF_PIPE"),
+            (PipelineStageFlags::DRAW_INDIRECT.0, "DRAW_INDIRECT"),
+            (PipelineStageFlags::VERTEX_INPUT.0, "VERTEX_INPUT"),
+            (PipelineStageFlags::VERTEX_SHADER.0, "VERTEX_SHADER"),
+            (
+                PipelineStageFlags::TESSELLATION_CONTROL_SHADER.0,
+                "TESSELLATION_CONTROL_SHADER",
+            ),
+            (
+                PipelineStageFlags::TESSELLATION_EVALUATION_SHADER.0,
+                "TESSELLATION_EVALUATION_SHADER",
+            ),
+            (PipelineStageFlags::GEOMETRY_SHADER.0, "GEOMETRY_SHADER"),
+            (PipelineStageFlags::FRAGMENT_SHADER.0, "FRAGMENT_SHADER"),
+            (
+                PipelineStageFlags::EARLY_FRAGMENT_TESTS.0,
+                "EARLY_FRAGMENT_TESTS",
+            ),
+            (
+                PipelineStageFlags::LATE_FRAGMENT_TESTS.0,
+                "LATE_FRAGMENT_TESTS",
+            ),
+            (
+                PipelineStageFlags::COLOR_ATTACHMENT_OUTPUT.0,
+                "COLOR_ATTACHMENT_OUTPUT",
+            ),
+            (PipelineStageFlags::COMPUTE_SHADER.0, "COMPUTE_SHADER"),
+            (PipelineStageFlags::TRANSFER.0, "TRANSFER"),
+            (PipelineStageFlags::BOTTOM_OF_PIPE.0, "BOTTOM_OF_PIPE"),
+            (PipelineStageFlags::HOST.0, "HOST"),
+            (PipelineStageFlags::ALL_GRAPHICS.0, "ALL_GRAPHICS"),
+            (PipelineStageFlags::ALL_COMMANDS.0, "ALL_COMMANDS"),
+            (
+                PipelineStageFlags::TRANSFORM_FEEDBACK_EXT.0,
+                "TRANSFORM_FEEDBACK_EXT",
+            ),
+            (
+                PipelineStageFlags::CONDITIONAL_RENDERING_EXT.0,
+                "CONDITIONAL_RENDERING_EXT",
+            ),
+            (
+                PipelineStageFlags::COMMAND_PROCESS_NVX.0,
+                "COMMAND_PROCESS_NVX",
+            ),
+            (
+                PipelineStageFlags::SHADING_RATE_IMAGE_NV.0,
+                "SHADING_RATE_IMAGE_NV",
+            ),
+            (
+                PipelineStageFlags::RAY_TRACING_SHADER_NV.0,
+                "RAY_TRACING_SHADER_NV",
+            ),
+            (
+                PipelineStageFlags::ACCELERATION_STRUCTURE_BUILD_NV.0,
+                "ACCELERATION_STRUCTURE_BUILD_NV",
+            ),
+            (PipelineStageFlags::TASK_SHADER_NV.0, "TASK_SHADER_NV"),
+            (PipelineStageFlags::MESH_SHADER_NV.0, "MESH_SHADER_NV"),
+            (PipelineStageFlags::RESERVED_23_EXT.0, "RESERVED_23_EXT"),
+        ];
+        display_flags(f, KNOWN, self.0)
+    }
+}
+impl fmt::Display for DependencyFlags {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        const KNOWN: &[(Flags, &str)] = &[
+            (DependencyFlags::BY_REGION.0, "BY_REGION"),
+            (DependencyFlags::DEVICE_GROUP.0, "DEVICE_GROUP"),
+            (DependencyFlags::VIEW_LOCAL.0, "VIEW_LOCAL"),
+        ];
+        display_flags(f, KNOWN, self.0)
+    }
+}
+impl fmt::Display for DescriptorBindingFlagsEXT {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        const KNOWN: &[(Flags, &str)] = &[
+            (
+                DescriptorBindingFlagsEXT::UPDATE_AFTER_BIND.0,
+                "UPDATE_AFTER_BIND",
+            ),
+            (
+                DescriptorBindingFlagsEXT::UPDATE_UNUSED_WHILE_PENDING.0,
+                "UPDATE_UNUSED_WHILE_PENDING",
+            ),
+            (
+                DescriptorBindingFlagsEXT::PARTIALLY_BOUND.0,
+                "PARTIALLY_BOUND",
+            ),
+            (
+                DescriptorBindingFlagsEXT::VARIABLE_DESCRIPTOR_COUNT.0,
+                "VARIABLE_DESCRIPTOR_COUNT",
+            ),
+        ];
+        display_flags(f, KNOWN, self.0)
+    }
+}
+impl fmt::Display for InternalAllocationType {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        let name = match *self {
+            Self::EXECUTABLE => Some("EXECUTABLE"),
+            _ => None,
+        };
+        if let Some(x) = name {
+            f.write_str(x)
+        } else {
+            write!(f, "{}", self.0)
+        }
+    }
+}
+impl fmt::Display for FormatFeatureFlags {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        const KNOWN : & [ ( Flags , & str ) ] = & [ ( FormatFeatureFlags :: SAMPLED_IMAGE . 0 , "SAMPLED_IMAGE" ) , ( FormatFeatureFlags :: STORAGE_IMAGE . 0 , "STORAGE_IMAGE" ) , ( FormatFeatureFlags :: STORAGE_IMAGE_ATOMIC . 0 , "STORAGE_IMAGE_ATOMIC" ) , ( FormatFeatureFlags :: UNIFORM_TEXEL_BUFFER . 0 , "UNIFORM_TEXEL_BUFFER" ) , ( FormatFeatureFlags :: STORAGE_TEXEL_BUFFER . 0 , "STORAGE_TEXEL_BUFFER" ) , ( FormatFeatureFlags :: STORAGE_TEXEL_BUFFER_ATOMIC . 0 , "STORAGE_TEXEL_BUFFER_ATOMIC" ) , ( FormatFeatureFlags :: VERTEX_BUFFER . 0 , "VERTEX_BUFFER" ) , ( FormatFeatureFlags :: COLOR_ATTACHMENT . 0 , "COLOR_ATTACHMENT" ) , ( FormatFeatureFlags :: COLOR_ATTACHMENT_BLEND . 0 , "COLOR_ATTACHMENT_BLEND" ) , ( FormatFeatureFlags :: DEPTH_STENCIL_ATTACHMENT . 0 , "DEPTH_STENCIL_ATTACHMENT" ) , ( FormatFeatureFlags :: BLIT_SRC . 0 , "BLIT_SRC" ) , ( FormatFeatureFlags :: BLIT_DST . 0 , "BLIT_DST" ) , ( FormatFeatureFlags :: SAMPLED_IMAGE_FILTER_LINEAR . 0 , "SAMPLED_IMAGE_FILTER_LINEAR" ) , ( FormatFeatureFlags :: SAMPLED_IMAGE_FILTER_CUBIC_IMG . 0 , "SAMPLED_IMAGE_FILTER_CUBIC_IMG" ) , ( FormatFeatureFlags :: SAMPLED_IMAGE_FILTER_MINMAX_EXT . 0 , "SAMPLED_IMAGE_FILTER_MINMAX_EXT" ) , ( FormatFeatureFlags :: RESERVED_24_EXT . 0 , "RESERVED_24_EXT" ) , ( FormatFeatureFlags :: TRANSFER_SRC . 0 , "TRANSFER_SRC" ) , ( FormatFeatureFlags :: TRANSFER_DST . 0 , "TRANSFER_DST" ) , ( FormatFeatureFlags :: MIDPOINT_CHROMA_SAMPLES . 0 , "MIDPOINT_CHROMA_SAMPLES" ) , ( FormatFeatureFlags :: SAMPLED_IMAGE_YCBCR_CONVERSION_LINEAR_FILTER . 0 , "SAMPLED_IMAGE_YCBCR_CONVERSION_LINEAR_FILTER" ) , ( FormatFeatureFlags :: SAMPLED_IMAGE_YCBCR_CONVERSION_SEPARATE_RECONSTRUCTION_FILTER . 0 , "SAMPLED_IMAGE_YCBCR_CONVERSION_SEPARATE_RECONSTRUCTION_FILTER" ) , ( FormatFeatureFlags :: SAMPLED_IMAGE_YCBCR_CONVERSION_CHROMA_RECONSTRUCTION_EXPLICIT . 0 , "SAMPLED_IMAGE_YCBCR_CONVERSION_CHROMA_RECONSTRUCTION_EXPLICIT" ) , ( FormatFeatureFlags :: SAMPLED_IMAGE_YCBCR_CONVERSION_CHROMA_RECONSTRUCTION_EXPLICIT_FORCEABLE . 0 , "SAMPLED_IMAGE_YCBCR_CONVERSION_CHROMA_RECONSTRUCTION_EXPLICIT_FORCEABLE" ) , ( FormatFeatureFlags :: DISJOINT . 0 , "DISJOINT" ) , ( FormatFeatureFlags :: COSITED_CHROMA_SAMPLES . 0 , "COSITED_CHROMA_SAMPLES" ) ] ;
+        display_flags(f, KNOWN, self.0)
+    }
+}
+impl fmt::Display for QueueFlags {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        const KNOWN: &[(Flags, &str)] = &[
+            (QueueFlags::GRAPHICS.0, "GRAPHICS"),
+            (QueueFlags::COMPUTE.0, "COMPUTE"),
+            (QueueFlags::TRANSFER.0, "TRANSFER"),
+            (QueueFlags::SPARSE_BINDING.0, "SPARSE_BINDING"),
+            (QueueFlags::PROTECTED.0, "PROTECTED"),
+        ];
+        display_flags(f, KNOWN, self.0)
+    }
+}
+impl fmt::Display for DriverIdKHR {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        let name = match *self {
+            Self::AMD_PROPRIETARY => Some("AMD_PROPRIETARY"),
+            Self::AMD_OPEN_SOURCE => Some("AMD_OPEN_SOURCE"),
+            Self::MESA_RADV => Some("MESA_RADV"),
+            Self::NVIDIA_PROPRIETARY => Some("NVIDIA_PROPRIETARY"),
+            Self::INTEL_PROPRIETARY_WINDOWS => Some("INTEL_PROPRIETARY_WINDOWS"),
+            Self::INTEL_OPEN_SOURCE_MESA => Some("INTEL_OPEN_SOURCE_MESA"),
+            Self::IMAGINATION_PROPRIETARY => Some("IMAGINATION_PROPRIETARY"),
+            Self::QUALCOMM_PROPRIETARY => Some("QUALCOMM_PROPRIETARY"),
+            Self::ARM_PROPRIETARY => Some("ARM_PROPRIETARY"),
+            _ => None,
+        };
+        if let Some(x) = name {
+            f.write_str(x)
+        } else {
+            write!(f, "{}", self.0)
+        }
+    }
+}
+impl fmt::Display for SubgroupFeatureFlags {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        const KNOWN: &[(Flags, &str)] = &[
+            (SubgroupFeatureFlags::BASIC.0, "BASIC"),
+            (SubgroupFeatureFlags::VOTE.0, "VOTE"),
+            (SubgroupFeatureFlags::ARITHMETIC.0, "ARITHMETIC"),
+            (SubgroupFeatureFlags::BALLOT.0, "BALLOT"),
+            (SubgroupFeatureFlags::SHUFFLE.0, "SHUFFLE"),
+            (SubgroupFeatureFlags::SHUFFLE_RELATIVE.0, "SHUFFLE_RELATIVE"),
+            (SubgroupFeatureFlags::CLUSTERED.0, "CLUSTERED"),
+            (SubgroupFeatureFlags::QUAD.0, "QUAD"),
+            (SubgroupFeatureFlags::PARTITIONED_NV.0, "PARTITIONED_NV"),
+        ];
+        display_flags(f, KNOWN, self.0)
+    }
+}
+impl fmt::Display for PresentModeKHR {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        let name = match *self {
+            Self::IMMEDIATE => Some("IMMEDIATE"),
+            Self::MAILBOX => Some("MAILBOX"),
+            Self::FIFO => Some("FIFO"),
+            Self::FIFO_RELAXED => Some("FIFO_RELAXED"),
+            Self::SHARED_DEMAND_REFRESH => Some("SHARED_DEMAND_REFRESH"),
+            Self::SHARED_CONTINUOUS_REFRESH => Some("SHARED_CONTINUOUS_REFRESH"),
+            _ => None,
+        };
+        if let Some(x) = name {
+            f.write_str(x)
+        } else {
+            write!(f, "{}", self.0)
+        }
+    }
+}
+impl fmt::Display for ImageCreateFlags {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        const KNOWN: &[(Flags, &str)] = &[
+            (ImageCreateFlags::SPARSE_BINDING.0, "SPARSE_BINDING"),
+            (ImageCreateFlags::SPARSE_RESIDENCY.0, "SPARSE_RESIDENCY"),
+            (ImageCreateFlags::SPARSE_ALIASED.0, "SPARSE_ALIASED"),
+            (ImageCreateFlags::MUTABLE_FORMAT.0, "MUTABLE_FORMAT"),
+            (ImageCreateFlags::CUBE_COMPATIBLE.0, "CUBE_COMPATIBLE"),
+            (ImageCreateFlags::CORNER_SAMPLED_NV.0, "CORNER_SAMPLED_NV"),
+            (
+                ImageCreateFlags::SAMPLE_LOCATIONS_COMPATIBLE_DEPTH_EXT.0,
+                "SAMPLE_LOCATIONS_COMPATIBLE_DEPTH_EXT",
+            ),
+            (ImageCreateFlags::RESERVED_14_EXT.0, "RESERVED_14_EXT"),
+            (ImageCreateFlags::ALIAS.0, "ALIAS"),
+            (
+                ImageCreateFlags::SPLIT_INSTANCE_BIND_REGIONS.0,
+                "SPLIT_INSTANCE_BIND_REGIONS",
+            ),
+            (
+                ImageCreateFlags::TYPE_2D_ARRAY_COMPATIBLE.0,
+                "TYPE_2D_ARRAY_COMPATIBLE",
+            ),
+            (
+                ImageCreateFlags::BLOCK_TEXEL_VIEW_COMPATIBLE.0,
+                "BLOCK_TEXEL_VIEW_COMPATIBLE",
+            ),
+            (ImageCreateFlags::EXTENDED_USAGE.0, "EXTENDED_USAGE"),
+            (ImageCreateFlags::PROTECTED.0, "PROTECTED"),
+            (ImageCreateFlags::DISJOINT.0, "DISJOINT"),
+        ];
+        display_flags(f, KNOWN, self.0)
+    }
+}
+impl fmt::Display for PipelineBindPoint {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        let name = match *self {
+            Self::GRAPHICS => Some("GRAPHICS"),
+            Self::COMPUTE => Some("COMPUTE"),
+            Self::RAY_TRACING_NV => Some("RAY_TRACING_NV"),
+            _ => None,
+        };
+        if let Some(x) = name {
+            f.write_str(x)
+        } else {
+            write!(f, "{}", self.0)
+        }
     }
 }
 impl fmt::Display for DisplayPowerStateEXT {
@@ -52972,25 +53574,12 @@ impl fmt::Display for DisplayPowerStateEXT {
         }
     }
 }
-impl fmt::Display for QueueFlags {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        const KNOWN: &[(Flags, &str)] = &[
-            (QueueFlags::GRAPHICS.0, "GRAPHICS"),
-            (QueueFlags::COMPUTE.0, "COMPUTE"),
-            (QueueFlags::TRANSFER.0, "TRANSFER"),
-            (QueueFlags::SPARSE_BINDING.0, "SPARSE_BINDING"),
-            (QueueFlags::PROTECTED.0, "PROTECTED"),
-        ];
-        display_flags(f, KNOWN, self.0)
-    }
-}
-impl fmt::Display for TimeDomainEXT {
+impl fmt::Display for RayTracingShaderGroupTypeNV {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         let name = match *self {
-            Self::DEVICE => Some("DEVICE"),
-            Self::CLOCK_MONOTONIC => Some("CLOCK_MONOTONIC"),
-            Self::CLOCK_MONOTONIC_RAW => Some("CLOCK_MONOTONIC_RAW"),
-            Self::QUERY_PERFORMANCE_COUNTER => Some("QUERY_PERFORMANCE_COUNTER"),
+            Self::GENERAL => Some("GENERAL"),
+            Self::TRIANGLES_HIT_GROUP => Some("TRIANGLES_HIT_GROUP"),
+            Self::PROCEDURAL_HIT_GROUP => Some("PROCEDURAL_HIT_GROUP"),
             _ => None,
         };
         if let Some(x) = name {
@@ -52998,6 +53587,88 @@ impl fmt::Display for TimeDomainEXT {
         } else {
             write!(f, "{}", self.0)
         }
+    }
+}
+impl fmt::Display for ExternalSemaphoreFeatureFlags {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        const KNOWN: &[(Flags, &str)] = &[
+            (
+                ExternalSemaphoreFeatureFlags::EXTERNAL_SEMAPHORE_FEATURE_EXPORTABLE.0,
+                "EXTERNAL_SEMAPHORE_FEATURE_EXPORTABLE",
+            ),
+            (
+                ExternalSemaphoreFeatureFlags::EXTERNAL_SEMAPHORE_FEATURE_IMPORTABLE.0,
+                "EXTERNAL_SEMAPHORE_FEATURE_IMPORTABLE",
+            ),
+        ];
+        display_flags(f, KNOWN, self.0)
+    }
+}
+impl fmt::Display for StencilOp {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        let name = match *self {
+            Self::KEEP => Some("KEEP"),
+            Self::ZERO => Some("ZERO"),
+            Self::REPLACE => Some("REPLACE"),
+            Self::INCREMENT_AND_CLAMP => Some("INCREMENT_AND_CLAMP"),
+            Self::DECREMENT_AND_CLAMP => Some("DECREMENT_AND_CLAMP"),
+            Self::INVERT => Some("INVERT"),
+            Self::INCREMENT_AND_WRAP => Some("INCREMENT_AND_WRAP"),
+            Self::DECREMENT_AND_WRAP => Some("DECREMENT_AND_WRAP"),
+            _ => None,
+        };
+        if let Some(x) = name {
+            f.write_str(x)
+        } else {
+            write!(f, "{}", self.0)
+        }
+    }
+}
+impl fmt::Display for QueryResultFlags {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        const KNOWN: &[(Flags, &str)] = &[
+            (QueryResultFlags::TYPE_64.0, "TYPE_64"),
+            (QueryResultFlags::WAIT.0, "WAIT"),
+            (QueryResultFlags::WITH_AVAILABILITY.0, "WITH_AVAILABILITY"),
+            (QueryResultFlags::PARTIAL.0, "PARTIAL"),
+        ];
+        display_flags(f, KNOWN, self.0)
+    }
+}
+impl fmt::Display for DynamicState {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        let name = match *self {
+            Self::VIEWPORT => Some("VIEWPORT"),
+            Self::SCISSOR => Some("SCISSOR"),
+            Self::LINE_WIDTH => Some("LINE_WIDTH"),
+            Self::DEPTH_BIAS => Some("DEPTH_BIAS"),
+            Self::BLEND_CONSTANTS => Some("BLEND_CONSTANTS"),
+            Self::DEPTH_BOUNDS => Some("DEPTH_BOUNDS"),
+            Self::STENCIL_COMPARE_MASK => Some("STENCIL_COMPARE_MASK"),
+            Self::STENCIL_WRITE_MASK => Some("STENCIL_WRITE_MASK"),
+            Self::STENCIL_REFERENCE => Some("STENCIL_REFERENCE"),
+            Self::VIEWPORT_W_SCALING_NV => Some("VIEWPORT_W_SCALING_NV"),
+            Self::DISCARD_RECTANGLE_EXT => Some("DISCARD_RECTANGLE_EXT"),
+            Self::SAMPLE_LOCATIONS_EXT => Some("SAMPLE_LOCATIONS_EXT"),
+            Self::VIEWPORT_SHADING_RATE_PALETTE_NV => Some("VIEWPORT_SHADING_RATE_PALETTE_NV"),
+            Self::VIEWPORT_COARSE_SAMPLE_ORDER_NV => Some("VIEWPORT_COARSE_SAMPLE_ORDER_NV"),
+            Self::EXCLUSIVE_SCISSOR_NV => Some("EXCLUSIVE_SCISSOR_NV"),
+            _ => None,
+        };
+        if let Some(x) = name {
+            f.write_str(x)
+        } else {
+            write!(f, "{}", self.0)
+        }
+    }
+}
+impl fmt::Display for CommandBufferResetFlags {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        const KNOWN: &[(Flags, &str)] = &[(
+            CommandBufferResetFlags::RELEASE_RESOURCES.0,
+            "RELEASE_RESOURCES",
+        )];
+        display_flags(f, KNOWN, self.0)
     }
 }
 impl fmt::Display for StructureType {
@@ -53592,89 +54263,6 @@ impl fmt::Display for StructureType {
         }
     }
 }
-impl fmt::Display for FenceImportFlags {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        const KNOWN: &[(Flags, &str)] = &[(FenceImportFlags::TEMPORARY.0, "TEMPORARY")];
-        display_flags(f, KNOWN, self.0)
-    }
-}
-impl fmt::Display for AttachmentLoadOp {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        let name = match *self {
-            Self::LOAD => Some("LOAD"),
-            Self::CLEAR => Some("CLEAR"),
-            Self::DONT_CARE => Some("DONT_CARE"),
-            _ => None,
-        };
-        if let Some(x) = name {
-            f.write_str(x)
-        } else {
-            write!(f, "{}", self.0)
-        }
-    }
-}
-impl fmt::Display for BufferCreateFlags {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        const KNOWN: &[(Flags, &str)] = &[
-            (BufferCreateFlags::SPARSE_BINDING.0, "SPARSE_BINDING"),
-            (BufferCreateFlags::SPARSE_RESIDENCY.0, "SPARSE_RESIDENCY"),
-            (BufferCreateFlags::SPARSE_ALIASED.0, "SPARSE_ALIASED"),
-            (BufferCreateFlags::PROTECTED.0, "PROTECTED"),
-        ];
-        display_flags(f, KNOWN, self.0)
-    }
-}
-impl fmt::Display for PolygonMode {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        let name = match *self {
-            Self::FILL => Some("FILL"),
-            Self::LINE => Some("LINE"),
-            Self::POINT => Some("POINT"),
-            Self::FILL_RECTANGLE_NV => Some("FILL_RECTANGLE_NV"),
-            _ => None,
-        };
-        if let Some(x) = name {
-            f.write_str(x)
-        } else {
-            write!(f, "{}", self.0)
-        }
-    }
-}
-impl fmt::Display for ConservativeRasterizationModeEXT {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        let name = match *self {
-            Self::DISABLED => Some("DISABLED"),
-            Self::OVERESTIMATE => Some("OVERESTIMATE"),
-            Self::UNDERESTIMATE => Some("UNDERESTIMATE"),
-            _ => None,
-        };
-        if let Some(x) = name {
-            f.write_str(x)
-        } else {
-            write!(f, "{}", self.0)
-        }
-    }
-}
-impl fmt::Display for StencilOp {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        let name = match *self {
-            Self::KEEP => Some("KEEP"),
-            Self::ZERO => Some("ZERO"),
-            Self::REPLACE => Some("REPLACE"),
-            Self::INCREMENT_AND_CLAMP => Some("INCREMENT_AND_CLAMP"),
-            Self::DECREMENT_AND_CLAMP => Some("DECREMENT_AND_CLAMP"),
-            Self::INVERT => Some("INVERT"),
-            Self::INCREMENT_AND_WRAP => Some("INCREMENT_AND_WRAP"),
-            Self::DECREMENT_AND_WRAP => Some("DECREMENT_AND_WRAP"),
-            _ => None,
-        };
-        if let Some(x) = name {
-            f.write_str(x)
-        } else {
-            write!(f, "{}", self.0)
-        }
-    }
-}
 impl fmt::Display for BorderColor {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         let name = match *self {
@@ -53693,195 +54281,6 @@ impl fmt::Display for BorderColor {
         }
     }
 }
-impl fmt::Display for AccelerationStructureMemoryRequirementsTypeNV {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        let name = match *self {
-            Self::OBJECT => Some("OBJECT"),
-            Self::BUILD_SCRATCH => Some("BUILD_SCRATCH"),
-            Self::UPDATE_SCRATCH => Some("UPDATE_SCRATCH"),
-            _ => None,
-        };
-        if let Some(x) = name {
-            f.write_str(x)
-        } else {
-            write!(f, "{}", self.0)
-        }
-    }
-}
-impl fmt::Display for InternalAllocationType {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        let name = match *self {
-            Self::EXECUTABLE => Some("EXECUTABLE"),
-            _ => None,
-        };
-        if let Some(x) = name {
-            f.write_str(x)
-        } else {
-            write!(f, "{}", self.0)
-        }
-    }
-}
-impl fmt::Display for ObjectEntryUsageFlagsNVX {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        const KNOWN: &[(Flags, &str)] = &[
-            (ObjectEntryUsageFlagsNVX::GRAPHICS.0, "GRAPHICS"),
-            (ObjectEntryUsageFlagsNVX::COMPUTE.0, "COMPUTE"),
-        ];
-        display_flags(f, KNOWN, self.0)
-    }
-}
-impl fmt::Display for DebugReportFlagsEXT {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        const KNOWN: &[(Flags, &str)] = &[
-            (DebugReportFlagsEXT::INFORMATION.0, "INFORMATION"),
-            (DebugReportFlagsEXT::WARNING.0, "WARNING"),
-            (
-                DebugReportFlagsEXT::PERFORMANCE_WARNING.0,
-                "PERFORMANCE_WARNING",
-            ),
-            (DebugReportFlagsEXT::ERROR.0, "ERROR"),
-            (DebugReportFlagsEXT::DEBUG.0, "DEBUG"),
-        ];
-        display_flags(f, KNOWN, self.0)
-    }
-}
-impl fmt::Display for CopyAccelerationStructureModeNV {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        let name = match *self {
-            Self::CLONE => Some("CLONE"),
-            Self::COMPACT => Some("COMPACT"),
-            _ => None,
-        };
-        if let Some(x) = name {
-            f.write_str(x)
-        } else {
-            write!(f, "{}", self.0)
-        }
-    }
-}
-impl fmt::Display for ExternalMemoryFeatureFlags {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        const KNOWN: &[(Flags, &str)] = &[
-            (
-                ExternalMemoryFeatureFlags::EXTERNAL_MEMORY_FEATURE_DEDICATED_ONLY.0,
-                "EXTERNAL_MEMORY_FEATURE_DEDICATED_ONLY",
-            ),
-            (
-                ExternalMemoryFeatureFlags::EXTERNAL_MEMORY_FEATURE_EXPORTABLE.0,
-                "EXTERNAL_MEMORY_FEATURE_EXPORTABLE",
-            ),
-            (
-                ExternalMemoryFeatureFlags::EXTERNAL_MEMORY_FEATURE_IMPORTABLE.0,
-                "EXTERNAL_MEMORY_FEATURE_IMPORTABLE",
-            ),
-        ];
-        display_flags(f, KNOWN, self.0)
-    }
-}
-impl fmt::Display for Filter {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        let name = match *self {
-            Self::NEAREST => Some("NEAREST"),
-            Self::LINEAR => Some("LINEAR"),
-            Self::CUBIC_IMG => Some("CUBIC_IMG"),
-            _ => None,
-        };
-        if let Some(x) = name {
-            f.write_str(x)
-        } else {
-            write!(f, "{}", self.0)
-        }
-    }
-}
-impl fmt::Display for ShadingRatePaletteEntryNV {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        let name = match *self {
-            Self::NO_INVOCATIONS => Some("NO_INVOCATIONS"),
-            Self::TYPE_16_INVOCATIONS_PER_PIXEL => Some("TYPE_16_INVOCATIONS_PER_PIXEL"),
-            Self::TYPE_8_INVOCATIONS_PER_PIXEL => Some("TYPE_8_INVOCATIONS_PER_PIXEL"),
-            Self::TYPE_4_INVOCATIONS_PER_PIXEL => Some("TYPE_4_INVOCATIONS_PER_PIXEL"),
-            Self::TYPE_2_INVOCATIONS_PER_PIXEL => Some("TYPE_2_INVOCATIONS_PER_PIXEL"),
-            Self::TYPE_1_INVOCATION_PER_PIXEL => Some("TYPE_1_INVOCATION_PER_PIXEL"),
-            Self::TYPE_1_INVOCATION_PER_2X1_PIXELS => Some("TYPE_1_INVOCATION_PER_2X1_PIXELS"),
-            Self::TYPE_1_INVOCATION_PER_1X2_PIXELS => Some("TYPE_1_INVOCATION_PER_1X2_PIXELS"),
-            Self::TYPE_1_INVOCATION_PER_2X2_PIXELS => Some("TYPE_1_INVOCATION_PER_2X2_PIXELS"),
-            Self::TYPE_1_INVOCATION_PER_4X2_PIXELS => Some("TYPE_1_INVOCATION_PER_4X2_PIXELS"),
-            Self::TYPE_1_INVOCATION_PER_2X4_PIXELS => Some("TYPE_1_INVOCATION_PER_2X4_PIXELS"),
-            Self::TYPE_1_INVOCATION_PER_4X4_PIXELS => Some("TYPE_1_INVOCATION_PER_4X4_PIXELS"),
-            _ => None,
-        };
-        if let Some(x) = name {
-            f.write_str(x)
-        } else {
-            write!(f, "{}", self.0)
-        }
-    }
-}
-impl fmt::Display for ExternalSemaphoreHandleTypeFlags {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        const KNOWN: &[(Flags, &str)] = &[
-            (
-                ExternalSemaphoreHandleTypeFlags::EXTERNAL_SEMAPHORE_HANDLE_TYPE_OPAQUE_FD.0,
-                "EXTERNAL_SEMAPHORE_HANDLE_TYPE_OPAQUE_FD",
-            ),
-            (
-                ExternalSemaphoreHandleTypeFlags::EXTERNAL_SEMAPHORE_HANDLE_TYPE_OPAQUE_WIN32.0,
-                "EXTERNAL_SEMAPHORE_HANDLE_TYPE_OPAQUE_WIN32",
-            ),
-            (
-                ExternalSemaphoreHandleTypeFlags::EXTERNAL_SEMAPHORE_HANDLE_TYPE_OPAQUE_WIN32_KMT.0,
-                "EXTERNAL_SEMAPHORE_HANDLE_TYPE_OPAQUE_WIN32_KMT",
-            ),
-            (
-                ExternalSemaphoreHandleTypeFlags::EXTERNAL_SEMAPHORE_HANDLE_TYPE_D3D12_FENCE.0,
-                "EXTERNAL_SEMAPHORE_HANDLE_TYPE_D3D12_FENCE",
-            ),
-            (
-                ExternalSemaphoreHandleTypeFlags::EXTERNAL_SEMAPHORE_HANDLE_TYPE_SYNC_FD.0,
-                "EXTERNAL_SEMAPHORE_HANDLE_TYPE_SYNC_FD",
-            ),
-        ];
-        display_flags(f, KNOWN, self.0)
-    }
-}
-impl fmt::Display for BuildAccelerationStructureFlagsNV {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        const KNOWN: &[(Flags, &str)] = &[
-            (
-                BuildAccelerationStructureFlagsNV::ALLOW_UPDATE.0,
-                "ALLOW_UPDATE",
-            ),
-            (
-                BuildAccelerationStructureFlagsNV::ALLOW_COMPACTION.0,
-                "ALLOW_COMPACTION",
-            ),
-            (
-                BuildAccelerationStructureFlagsNV::PREFER_FAST_TRACE.0,
-                "PREFER_FAST_TRACE",
-            ),
-            (
-                BuildAccelerationStructureFlagsNV::PREFER_FAST_BUILD.0,
-                "PREFER_FAST_BUILD",
-            ),
-            (
-                BuildAccelerationStructureFlagsNV::LOW_MEMORY.0,
-                "LOW_MEMORY",
-            ),
-        ];
-        display_flags(f, KNOWN, self.0)
-    }
-}
-impl fmt::Display for DebugUtilsMessageSeverityFlagsEXT {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        const KNOWN: &[(Flags, &str)] = &[
-            (DebugUtilsMessageSeverityFlagsEXT::VERBOSE.0, "VERBOSE"),
-            (DebugUtilsMessageSeverityFlagsEXT::INFO.0, "INFO"),
-            (DebugUtilsMessageSeverityFlagsEXT::WARNING.0, "WARNING"),
-            (DebugUtilsMessageSeverityFlagsEXT::ERROR.0, "ERROR"),
-        ];
-        display_flags(f, KNOWN, self.0)
-    }
-}
 impl fmt::Display for CoverageModulationModeNV {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         let name = match *self {
@@ -53889,108 +54288,6 @@ impl fmt::Display for CoverageModulationModeNV {
             Self::RGB => Some("RGB"),
             Self::ALPHA => Some("ALPHA"),
             Self::RGBA => Some("RGBA"),
-            _ => None,
-        };
-        if let Some(x) = name {
-            f.write_str(x)
-        } else {
-            write!(f, "{}", self.0)
-        }
-    }
-}
-impl fmt::Display for FenceCreateFlags {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        const KNOWN: &[(Flags, &str)] = &[(FenceCreateFlags::SIGNALED.0, "SIGNALED")];
-        display_flags(f, KNOWN, self.0)
-    }
-}
-impl fmt::Display for DescriptorType {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        let name = match *self {
-            Self::SAMPLER => Some("SAMPLER"),
-            Self::COMBINED_IMAGE_SAMPLER => Some("COMBINED_IMAGE_SAMPLER"),
-            Self::SAMPLED_IMAGE => Some("SAMPLED_IMAGE"),
-            Self::STORAGE_IMAGE => Some("STORAGE_IMAGE"),
-            Self::UNIFORM_TEXEL_BUFFER => Some("UNIFORM_TEXEL_BUFFER"),
-            Self::STORAGE_TEXEL_BUFFER => Some("STORAGE_TEXEL_BUFFER"),
-            Self::UNIFORM_BUFFER => Some("UNIFORM_BUFFER"),
-            Self::STORAGE_BUFFER => Some("STORAGE_BUFFER"),
-            Self::UNIFORM_BUFFER_DYNAMIC => Some("UNIFORM_BUFFER_DYNAMIC"),
-            Self::STORAGE_BUFFER_DYNAMIC => Some("STORAGE_BUFFER_DYNAMIC"),
-            Self::INPUT_ATTACHMENT => Some("INPUT_ATTACHMENT"),
-            Self::INLINE_UNIFORM_BLOCK_EXT => Some("INLINE_UNIFORM_BLOCK_EXT"),
-            Self::ACCELERATION_STRUCTURE_NV => Some("ACCELERATION_STRUCTURE_NV"),
-            _ => None,
-        };
-        if let Some(x) = name {
-            f.write_str(x)
-        } else {
-            write!(f, "{}", self.0)
-        }
-    }
-}
-impl fmt::Display for FrontFace {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        let name = match *self {
-            Self::COUNTER_CLOCKWISE => Some("COUNTER_CLOCKWISE"),
-            Self::CLOCKWISE => Some("CLOCKWISE"),
-            _ => None,
-        };
-        if let Some(x) = name {
-            f.write_str(x)
-        } else {
-            write!(f, "{}", self.0)
-        }
-    }
-}
-impl fmt::Display for CommandBufferLevel {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        let name = match *self {
-            Self::PRIMARY => Some("PRIMARY"),
-            Self::SECONDARY => Some("SECONDARY"),
-            _ => None,
-        };
-        if let Some(x) = name {
-            f.write_str(x)
-        } else {
-            write!(f, "{}", self.0)
-        }
-    }
-}
-impl fmt::Display for ImageAspectFlags {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        const KNOWN: &[(Flags, &str)] = &[
-            (ImageAspectFlags::COLOR.0, "COLOR"),
-            (ImageAspectFlags::DEPTH.0, "DEPTH"),
-            (ImageAspectFlags::STENCIL.0, "STENCIL"),
-            (ImageAspectFlags::METADATA.0, "METADATA"),
-            (ImageAspectFlags::MEMORY_PLANE_0_EXT.0, "MEMORY_PLANE_0_EXT"),
-            (ImageAspectFlags::MEMORY_PLANE_1_EXT.0, "MEMORY_PLANE_1_EXT"),
-            (ImageAspectFlags::MEMORY_PLANE_2_EXT.0, "MEMORY_PLANE_2_EXT"),
-            (ImageAspectFlags::MEMORY_PLANE_3_EXT.0, "MEMORY_PLANE_3_EXT"),
-            (ImageAspectFlags::PLANE_0.0, "PLANE_0"),
-            (ImageAspectFlags::PLANE_1.0, "PLANE_1"),
-            (ImageAspectFlags::PLANE_2.0, "PLANE_2"),
-        ];
-        display_flags(f, KNOWN, self.0)
-    }
-}
-impl fmt::Display for CullModeFlags {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        const KNOWN: &[(Flags, &str)] = &[
-            (CullModeFlags::NONE.0, "NONE"),
-            (CullModeFlags::FRONT.0, "FRONT"),
-            (CullModeFlags::BACK.0, "BACK"),
-            (CullModeFlags::FRONT_AND_BACK.0, "FRONT_AND_BACK"),
-        ];
-        display_flags(f, KNOWN, self.0)
-    }
-}
-impl fmt::Display for AttachmentStoreOp {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        let name = match *self {
-            Self::STORE => Some("STORE"),
-            Self::DONT_CARE => Some("DONT_CARE"),
             _ => None,
         };
         if let Some(x) = name {
@@ -54015,24 +54312,13 @@ impl fmt::Display for ImageTiling {
         }
     }
 }
-impl fmt::Display for DynamicState {
+impl fmt::Display for CoarseSampleOrderTypeNV {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         let name = match *self {
-            Self::VIEWPORT => Some("VIEWPORT"),
-            Self::SCISSOR => Some("SCISSOR"),
-            Self::LINE_WIDTH => Some("LINE_WIDTH"),
-            Self::DEPTH_BIAS => Some("DEPTH_BIAS"),
-            Self::BLEND_CONSTANTS => Some("BLEND_CONSTANTS"),
-            Self::DEPTH_BOUNDS => Some("DEPTH_BOUNDS"),
-            Self::STENCIL_COMPARE_MASK => Some("STENCIL_COMPARE_MASK"),
-            Self::STENCIL_WRITE_MASK => Some("STENCIL_WRITE_MASK"),
-            Self::STENCIL_REFERENCE => Some("STENCIL_REFERENCE"),
-            Self::VIEWPORT_W_SCALING_NV => Some("VIEWPORT_W_SCALING_NV"),
-            Self::DISCARD_RECTANGLE_EXT => Some("DISCARD_RECTANGLE_EXT"),
-            Self::SAMPLE_LOCATIONS_EXT => Some("SAMPLE_LOCATIONS_EXT"),
-            Self::VIEWPORT_SHADING_RATE_PALETTE_NV => Some("VIEWPORT_SHADING_RATE_PALETTE_NV"),
-            Self::VIEWPORT_COARSE_SAMPLE_ORDER_NV => Some("VIEWPORT_COARSE_SAMPLE_ORDER_NV"),
-            Self::EXCLUSIVE_SCISSOR_NV => Some("EXCLUSIVE_SCISSOR_NV"),
+            Self::DEFAULT => Some("DEFAULT"),
+            Self::CUSTOM => Some("CUSTOM"),
+            Self::PIXEL_MAJOR => Some("PIXEL_MAJOR"),
+            Self::SAMPLE_MAJOR => Some("SAMPLE_MAJOR"),
             _ => None,
         };
         if let Some(x) = name {
@@ -54042,19 +54328,11 @@ impl fmt::Display for DynamicState {
         }
     }
 }
-impl fmt::Display for MemoryAllocateFlags {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        const KNOWN: &[(Flags, &str)] = &[(MemoryAllocateFlags::DEVICE_MASK.0, "DEVICE_MASK")];
-        display_flags(f, KNOWN, self.0)
-    }
-}
-impl fmt::Display for QueueGlobalPriorityEXT {
+impl fmt::Display for AccelerationStructureTypeNV {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         let name = match *self {
-            Self::LOW => Some("LOW"),
-            Self::MEDIUM => Some("MEDIUM"),
-            Self::HIGH => Some("HIGH"),
-            Self::REALTIME => Some("REALTIME"),
+            Self::TOP_LEVEL => Some("TOP_LEVEL"),
+            Self::BOTTOM_LEVEL => Some("BOTTOM_LEVEL"),
             _ => None,
         };
         if let Some(x) = name {
@@ -54064,23 +54342,17 @@ impl fmt::Display for QueueGlobalPriorityEXT {
         }
     }
 }
-impl fmt::Display for AttachmentDescriptionFlags {
+impl fmt::Display for SemaphoreImportFlags {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        const KNOWN: &[(Flags, &str)] = &[(AttachmentDescriptionFlags::MAY_ALIAS.0, "MAY_ALIAS")];
+        const KNOWN: &[(Flags, &str)] = &[(SemaphoreImportFlags::TEMPORARY.0, "TEMPORARY")];
         display_flags(f, KNOWN, self.0)
     }
 }
-impl fmt::Display for CompareOp {
+impl fmt::Display for SamplerMipmapMode {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         let name = match *self {
-            Self::NEVER => Some("NEVER"),
-            Self::LESS => Some("LESS"),
-            Self::EQUAL => Some("EQUAL"),
-            Self::LESS_OR_EQUAL => Some("LESS_OR_EQUAL"),
-            Self::GREATER => Some("GREATER"),
-            Self::NOT_EQUAL => Some("NOT_EQUAL"),
-            Self::GREATER_OR_EQUAL => Some("GREATER_OR_EQUAL"),
-            Self::ALWAYS => Some("ALWAYS"),
+            Self::NEAREST => Some("NEAREST"),
+            Self::LINEAR => Some("LINEAR"),
             _ => None,
         };
         if let Some(x) = name {
@@ -54090,109 +54362,16 @@ impl fmt::Display for CompareOp {
         }
     }
 }
-impl fmt::Display for PipelineStageFlags {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        const KNOWN: &[(Flags, &str)] = &[
-            (PipelineStageFlags::TOP_OF_PIPE.0, "TOP_OF_PIPE"),
-            (PipelineStageFlags::DRAW_INDIRECT.0, "DRAW_INDIRECT"),
-            (PipelineStageFlags::VERTEX_INPUT.0, "VERTEX_INPUT"),
-            (PipelineStageFlags::VERTEX_SHADER.0, "VERTEX_SHADER"),
-            (
-                PipelineStageFlags::TESSELLATION_CONTROL_SHADER.0,
-                "TESSELLATION_CONTROL_SHADER",
-            ),
-            (
-                PipelineStageFlags::TESSELLATION_EVALUATION_SHADER.0,
-                "TESSELLATION_EVALUATION_SHADER",
-            ),
-            (PipelineStageFlags::GEOMETRY_SHADER.0, "GEOMETRY_SHADER"),
-            (PipelineStageFlags::FRAGMENT_SHADER.0, "FRAGMENT_SHADER"),
-            (
-                PipelineStageFlags::EARLY_FRAGMENT_TESTS.0,
-                "EARLY_FRAGMENT_TESTS",
-            ),
-            (
-                PipelineStageFlags::LATE_FRAGMENT_TESTS.0,
-                "LATE_FRAGMENT_TESTS",
-            ),
-            (
-                PipelineStageFlags::COLOR_ATTACHMENT_OUTPUT.0,
-                "COLOR_ATTACHMENT_OUTPUT",
-            ),
-            (PipelineStageFlags::COMPUTE_SHADER.0, "COMPUTE_SHADER"),
-            (PipelineStageFlags::TRANSFER.0, "TRANSFER"),
-            (PipelineStageFlags::BOTTOM_OF_PIPE.0, "BOTTOM_OF_PIPE"),
-            (PipelineStageFlags::HOST.0, "HOST"),
-            (PipelineStageFlags::ALL_GRAPHICS.0, "ALL_GRAPHICS"),
-            (PipelineStageFlags::ALL_COMMANDS.0, "ALL_COMMANDS"),
-            (
-                PipelineStageFlags::TRANSFORM_FEEDBACK_EXT.0,
-                "TRANSFORM_FEEDBACK_EXT",
-            ),
-            (
-                PipelineStageFlags::CONDITIONAL_RENDERING_EXT.0,
-                "CONDITIONAL_RENDERING_EXT",
-            ),
-            (
-                PipelineStageFlags::COMMAND_PROCESS_NVX.0,
-                "COMMAND_PROCESS_NVX",
-            ),
-            (
-                PipelineStageFlags::SHADING_RATE_IMAGE_NV.0,
-                "SHADING_RATE_IMAGE_NV",
-            ),
-            (
-                PipelineStageFlags::RAY_TRACING_SHADER_NV.0,
-                "RAY_TRACING_SHADER_NV",
-            ),
-            (
-                PipelineStageFlags::ACCELERATION_STRUCTURE_BUILD_NV.0,
-                "ACCELERATION_STRUCTURE_BUILD_NV",
-            ),
-            (PipelineStageFlags::TASK_SHADER_NV.0, "TASK_SHADER_NV"),
-            (PipelineStageFlags::MESH_SHADER_NV.0, "MESH_SHADER_NV"),
-            (PipelineStageFlags::RESERVED_23_EXT.0, "RESERVED_23_EXT"),
-        ];
-        display_flags(f, KNOWN, self.0)
-    }
-}
-impl fmt::Display for SubpassDescriptionFlags {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        const KNOWN: &[(Flags, &str)] = &[
-            (
-                SubpassDescriptionFlags::PER_VIEW_ATTRIBUTES_NVX.0,
-                "PER_VIEW_ATTRIBUTES_NVX",
-            ),
-            (
-                SubpassDescriptionFlags::PER_VIEW_POSITION_X_ONLY_NVX.0,
-                "PER_VIEW_POSITION_X_ONLY_NVX",
-            ),
-        ];
-        display_flags(f, KNOWN, self.0)
-    }
-}
-impl fmt::Display for BlendFactor {
+impl fmt::Display for ComponentSwizzle {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         let name = match *self {
+            Self::IDENTITY => Some("IDENTITY"),
             Self::ZERO => Some("ZERO"),
             Self::ONE => Some("ONE"),
-            Self::SRC_COLOR => Some("SRC_COLOR"),
-            Self::ONE_MINUS_SRC_COLOR => Some("ONE_MINUS_SRC_COLOR"),
-            Self::DST_COLOR => Some("DST_COLOR"),
-            Self::ONE_MINUS_DST_COLOR => Some("ONE_MINUS_DST_COLOR"),
-            Self::SRC_ALPHA => Some("SRC_ALPHA"),
-            Self::ONE_MINUS_SRC_ALPHA => Some("ONE_MINUS_SRC_ALPHA"),
-            Self::DST_ALPHA => Some("DST_ALPHA"),
-            Self::ONE_MINUS_DST_ALPHA => Some("ONE_MINUS_DST_ALPHA"),
-            Self::CONSTANT_COLOR => Some("CONSTANT_COLOR"),
-            Self::ONE_MINUS_CONSTANT_COLOR => Some("ONE_MINUS_CONSTANT_COLOR"),
-            Self::CONSTANT_ALPHA => Some("CONSTANT_ALPHA"),
-            Self::ONE_MINUS_CONSTANT_ALPHA => Some("ONE_MINUS_CONSTANT_ALPHA"),
-            Self::SRC_ALPHA_SATURATE => Some("SRC_ALPHA_SATURATE"),
-            Self::SRC1_COLOR => Some("SRC1_COLOR"),
-            Self::ONE_MINUS_SRC1_COLOR => Some("ONE_MINUS_SRC1_COLOR"),
-            Self::SRC1_ALPHA => Some("SRC1_ALPHA"),
-            Self::ONE_MINUS_SRC1_ALPHA => Some("ONE_MINUS_SRC1_ALPHA"),
+            Self::R => Some("R"),
+            Self::G => Some("G"),
+            Self::B => Some("B"),
+            Self::A => Some("A"),
             _ => None,
         };
         if let Some(x) = name {
@@ -54202,11 +54381,12 @@ impl fmt::Display for BlendFactor {
         }
     }
 }
-impl fmt::Display for ChromaLocation {
+impl fmt::Display for Filter {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         let name = match *self {
-            Self::COSITED_EVEN => Some("COSITED_EVEN"),
-            Self::MIDPOINT => Some("MIDPOINT"),
+            Self::NEAREST => Some("NEAREST"),
+            Self::LINEAR => Some("LINEAR"),
+            Self::CUBIC_IMG => Some("CUBIC_IMG"),
             _ => None,
         };
         if let Some(x) = name {
@@ -54216,13 +54396,173 @@ impl fmt::Display for ChromaLocation {
         }
     }
 }
-impl fmt::Display for QueryResultFlags {
+impl fmt::Display for PipelineCreateFlags {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         const KNOWN: &[(Flags, &str)] = &[
-            (QueryResultFlags::TYPE_64.0, "TYPE_64"),
-            (QueryResultFlags::WAIT.0, "WAIT"),
-            (QueryResultFlags::WITH_AVAILABILITY.0, "WITH_AVAILABILITY"),
-            (QueryResultFlags::PARTIAL.0, "PARTIAL"),
+            (
+                PipelineCreateFlags::DISABLE_OPTIMIZATION.0,
+                "DISABLE_OPTIMIZATION",
+            ),
+            (
+                PipelineCreateFlags::ALLOW_DERIVATIVES.0,
+                "ALLOW_DERIVATIVES",
+            ),
+            (PipelineCreateFlags::DERIVATIVE.0, "DERIVATIVE"),
+            (PipelineCreateFlags::DEFER_COMPILE_NV.0, "DEFER_COMPILE_NV"),
+            (
+                PipelineCreateFlags::VIEW_INDEX_FROM_DEVICE_INDEX.0,
+                "VIEW_INDEX_FROM_DEVICE_INDEX",
+            ),
+            (PipelineCreateFlags::DISPATCH_BASE.0, "DISPATCH_BASE"),
+        ];
+        display_flags(f, KNOWN, self.0)
+    }
+}
+impl fmt::Display for DisplayPlaneAlphaFlagsKHR {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        const KNOWN: &[(Flags, &str)] = &[
+            (DisplayPlaneAlphaFlagsKHR::OPAQUE.0, "OPAQUE"),
+            (DisplayPlaneAlphaFlagsKHR::GLOBAL.0, "GLOBAL"),
+            (DisplayPlaneAlphaFlagsKHR::PER_PIXEL.0, "PER_PIXEL"),
+            (
+                DisplayPlaneAlphaFlagsKHR::PER_PIXEL_PREMULTIPLIED.0,
+                "PER_PIXEL_PREMULTIPLIED",
+            ),
+        ];
+        display_flags(f, KNOWN, self.0)
+    }
+}
+impl fmt::Display for QueryControlFlags {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        const KNOWN: &[(Flags, &str)] = &[(QueryControlFlags::PRECISE.0, "PRECISE")];
+        display_flags(f, KNOWN, self.0)
+    }
+}
+impl fmt::Display for DebugUtilsMessageTypeFlagsEXT {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        const KNOWN: &[(Flags, &str)] = &[
+            (DebugUtilsMessageTypeFlagsEXT::GENERAL.0, "GENERAL"),
+            (DebugUtilsMessageTypeFlagsEXT::VALIDATION.0, "VALIDATION"),
+            (DebugUtilsMessageTypeFlagsEXT::PERFORMANCE.0, "PERFORMANCE"),
+        ];
+        display_flags(f, KNOWN, self.0)
+    }
+}
+impl fmt::Display for DebugReportFlagsEXT {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        const KNOWN: &[(Flags, &str)] = &[
+            (DebugReportFlagsEXT::INFORMATION.0, "INFORMATION"),
+            (DebugReportFlagsEXT::WARNING.0, "WARNING"),
+            (
+                DebugReportFlagsEXT::PERFORMANCE_WARNING.0,
+                "PERFORMANCE_WARNING",
+            ),
+            (DebugReportFlagsEXT::ERROR.0, "ERROR"),
+            (DebugReportFlagsEXT::DEBUG.0, "DEBUG"),
+        ];
+        display_flags(f, KNOWN, self.0)
+    }
+}
+impl fmt::Display for MemoryPropertyFlags {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        const KNOWN: &[(Flags, &str)] = &[
+            (MemoryPropertyFlags::DEVICE_LOCAL.0, "DEVICE_LOCAL"),
+            (MemoryPropertyFlags::HOST_VISIBLE.0, "HOST_VISIBLE"),
+            (MemoryPropertyFlags::HOST_COHERENT.0, "HOST_COHERENT"),
+            (MemoryPropertyFlags::HOST_CACHED.0, "HOST_CACHED"),
+            (MemoryPropertyFlags::LAZILY_ALLOCATED.0, "LAZILY_ALLOCATED"),
+            (MemoryPropertyFlags::PROTECTED.0, "PROTECTED"),
+        ];
+        display_flags(f, KNOWN, self.0)
+    }
+}
+impl fmt::Display for MemoryOverallocationBehaviorAMD {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        let name = match *self {
+            Self::DEFAULT => Some("DEFAULT"),
+            Self::ALLOWED => Some("ALLOWED"),
+            Self::DISALLOWED => Some("DISALLOWED"),
+            _ => None,
+        };
+        if let Some(x) = name {
+            f.write_str(x)
+        } else {
+            write!(f, "{}", self.0)
+        }
+    }
+}
+impl fmt::Display for DiscardRectangleModeEXT {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        let name = match *self {
+            Self::INCLUSIVE => Some("INCLUSIVE"),
+            Self::EXCLUSIVE => Some("EXCLUSIVE"),
+            _ => None,
+        };
+        if let Some(x) = name {
+            f.write_str(x)
+        } else {
+            write!(f, "{}", self.0)
+        }
+    }
+}
+impl fmt::Display for ImageUsageFlags {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        const KNOWN: &[(Flags, &str)] = &[
+            (ImageUsageFlags::TRANSFER_SRC.0, "TRANSFER_SRC"),
+            (ImageUsageFlags::TRANSFER_DST.0, "TRANSFER_DST"),
+            (ImageUsageFlags::SAMPLED.0, "SAMPLED"),
+            (ImageUsageFlags::STORAGE.0, "STORAGE"),
+            (ImageUsageFlags::COLOR_ATTACHMENT.0, "COLOR_ATTACHMENT"),
+            (
+                ImageUsageFlags::DEPTH_STENCIL_ATTACHMENT.0,
+                "DEPTH_STENCIL_ATTACHMENT",
+            ),
+            (
+                ImageUsageFlags::TRANSIENT_ATTACHMENT.0,
+                "TRANSIENT_ATTACHMENT",
+            ),
+            (ImageUsageFlags::INPUT_ATTACHMENT.0, "INPUT_ATTACHMENT"),
+            (
+                ImageUsageFlags::SHADING_RATE_IMAGE_NV.0,
+                "SHADING_RATE_IMAGE_NV",
+            ),
+            (ImageUsageFlags::RESERVED_9_EXT.0, "RESERVED_9_EXT"),
+        ];
+        display_flags(f, KNOWN, self.0)
+    }
+}
+impl fmt::Display for CompositeAlphaFlagsKHR {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        const KNOWN: &[(Flags, &str)] = &[
+            (CompositeAlphaFlagsKHR::OPAQUE.0, "OPAQUE"),
+            (CompositeAlphaFlagsKHR::PRE_MULTIPLIED.0, "PRE_MULTIPLIED"),
+            (CompositeAlphaFlagsKHR::POST_MULTIPLIED.0, "POST_MULTIPLIED"),
+            (CompositeAlphaFlagsKHR::INHERIT.0, "INHERIT"),
+        ];
+        display_flags(f, KNOWN, self.0)
+    }
+}
+impl fmt::Display for ExternalMemoryHandleTypeFlags {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        const KNOWN : & [ ( Flags , & str ) ] = & [ ( ExternalMemoryHandleTypeFlags :: EXTERNAL_MEMORY_HANDLE_TYPE_OPAQUE_FD . 0 , "EXTERNAL_MEMORY_HANDLE_TYPE_OPAQUE_FD" ) , ( ExternalMemoryHandleTypeFlags :: EXTERNAL_MEMORY_HANDLE_TYPE_OPAQUE_WIN32 . 0 , "EXTERNAL_MEMORY_HANDLE_TYPE_OPAQUE_WIN32" ) , ( ExternalMemoryHandleTypeFlags :: EXTERNAL_MEMORY_HANDLE_TYPE_OPAQUE_WIN32_KMT . 0 , "EXTERNAL_MEMORY_HANDLE_TYPE_OPAQUE_WIN32_KMT" ) , ( ExternalMemoryHandleTypeFlags :: EXTERNAL_MEMORY_HANDLE_TYPE_D3D11_TEXTURE . 0 , "EXTERNAL_MEMORY_HANDLE_TYPE_D3D11_TEXTURE" ) , ( ExternalMemoryHandleTypeFlags :: EXTERNAL_MEMORY_HANDLE_TYPE_D3D11_TEXTURE_KMT . 0 , "EXTERNAL_MEMORY_HANDLE_TYPE_D3D11_TEXTURE_KMT" ) , ( ExternalMemoryHandleTypeFlags :: EXTERNAL_MEMORY_HANDLE_TYPE_D3D12_HEAP . 0 , "EXTERNAL_MEMORY_HANDLE_TYPE_D3D12_HEAP" ) , ( ExternalMemoryHandleTypeFlags :: EXTERNAL_MEMORY_HANDLE_TYPE_D3D12_RESOURCE . 0 , "EXTERNAL_MEMORY_HANDLE_TYPE_D3D12_RESOURCE" ) , ( ExternalMemoryHandleTypeFlags :: EXTERNAL_MEMORY_HANDLE_TYPE_DMA_BUF . 0 , "EXTERNAL_MEMORY_HANDLE_TYPE_DMA_BUF" ) , ( ExternalMemoryHandleTypeFlags :: EXTERNAL_MEMORY_HANDLE_TYPE_ANDROID_HARDWARE_BUFFER_ANDROID . 0 , "EXTERNAL_MEMORY_HANDLE_TYPE_ANDROID_HARDWARE_BUFFER_ANDROID" ) , ( ExternalMemoryHandleTypeFlags :: EXTERNAL_MEMORY_HANDLE_TYPE_HOST_ALLOCATION . 0 , "EXTERNAL_MEMORY_HANDLE_TYPE_HOST_ALLOCATION" ) , ( ExternalMemoryHandleTypeFlags :: EXTERNAL_MEMORY_HANDLE_TYPE_HOST_MAPPED_FOREIGN_MEMORY . 0 , "EXTERNAL_MEMORY_HANDLE_TYPE_HOST_MAPPED_FOREIGN_MEMORY" ) ] ;
+        display_flags(f, KNOWN, self.0)
+    }
+}
+impl fmt::Display for ExternalMemoryFeatureFlagsNV {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        const KNOWN: &[(Flags, &str)] = &[
+            (
+                ExternalMemoryFeatureFlagsNV::EXTERNAL_MEMORY_FEATURE_DEDICATED_ONLY_NV.0,
+                "EXTERNAL_MEMORY_FEATURE_DEDICATED_ONLY_NV",
+            ),
+            (
+                ExternalMemoryFeatureFlagsNV::EXTERNAL_MEMORY_FEATURE_EXPORTABLE_NV.0,
+                "EXTERNAL_MEMORY_FEATURE_EXPORTABLE_NV",
+            ),
+            (
+                ExternalMemoryFeatureFlagsNV::EXTERNAL_MEMORY_FEATURE_IMPORTABLE_NV.0,
+                "EXTERNAL_MEMORY_FEATURE_IMPORTABLE_NV",
+            ),
         ];
         display_flags(f, KNOWN, self.0)
     }
@@ -54247,13 +54587,28 @@ impl fmt::Display for GeometryInstanceFlagsNV {
         display_flags(f, KNOWN, self.0)
     }
 }
-impl fmt::Display for SamplerAddressMode {
+impl fmt::Display for ColorComponentFlags {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        const KNOWN: &[(Flags, &str)] = &[
+            (ColorComponentFlags::R.0, "R"),
+            (ColorComponentFlags::G.0, "G"),
+            (ColorComponentFlags::B.0, "B"),
+            (ColorComponentFlags::A.0, "A"),
+        ];
+        display_flags(f, KNOWN, self.0)
+    }
+}
+impl fmt::Display for FenceCreateFlags {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        const KNOWN: &[(Flags, &str)] = &[(FenceCreateFlags::SIGNALED.0, "SIGNALED")];
+        display_flags(f, KNOWN, self.0)
+    }
+}
+impl fmt::Display for CommandBufferLevel {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         let name = match *self {
-            Self::REPEAT => Some("REPEAT"),
-            Self::MIRRORED_REPEAT => Some("MIRRORED_REPEAT"),
-            Self::CLAMP_TO_EDGE => Some("CLAMP_TO_EDGE"),
-            Self::CLAMP_TO_BORDER => Some("CLAMP_TO_BORDER"),
+            Self::PRIMARY => Some("PRIMARY"),
+            Self::SECONDARY => Some("SECONDARY"),
             _ => None,
         };
         if let Some(x) = name {
@@ -54263,54 +54618,27 @@ impl fmt::Display for SamplerAddressMode {
         }
     }
 }
-impl fmt::Display for MemoryHeapFlags {
+impl fmt::Display for ExternalFenceHandleTypeFlags {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         const KNOWN: &[(Flags, &str)] = &[
-            (MemoryHeapFlags::DEVICE_LOCAL.0, "DEVICE_LOCAL"),
-            (MemoryHeapFlags::MULTI_INSTANCE.0, "MULTI_INSTANCE"),
-        ];
-        display_flags(f, KNOWN, self.0)
-    }
-}
-impl fmt::Display for DeviceGroupPresentModeFlagsKHR {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        const KNOWN: &[(Flags, &str)] = &[
-            (DeviceGroupPresentModeFlagsKHR::LOCAL.0, "LOCAL"),
-            (DeviceGroupPresentModeFlagsKHR::REMOTE.0, "REMOTE"),
-            (DeviceGroupPresentModeFlagsKHR::SUM.0, "SUM"),
             (
-                DeviceGroupPresentModeFlagsKHR::LOCAL_MULTI_DEVICE.0,
-                "LOCAL_MULTI_DEVICE",
+                ExternalFenceHandleTypeFlags::EXTERNAL_FENCE_HANDLE_TYPE_OPAQUE_FD.0,
+                "EXTERNAL_FENCE_HANDLE_TYPE_OPAQUE_FD",
+            ),
+            (
+                ExternalFenceHandleTypeFlags::EXTERNAL_FENCE_HANDLE_TYPE_OPAQUE_WIN32.0,
+                "EXTERNAL_FENCE_HANDLE_TYPE_OPAQUE_WIN32",
+            ),
+            (
+                ExternalFenceHandleTypeFlags::EXTERNAL_FENCE_HANDLE_TYPE_OPAQUE_WIN32_KMT.0,
+                "EXTERNAL_FENCE_HANDLE_TYPE_OPAQUE_WIN32_KMT",
+            ),
+            (
+                ExternalFenceHandleTypeFlags::EXTERNAL_FENCE_HANDLE_TYPE_SYNC_FD.0,
+                "EXTERNAL_FENCE_HANDLE_TYPE_SYNC_FD",
             ),
         ];
         display_flags(f, KNOWN, self.0)
-    }
-}
-impl fmt::Display for ColorSpaceKHR {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        let name = match *self {
-            Self::SRGB_NONLINEAR => Some("SRGB_NONLINEAR"),
-            Self::DISPLAY_P3_NONLINEAR_EXT => Some("DISPLAY_P3_NONLINEAR_EXT"),
-            Self::EXTENDED_SRGB_LINEAR_EXT => Some("EXTENDED_SRGB_LINEAR_EXT"),
-            Self::DCI_P3_LINEAR_EXT => Some("DCI_P3_LINEAR_EXT"),
-            Self::DCI_P3_NONLINEAR_EXT => Some("DCI_P3_NONLINEAR_EXT"),
-            Self::BT709_LINEAR_EXT => Some("BT709_LINEAR_EXT"),
-            Self::BT709_NONLINEAR_EXT => Some("BT709_NONLINEAR_EXT"),
-            Self::BT2020_LINEAR_EXT => Some("BT2020_LINEAR_EXT"),
-            Self::HDR10_ST2084_EXT => Some("HDR10_ST2084_EXT"),
-            Self::DOLBYVISION_EXT => Some("DOLBYVISION_EXT"),
-            Self::HDR10_HLG_EXT => Some("HDR10_HLG_EXT"),
-            Self::ADOBERGB_LINEAR_EXT => Some("ADOBERGB_LINEAR_EXT"),
-            Self::ADOBERGB_NONLINEAR_EXT => Some("ADOBERGB_NONLINEAR_EXT"),
-            Self::PASS_THROUGH_EXT => Some("PASS_THROUGH_EXT"),
-            Self::EXTENDED_SRGB_NONLINEAR_EXT => Some("EXTENDED_SRGB_NONLINEAR_EXT"),
-            _ => None,
-        };
-        if let Some(x) = name {
-            f.write_str(x)
-        } else {
-            write!(f, "{}", self.0)
-        }
     }
 }
 impl fmt::Display for GeometryTypeNV {
@@ -54327,145 +54655,15 @@ impl fmt::Display for GeometryTypeNV {
         }
     }
 }
-impl fmt::Display for DebugReportObjectTypeEXT {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        let name = match *self {
-            Self::UNKNOWN => Some("UNKNOWN"),
-            Self::INSTANCE => Some("INSTANCE"),
-            Self::PHYSICAL_DEVICE => Some("PHYSICAL_DEVICE"),
-            Self::DEVICE => Some("DEVICE"),
-            Self::QUEUE => Some("QUEUE"),
-            Self::SEMAPHORE => Some("SEMAPHORE"),
-            Self::COMMAND_BUFFER => Some("COMMAND_BUFFER"),
-            Self::FENCE => Some("FENCE"),
-            Self::DEVICE_MEMORY => Some("DEVICE_MEMORY"),
-            Self::BUFFER => Some("BUFFER"),
-            Self::IMAGE => Some("IMAGE"),
-            Self::EVENT => Some("EVENT"),
-            Self::QUERY_POOL => Some("QUERY_POOL"),
-            Self::BUFFER_VIEW => Some("BUFFER_VIEW"),
-            Self::IMAGE_VIEW => Some("IMAGE_VIEW"),
-            Self::SHADER_MODULE => Some("SHADER_MODULE"),
-            Self::PIPELINE_CACHE => Some("PIPELINE_CACHE"),
-            Self::PIPELINE_LAYOUT => Some("PIPELINE_LAYOUT"),
-            Self::RENDER_PASS => Some("RENDER_PASS"),
-            Self::PIPELINE => Some("PIPELINE"),
-            Self::DESCRIPTOR_SET_LAYOUT => Some("DESCRIPTOR_SET_LAYOUT"),
-            Self::SAMPLER => Some("SAMPLER"),
-            Self::DESCRIPTOR_POOL => Some("DESCRIPTOR_POOL"),
-            Self::DESCRIPTOR_SET => Some("DESCRIPTOR_SET"),
-            Self::FRAMEBUFFER => Some("FRAMEBUFFER"),
-            Self::COMMAND_POOL => Some("COMMAND_POOL"),
-            Self::SURFACE_KHR => Some("SURFACE_KHR"),
-            Self::SWAPCHAIN_KHR => Some("SWAPCHAIN_KHR"),
-            Self::DEBUG_REPORT_CALLBACK => Some("DEBUG_REPORT_CALLBACK"),
-            Self::DISPLAY_KHR => Some("DISPLAY_KHR"),
-            Self::DISPLAY_MODE_KHR => Some("DISPLAY_MODE_KHR"),
-            Self::OBJECT_TABLE_NVX => Some("OBJECT_TABLE_NVX"),
-            Self::INDIRECT_COMMANDS_LAYOUT_NVX => Some("INDIRECT_COMMANDS_LAYOUT_NVX"),
-            Self::VALIDATION_CACHE => Some("VALIDATION_CACHE"),
-            Self::SAMPLER_YCBCR_CONVERSION => Some("SAMPLER_YCBCR_CONVERSION"),
-            Self::DESCRIPTOR_UPDATE_TEMPLATE => Some("DESCRIPTOR_UPDATE_TEMPLATE"),
-            Self::ACCELERATION_STRUCTURE_NV => Some("ACCELERATION_STRUCTURE_NV"),
-            _ => None,
-        };
-        if let Some(x) = name {
-            f.write_str(x)
-        } else {
-            write!(f, "{}", self.0)
-        }
-    }
-}
-impl fmt::Display for GeometryFlagsNV {
+impl fmt::Display for BufferCreateFlags {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         const KNOWN: &[(Flags, &str)] = &[
-            (GeometryFlagsNV::OPAQUE.0, "OPAQUE"),
-            (
-                GeometryFlagsNV::NO_DUPLICATE_ANY_HIT_INVOCATION.0,
-                "NO_DUPLICATE_ANY_HIT_INVOCATION",
-            ),
+            (BufferCreateFlags::SPARSE_BINDING.0, "SPARSE_BINDING"),
+            (BufferCreateFlags::SPARSE_RESIDENCY.0, "SPARSE_RESIDENCY"),
+            (BufferCreateFlags::SPARSE_ALIASED.0, "SPARSE_ALIASED"),
+            (BufferCreateFlags::PROTECTED.0, "PROTECTED"),
         ];
         display_flags(f, KNOWN, self.0)
-    }
-}
-impl fmt::Display for ImageViewType {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        let name = match *self {
-            Self::TYPE_1D => Some("TYPE_1D"),
-            Self::TYPE_2D => Some("TYPE_2D"),
-            Self::TYPE_3D => Some("TYPE_3D"),
-            Self::CUBE => Some("CUBE"),
-            Self::TYPE_1D_ARRAY => Some("TYPE_1D_ARRAY"),
-            Self::TYPE_2D_ARRAY => Some("TYPE_2D_ARRAY"),
-            Self::CUBE_ARRAY => Some("CUBE_ARRAY"),
-            _ => None,
-        };
-        if let Some(x) = name {
-            f.write_str(x)
-        } else {
-            write!(f, "{}", self.0)
-        }
-    }
-}
-impl fmt::Display for FormatFeatureFlags {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        const KNOWN : & [ ( Flags , & str ) ] = & [ ( FormatFeatureFlags :: SAMPLED_IMAGE . 0 , "SAMPLED_IMAGE" ) , ( FormatFeatureFlags :: STORAGE_IMAGE . 0 , "STORAGE_IMAGE" ) , ( FormatFeatureFlags :: STORAGE_IMAGE_ATOMIC . 0 , "STORAGE_IMAGE_ATOMIC" ) , ( FormatFeatureFlags :: UNIFORM_TEXEL_BUFFER . 0 , "UNIFORM_TEXEL_BUFFER" ) , ( FormatFeatureFlags :: STORAGE_TEXEL_BUFFER . 0 , "STORAGE_TEXEL_BUFFER" ) , ( FormatFeatureFlags :: STORAGE_TEXEL_BUFFER_ATOMIC . 0 , "STORAGE_TEXEL_BUFFER_ATOMIC" ) , ( FormatFeatureFlags :: VERTEX_BUFFER . 0 , "VERTEX_BUFFER" ) , ( FormatFeatureFlags :: COLOR_ATTACHMENT . 0 , "COLOR_ATTACHMENT" ) , ( FormatFeatureFlags :: COLOR_ATTACHMENT_BLEND . 0 , "COLOR_ATTACHMENT_BLEND" ) , ( FormatFeatureFlags :: DEPTH_STENCIL_ATTACHMENT . 0 , "DEPTH_STENCIL_ATTACHMENT" ) , ( FormatFeatureFlags :: BLIT_SRC . 0 , "BLIT_SRC" ) , ( FormatFeatureFlags :: BLIT_DST . 0 , "BLIT_DST" ) , ( FormatFeatureFlags :: SAMPLED_IMAGE_FILTER_LINEAR . 0 , "SAMPLED_IMAGE_FILTER_LINEAR" ) , ( FormatFeatureFlags :: SAMPLED_IMAGE_FILTER_CUBIC_IMG . 0 , "SAMPLED_IMAGE_FILTER_CUBIC_IMG" ) , ( FormatFeatureFlags :: SAMPLED_IMAGE_FILTER_MINMAX_EXT . 0 , "SAMPLED_IMAGE_FILTER_MINMAX_EXT" ) , ( FormatFeatureFlags :: RESERVED_24_EXT . 0 , "RESERVED_24_EXT" ) , ( FormatFeatureFlags :: TRANSFER_SRC . 0 , "TRANSFER_SRC" ) , ( FormatFeatureFlags :: TRANSFER_DST . 0 , "TRANSFER_DST" ) , ( FormatFeatureFlags :: MIDPOINT_CHROMA_SAMPLES . 0 , "MIDPOINT_CHROMA_SAMPLES" ) , ( FormatFeatureFlags :: SAMPLED_IMAGE_YCBCR_CONVERSION_LINEAR_FILTER . 0 , "SAMPLED_IMAGE_YCBCR_CONVERSION_LINEAR_FILTER" ) , ( FormatFeatureFlags :: SAMPLED_IMAGE_YCBCR_CONVERSION_SEPARATE_RECONSTRUCTION_FILTER . 0 , "SAMPLED_IMAGE_YCBCR_CONVERSION_SEPARATE_RECONSTRUCTION_FILTER" ) , ( FormatFeatureFlags :: SAMPLED_IMAGE_YCBCR_CONVERSION_CHROMA_RECONSTRUCTION_EXPLICIT . 0 , "SAMPLED_IMAGE_YCBCR_CONVERSION_CHROMA_RECONSTRUCTION_EXPLICIT" ) , ( FormatFeatureFlags :: SAMPLED_IMAGE_YCBCR_CONVERSION_CHROMA_RECONSTRUCTION_EXPLICIT_FORCEABLE . 0 , "SAMPLED_IMAGE_YCBCR_CONVERSION_CHROMA_RECONSTRUCTION_EXPLICIT_FORCEABLE" ) , ( FormatFeatureFlags :: DISJOINT . 0 , "DISJOINT" ) , ( FormatFeatureFlags :: COSITED_CHROMA_SAMPLES . 0 , "COSITED_CHROMA_SAMPLES" ) ] ;
-        display_flags(f, KNOWN, self.0)
-    }
-}
-impl fmt::Display for SharingMode {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        let name = match *self {
-            Self::EXCLUSIVE => Some("EXCLUSIVE"),
-            Self::CONCURRENT => Some("CONCURRENT"),
-            _ => None,
-        };
-        if let Some(x) = name {
-            f.write_str(x)
-        } else {
-            write!(f, "{}", self.0)
-        }
-    }
-}
-impl fmt::Display for DeviceEventTypeEXT {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        let name = match *self {
-            Self::DISPLAY_HOTPLUG => Some("DISPLAY_HOTPLUG"),
-            _ => None,
-        };
-        if let Some(x) = name {
-            f.write_str(x)
-        } else {
-            write!(f, "{}", self.0)
-        }
-    }
-}
-impl fmt::Display for LogicOp {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        let name = match *self {
-            Self::CLEAR => Some("CLEAR"),
-            Self::AND => Some("AND"),
-            Self::AND_REVERSE => Some("AND_REVERSE"),
-            Self::COPY => Some("COPY"),
-            Self::AND_INVERTED => Some("AND_INVERTED"),
-            Self::NO_OP => Some("NO_OP"),
-            Self::XOR => Some("XOR"),
-            Self::OR => Some("OR"),
-            Self::NOR => Some("NOR"),
-            Self::EQUIVALENT => Some("EQUIVALENT"),
-            Self::INVERT => Some("INVERT"),
-            Self::OR_REVERSE => Some("OR_REVERSE"),
-            Self::COPY_INVERTED => Some("COPY_INVERTED"),
-            Self::OR_INVERTED => Some("OR_INVERTED"),
-            Self::NAND => Some("NAND"),
-            Self::SET => Some("SET"),
-            _ => None,
-        };
-        if let Some(x) = name {
-            f.write_str(x)
-        } else {
-            write!(f, "{}", self.0)
-        }
     }
 }
 impl fmt::Display for BlendOp {
@@ -54529,6 +54727,1379 @@ impl fmt::Display for BlendOp {
         } else {
             write!(f, "{}", self.0)
         }
+    }
+}
+impl fmt::Display for ImageType {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        let name = match *self {
+            Self::TYPE_1D => Some("TYPE_1D"),
+            Self::TYPE_2D => Some("TYPE_2D"),
+            Self::TYPE_3D => Some("TYPE_3D"),
+            _ => None,
+        };
+        if let Some(x) = name {
+            f.write_str(x)
+        } else {
+            write!(f, "{}", self.0)
+        }
+    }
+}
+impl fmt::Display for MemoryHeapFlags {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        const KNOWN: &[(Flags, &str)] = &[
+            (MemoryHeapFlags::DEVICE_LOCAL.0, "DEVICE_LOCAL"),
+            (MemoryHeapFlags::MULTI_INSTANCE.0, "MULTI_INSTANCE"),
+        ];
+        display_flags(f, KNOWN, self.0)
+    }
+}
+impl fmt::Display for AttachmentDescriptionFlags {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        const KNOWN: &[(Flags, &str)] = &[(AttachmentDescriptionFlags::MAY_ALIAS.0, "MAY_ALIAS")];
+        display_flags(f, KNOWN, self.0)
+    }
+}
+impl fmt::Display for SurfaceTransformFlagsKHR {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        const KNOWN: &[(Flags, &str)] = &[
+            (SurfaceTransformFlagsKHR::IDENTITY.0, "IDENTITY"),
+            (SurfaceTransformFlagsKHR::ROTATE_90.0, "ROTATE_90"),
+            (SurfaceTransformFlagsKHR::ROTATE_180.0, "ROTATE_180"),
+            (SurfaceTransformFlagsKHR::ROTATE_270.0, "ROTATE_270"),
+            (
+                SurfaceTransformFlagsKHR::HORIZONTAL_MIRROR.0,
+                "HORIZONTAL_MIRROR",
+            ),
+            (
+                SurfaceTransformFlagsKHR::HORIZONTAL_MIRROR_ROTATE_90.0,
+                "HORIZONTAL_MIRROR_ROTATE_90",
+            ),
+            (
+                SurfaceTransformFlagsKHR::HORIZONTAL_MIRROR_ROTATE_180.0,
+                "HORIZONTAL_MIRROR_ROTATE_180",
+            ),
+            (
+                SurfaceTransformFlagsKHR::HORIZONTAL_MIRROR_ROTATE_270.0,
+                "HORIZONTAL_MIRROR_ROTATE_270",
+            ),
+            (SurfaceTransformFlagsKHR::INHERIT.0, "INHERIT"),
+        ];
+        display_flags(f, KNOWN, self.0)
+    }
+}
+impl fmt::Display for DescriptorUpdateTemplateType {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        let name = match *self {
+            Self::DESCRIPTOR_SET => Some("DESCRIPTOR_SET"),
+            _ => None,
+        };
+        if let Some(x) = name {
+            f.write_str(x)
+        } else {
+            write!(f, "{}", self.0)
+        }
+    }
+}
+impl fmt::Display for QueryPipelineStatisticFlags {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        const KNOWN: &[(Flags, &str)] = &[
+            (
+                QueryPipelineStatisticFlags::INPUT_ASSEMBLY_VERTICES.0,
+                "INPUT_ASSEMBLY_VERTICES",
+            ),
+            (
+                QueryPipelineStatisticFlags::INPUT_ASSEMBLY_PRIMITIVES.0,
+                "INPUT_ASSEMBLY_PRIMITIVES",
+            ),
+            (
+                QueryPipelineStatisticFlags::VERTEX_SHADER_INVOCATIONS.0,
+                "VERTEX_SHADER_INVOCATIONS",
+            ),
+            (
+                QueryPipelineStatisticFlags::GEOMETRY_SHADER_INVOCATIONS.0,
+                "GEOMETRY_SHADER_INVOCATIONS",
+            ),
+            (
+                QueryPipelineStatisticFlags::GEOMETRY_SHADER_PRIMITIVES.0,
+                "GEOMETRY_SHADER_PRIMITIVES",
+            ),
+            (
+                QueryPipelineStatisticFlags::CLIPPING_INVOCATIONS.0,
+                "CLIPPING_INVOCATIONS",
+            ),
+            (
+                QueryPipelineStatisticFlags::CLIPPING_PRIMITIVES.0,
+                "CLIPPING_PRIMITIVES",
+            ),
+            (
+                QueryPipelineStatisticFlags::FRAGMENT_SHADER_INVOCATIONS.0,
+                "FRAGMENT_SHADER_INVOCATIONS",
+            ),
+            (
+                QueryPipelineStatisticFlags::TESSELLATION_CONTROL_SHADER_PATCHES.0,
+                "TESSELLATION_CONTROL_SHADER_PATCHES",
+            ),
+            (
+                QueryPipelineStatisticFlags::TESSELLATION_EVALUATION_SHADER_INVOCATIONS.0,
+                "TESSELLATION_EVALUATION_SHADER_INVOCATIONS",
+            ),
+            (
+                QueryPipelineStatisticFlags::COMPUTE_SHADER_INVOCATIONS.0,
+                "COMPUTE_SHADER_INVOCATIONS",
+            ),
+        ];
+        display_flags(f, KNOWN, self.0)
+    }
+}
+impl fmt::Display for SubpassDescriptionFlags {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        const KNOWN: &[(Flags, &str)] = &[
+            (
+                SubpassDescriptionFlags::PER_VIEW_ATTRIBUTES_NVX.0,
+                "PER_VIEW_ATTRIBUTES_NVX",
+            ),
+            (
+                SubpassDescriptionFlags::PER_VIEW_POSITION_X_ONLY_NVX.0,
+                "PER_VIEW_POSITION_X_ONLY_NVX",
+            ),
+        ];
+        display_flags(f, KNOWN, self.0)
+    }
+}
+impl fmt::Display for SparseMemoryBindFlags {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        const KNOWN: &[(Flags, &str)] = &[(SparseMemoryBindFlags::METADATA.0, "METADATA")];
+        display_flags(f, KNOWN, self.0)
+    }
+}
+impl fmt::Display for ObjectEntryTypeNVX {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        let name = match *self {
+            Self::DESCRIPTOR_SET => Some("DESCRIPTOR_SET"),
+            Self::PIPELINE => Some("PIPELINE"),
+            Self::INDEX_BUFFER => Some("INDEX_BUFFER"),
+            Self::VERTEX_BUFFER => Some("VERTEX_BUFFER"),
+            Self::PUSH_CONSTANT => Some("PUSH_CONSTANT"),
+            _ => None,
+        };
+        if let Some(x) = name {
+            f.write_str(x)
+        } else {
+            write!(f, "{}", self.0)
+        }
+    }
+}
+impl fmt::Display for MemoryAllocateFlags {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        const KNOWN: &[(Flags, &str)] = &[(MemoryAllocateFlags::DEVICE_MASK.0, "DEVICE_MASK")];
+        display_flags(f, KNOWN, self.0)
+    }
+}
+impl fmt::Display for DescriptorType {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        let name = match *self {
+            Self::SAMPLER => Some("SAMPLER"),
+            Self::COMBINED_IMAGE_SAMPLER => Some("COMBINED_IMAGE_SAMPLER"),
+            Self::SAMPLED_IMAGE => Some("SAMPLED_IMAGE"),
+            Self::STORAGE_IMAGE => Some("STORAGE_IMAGE"),
+            Self::UNIFORM_TEXEL_BUFFER => Some("UNIFORM_TEXEL_BUFFER"),
+            Self::STORAGE_TEXEL_BUFFER => Some("STORAGE_TEXEL_BUFFER"),
+            Self::UNIFORM_BUFFER => Some("UNIFORM_BUFFER"),
+            Self::STORAGE_BUFFER => Some("STORAGE_BUFFER"),
+            Self::UNIFORM_BUFFER_DYNAMIC => Some("UNIFORM_BUFFER_DYNAMIC"),
+            Self::STORAGE_BUFFER_DYNAMIC => Some("STORAGE_BUFFER_DYNAMIC"),
+            Self::INPUT_ATTACHMENT => Some("INPUT_ATTACHMENT"),
+            Self::INLINE_UNIFORM_BLOCK_EXT => Some("INLINE_UNIFORM_BLOCK_EXT"),
+            Self::ACCELERATION_STRUCTURE_NV => Some("ACCELERATION_STRUCTURE_NV"),
+            _ => None,
+        };
+        if let Some(x) = name {
+            f.write_str(x)
+        } else {
+            write!(f, "{}", self.0)
+        }
+    }
+}
+impl fmt::Display for ColorSpaceKHR {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        let name = match *self {
+            Self::SRGB_NONLINEAR => Some("SRGB_NONLINEAR"),
+            Self::DISPLAY_P3_NONLINEAR_EXT => Some("DISPLAY_P3_NONLINEAR_EXT"),
+            Self::EXTENDED_SRGB_LINEAR_EXT => Some("EXTENDED_SRGB_LINEAR_EXT"),
+            Self::DCI_P3_LINEAR_EXT => Some("DCI_P3_LINEAR_EXT"),
+            Self::DCI_P3_NONLINEAR_EXT => Some("DCI_P3_NONLINEAR_EXT"),
+            Self::BT709_LINEAR_EXT => Some("BT709_LINEAR_EXT"),
+            Self::BT709_NONLINEAR_EXT => Some("BT709_NONLINEAR_EXT"),
+            Self::BT2020_LINEAR_EXT => Some("BT2020_LINEAR_EXT"),
+            Self::HDR10_ST2084_EXT => Some("HDR10_ST2084_EXT"),
+            Self::DOLBYVISION_EXT => Some("DOLBYVISION_EXT"),
+            Self::HDR10_HLG_EXT => Some("HDR10_HLG_EXT"),
+            Self::ADOBERGB_LINEAR_EXT => Some("ADOBERGB_LINEAR_EXT"),
+            Self::ADOBERGB_NONLINEAR_EXT => Some("ADOBERGB_NONLINEAR_EXT"),
+            Self::PASS_THROUGH_EXT => Some("PASS_THROUGH_EXT"),
+            Self::EXTENDED_SRGB_NONLINEAR_EXT => Some("EXTENDED_SRGB_NONLINEAR_EXT"),
+            _ => None,
+        };
+        if let Some(x) = name {
+            f.write_str(x)
+        } else {
+            write!(f, "{}", self.0)
+        }
+    }
+}
+impl fmt::Display for SharingMode {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        let name = match *self {
+            Self::EXCLUSIVE => Some("EXCLUSIVE"),
+            Self::CONCURRENT => Some("CONCURRENT"),
+            _ => None,
+        };
+        if let Some(x) = name {
+            f.write_str(x)
+        } else {
+            write!(f, "{}", self.0)
+        }
+    }
+}
+impl fmt::Display for ExternalFenceFeatureFlags {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        const KNOWN: &[(Flags, &str)] = &[
+            (
+                ExternalFenceFeatureFlags::EXTERNAL_FENCE_FEATURE_EXPORTABLE.0,
+                "EXTERNAL_FENCE_FEATURE_EXPORTABLE",
+            ),
+            (
+                ExternalFenceFeatureFlags::EXTERNAL_FENCE_FEATURE_IMPORTABLE.0,
+                "EXTERNAL_FENCE_FEATURE_IMPORTABLE",
+            ),
+        ];
+        display_flags(f, KNOWN, self.0)
+    }
+}
+impl fmt::Display for VertexInputRate {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        let name = match *self {
+            Self::VERTEX => Some("VERTEX"),
+            Self::INSTANCE => Some("INSTANCE"),
+            _ => None,
+        };
+        if let Some(x) = name {
+            f.write_str(x)
+        } else {
+            write!(f, "{}", self.0)
+        }
+    }
+}
+impl fmt::Display for DebugReportObjectTypeEXT {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        let name = match *self {
+            Self::UNKNOWN => Some("UNKNOWN"),
+            Self::INSTANCE => Some("INSTANCE"),
+            Self::PHYSICAL_DEVICE => Some("PHYSICAL_DEVICE"),
+            Self::DEVICE => Some("DEVICE"),
+            Self::QUEUE => Some("QUEUE"),
+            Self::SEMAPHORE => Some("SEMAPHORE"),
+            Self::COMMAND_BUFFER => Some("COMMAND_BUFFER"),
+            Self::FENCE => Some("FENCE"),
+            Self::DEVICE_MEMORY => Some("DEVICE_MEMORY"),
+            Self::BUFFER => Some("BUFFER"),
+            Self::IMAGE => Some("IMAGE"),
+            Self::EVENT => Some("EVENT"),
+            Self::QUERY_POOL => Some("QUERY_POOL"),
+            Self::BUFFER_VIEW => Some("BUFFER_VIEW"),
+            Self::IMAGE_VIEW => Some("IMAGE_VIEW"),
+            Self::SHADER_MODULE => Some("SHADER_MODULE"),
+            Self::PIPELINE_CACHE => Some("PIPELINE_CACHE"),
+            Self::PIPELINE_LAYOUT => Some("PIPELINE_LAYOUT"),
+            Self::RENDER_PASS => Some("RENDER_PASS"),
+            Self::PIPELINE => Some("PIPELINE"),
+            Self::DESCRIPTOR_SET_LAYOUT => Some("DESCRIPTOR_SET_LAYOUT"),
+            Self::SAMPLER => Some("SAMPLER"),
+            Self::DESCRIPTOR_POOL => Some("DESCRIPTOR_POOL"),
+            Self::DESCRIPTOR_SET => Some("DESCRIPTOR_SET"),
+            Self::FRAMEBUFFER => Some("FRAMEBUFFER"),
+            Self::COMMAND_POOL => Some("COMMAND_POOL"),
+            Self::SURFACE_KHR => Some("SURFACE_KHR"),
+            Self::SWAPCHAIN_KHR => Some("SWAPCHAIN_KHR"),
+            Self::DEBUG_REPORT_CALLBACK => Some("DEBUG_REPORT_CALLBACK"),
+            Self::DISPLAY_KHR => Some("DISPLAY_KHR"),
+            Self::DISPLAY_MODE_KHR => Some("DISPLAY_MODE_KHR"),
+            Self::OBJECT_TABLE_NVX => Some("OBJECT_TABLE_NVX"),
+            Self::INDIRECT_COMMANDS_LAYOUT_NVX => Some("INDIRECT_COMMANDS_LAYOUT_NVX"),
+            Self::VALIDATION_CACHE => Some("VALIDATION_CACHE"),
+            Self::SAMPLER_YCBCR_CONVERSION => Some("SAMPLER_YCBCR_CONVERSION"),
+            Self::DESCRIPTOR_UPDATE_TEMPLATE => Some("DESCRIPTOR_UPDATE_TEMPLATE"),
+            Self::ACCELERATION_STRUCTURE_NV => Some("ACCELERATION_STRUCTURE_NV"),
+            _ => None,
+        };
+        if let Some(x) = name {
+            f.write_str(x)
+        } else {
+            write!(f, "{}", self.0)
+        }
+    }
+}
+impl fmt::Display for SamplerYcbcrModelConversion {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        let name = match *self {
+            Self::RGB_IDENTITY => Some("RGB_IDENTITY"),
+            Self::YCBCR_IDENTITY => Some("YCBCR_IDENTITY"),
+            Self::YCBCR_709 => Some("YCBCR_709"),
+            Self::YCBCR_601 => Some("YCBCR_601"),
+            Self::YCBCR_2020 => Some("YCBCR_2020"),
+            _ => None,
+        };
+        if let Some(x) = name {
+            f.write_str(x)
+        } else {
+            write!(f, "{}", self.0)
+        }
+    }
+}
+impl fmt::Display for DescriptorSetLayoutCreateFlags {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        const KNOWN: &[(Flags, &str)] = &[
+            (
+                DescriptorSetLayoutCreateFlags::PUSH_DESCRIPTOR_KHR.0,
+                "PUSH_DESCRIPTOR_KHR",
+            ),
+            (
+                DescriptorSetLayoutCreateFlags::UPDATE_AFTER_BIND_POOL_EXT.0,
+                "UPDATE_AFTER_BIND_POOL_EXT",
+            ),
+        ];
+        display_flags(f, KNOWN, self.0)
+    }
+}
+impl fmt::Display for DisplayEventTypeEXT {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        let name = match *self {
+            Self::FIRST_PIXEL_OUT => Some("FIRST_PIXEL_OUT"),
+            _ => None,
+        };
+        if let Some(x) = name {
+            f.write_str(x)
+        } else {
+            write!(f, "{}", self.0)
+        }
+    }
+}
+impl fmt::Display for BlendOverlapEXT {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        let name = match *self {
+            Self::UNCORRELATED => Some("UNCORRELATED"),
+            Self::DISJOINT => Some("DISJOINT"),
+            Self::CONJOINT => Some("CONJOINT"),
+            _ => None,
+        };
+        if let Some(x) = name {
+            f.write_str(x)
+        } else {
+            write!(f, "{}", self.0)
+        }
+    }
+}
+impl fmt::Display for ChromaLocation {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        let name = match *self {
+            Self::COSITED_EVEN => Some("COSITED_EVEN"),
+            Self::MIDPOINT => Some("MIDPOINT"),
+            _ => None,
+        };
+        if let Some(x) = name {
+            f.write_str(x)
+        } else {
+            write!(f, "{}", self.0)
+        }
+    }
+}
+impl fmt::Display for ViewportCoordinateSwizzleNV {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        let name = match *self {
+            Self::POSITIVE_X => Some("POSITIVE_X"),
+            Self::NEGATIVE_X => Some("NEGATIVE_X"),
+            Self::POSITIVE_Y => Some("POSITIVE_Y"),
+            Self::NEGATIVE_Y => Some("NEGATIVE_Y"),
+            Self::POSITIVE_Z => Some("POSITIVE_Z"),
+            Self::NEGATIVE_Z => Some("NEGATIVE_Z"),
+            Self::POSITIVE_W => Some("POSITIVE_W"),
+            Self::NEGATIVE_W => Some("NEGATIVE_W"),
+            _ => None,
+        };
+        if let Some(x) = name {
+            f.write_str(x)
+        } else {
+            write!(f, "{}", self.0)
+        }
+    }
+}
+impl fmt::Display for RenderPassCreateFlags {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        const KNOWN: &[(Flags, &str)] =
+            &[(RenderPassCreateFlags::RESERVED_0_KHR.0, "RESERVED_0_KHR")];
+        display_flags(f, KNOWN, self.0)
+    }
+}
+impl fmt::Display for ImageViewType {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        let name = match *self {
+            Self::TYPE_1D => Some("TYPE_1D"),
+            Self::TYPE_2D => Some("TYPE_2D"),
+            Self::TYPE_3D => Some("TYPE_3D"),
+            Self::CUBE => Some("CUBE"),
+            Self::TYPE_1D_ARRAY => Some("TYPE_1D_ARRAY"),
+            Self::TYPE_2D_ARRAY => Some("TYPE_2D_ARRAY"),
+            Self::CUBE_ARRAY => Some("CUBE_ARRAY"),
+            _ => None,
+        };
+        if let Some(x) = name {
+            f.write_str(x)
+        } else {
+            write!(f, "{}", self.0)
+        }
+    }
+}
+impl fmt::Display for PipelineCacheHeaderVersion {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        let name = match *self {
+            Self::ONE => Some("ONE"),
+            _ => None,
+        };
+        if let Some(x) = name {
+            f.write_str(x)
+        } else {
+            write!(f, "{}", self.0)
+        }
+    }
+}
+impl fmt::Display for SystemAllocationScope {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        let name = match *self {
+            Self::COMMAND => Some("COMMAND"),
+            Self::OBJECT => Some("OBJECT"),
+            Self::CACHE => Some("CACHE"),
+            Self::DEVICE => Some("DEVICE"),
+            Self::INSTANCE => Some("INSTANCE"),
+            _ => None,
+        };
+        if let Some(x) = name {
+            f.write_str(x)
+        } else {
+            write!(f, "{}", self.0)
+        }
+    }
+}
+impl fmt::Display for ExternalSemaphoreHandleTypeFlags {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        const KNOWN: &[(Flags, &str)] = &[
+            (
+                ExternalSemaphoreHandleTypeFlags::EXTERNAL_SEMAPHORE_HANDLE_TYPE_OPAQUE_FD.0,
+                "EXTERNAL_SEMAPHORE_HANDLE_TYPE_OPAQUE_FD",
+            ),
+            (
+                ExternalSemaphoreHandleTypeFlags::EXTERNAL_SEMAPHORE_HANDLE_TYPE_OPAQUE_WIN32.0,
+                "EXTERNAL_SEMAPHORE_HANDLE_TYPE_OPAQUE_WIN32",
+            ),
+            (
+                ExternalSemaphoreHandleTypeFlags::EXTERNAL_SEMAPHORE_HANDLE_TYPE_OPAQUE_WIN32_KMT.0,
+                "EXTERNAL_SEMAPHORE_HANDLE_TYPE_OPAQUE_WIN32_KMT",
+            ),
+            (
+                ExternalSemaphoreHandleTypeFlags::EXTERNAL_SEMAPHORE_HANDLE_TYPE_D3D12_FENCE.0,
+                "EXTERNAL_SEMAPHORE_HANDLE_TYPE_D3D12_FENCE",
+            ),
+            (
+                ExternalSemaphoreHandleTypeFlags::EXTERNAL_SEMAPHORE_HANDLE_TYPE_SYNC_FD.0,
+                "EXTERNAL_SEMAPHORE_HANDLE_TYPE_SYNC_FD",
+            ),
+        ];
+        display_flags(f, KNOWN, self.0)
+    }
+}
+impl fmt::Display for CullModeFlags {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        const KNOWN: &[(Flags, &str)] = &[
+            (CullModeFlags::NONE.0, "NONE"),
+            (CullModeFlags::FRONT.0, "FRONT"),
+            (CullModeFlags::BACK.0, "BACK"),
+            (CullModeFlags::FRONT_AND_BACK.0, "FRONT_AND_BACK"),
+        ];
+        display_flags(f, KNOWN, self.0)
+    }
+}
+impl fmt::Display for ShaderStageFlags {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        const KNOWN: &[(Flags, &str)] = &[
+            (ShaderStageFlags::VERTEX.0, "VERTEX"),
+            (
+                ShaderStageFlags::TESSELLATION_CONTROL.0,
+                "TESSELLATION_CONTROL",
+            ),
+            (
+                ShaderStageFlags::TESSELLATION_EVALUATION.0,
+                "TESSELLATION_EVALUATION",
+            ),
+            (ShaderStageFlags::GEOMETRY.0, "GEOMETRY"),
+            (ShaderStageFlags::FRAGMENT.0, "FRAGMENT"),
+            (ShaderStageFlags::COMPUTE.0, "COMPUTE"),
+            (ShaderStageFlags::ALL_GRAPHICS.0, "ALL_GRAPHICS"),
+            (ShaderStageFlags::ALL.0, "ALL"),
+            (ShaderStageFlags::RAYGEN_NV.0, "RAYGEN_NV"),
+            (ShaderStageFlags::ANY_HIT_NV.0, "ANY_HIT_NV"),
+            (ShaderStageFlags::CLOSEST_HIT_NV.0, "CLOSEST_HIT_NV"),
+            (ShaderStageFlags::MISS_NV.0, "MISS_NV"),
+            (ShaderStageFlags::INTERSECTION_NV.0, "INTERSECTION_NV"),
+            (ShaderStageFlags::CALLABLE_NV.0, "CALLABLE_NV"),
+            (ShaderStageFlags::TASK_NV.0, "TASK_NV"),
+            (ShaderStageFlags::MESH_NV.0, "MESH_NV"),
+        ];
+        display_flags(f, KNOWN, self.0)
+    }
+}
+impl fmt::Display for DescriptorPoolCreateFlags {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        const KNOWN: &[(Flags, &str)] = &[
+            (
+                DescriptorPoolCreateFlags::FREE_DESCRIPTOR_SET.0,
+                "FREE_DESCRIPTOR_SET",
+            ),
+            (
+                DescriptorPoolCreateFlags::UPDATE_AFTER_BIND_EXT.0,
+                "UPDATE_AFTER_BIND_EXT",
+            ),
+        ];
+        display_flags(f, KNOWN, self.0)
+    }
+}
+impl fmt::Display for TessellationDomainOrigin {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        let name = match *self {
+            Self::UPPER_LEFT => Some("UPPER_LEFT"),
+            Self::LOWER_LEFT => Some("LOWER_LEFT"),
+            _ => None,
+        };
+        if let Some(x) = name {
+            f.write_str(x)
+        } else {
+            write!(f, "{}", self.0)
+        }
+    }
+}
+impl fmt::Display for ObjectType {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        let name = match *self {
+            Self::UNKNOWN => Some("UNKNOWN"),
+            Self::INSTANCE => Some("INSTANCE"),
+            Self::PHYSICAL_DEVICE => Some("PHYSICAL_DEVICE"),
+            Self::DEVICE => Some("DEVICE"),
+            Self::QUEUE => Some("QUEUE"),
+            Self::SEMAPHORE => Some("SEMAPHORE"),
+            Self::COMMAND_BUFFER => Some("COMMAND_BUFFER"),
+            Self::FENCE => Some("FENCE"),
+            Self::DEVICE_MEMORY => Some("DEVICE_MEMORY"),
+            Self::BUFFER => Some("BUFFER"),
+            Self::IMAGE => Some("IMAGE"),
+            Self::EVENT => Some("EVENT"),
+            Self::QUERY_POOL => Some("QUERY_POOL"),
+            Self::BUFFER_VIEW => Some("BUFFER_VIEW"),
+            Self::IMAGE_VIEW => Some("IMAGE_VIEW"),
+            Self::SHADER_MODULE => Some("SHADER_MODULE"),
+            Self::PIPELINE_CACHE => Some("PIPELINE_CACHE"),
+            Self::PIPELINE_LAYOUT => Some("PIPELINE_LAYOUT"),
+            Self::RENDER_PASS => Some("RENDER_PASS"),
+            Self::PIPELINE => Some("PIPELINE"),
+            Self::DESCRIPTOR_SET_LAYOUT => Some("DESCRIPTOR_SET_LAYOUT"),
+            Self::SAMPLER => Some("SAMPLER"),
+            Self::DESCRIPTOR_POOL => Some("DESCRIPTOR_POOL"),
+            Self::DESCRIPTOR_SET => Some("DESCRIPTOR_SET"),
+            Self::FRAMEBUFFER => Some("FRAMEBUFFER"),
+            Self::COMMAND_POOL => Some("COMMAND_POOL"),
+            Self::SURFACE_KHR => Some("SURFACE_KHR"),
+            Self::SWAPCHAIN_KHR => Some("SWAPCHAIN_KHR"),
+            Self::DISPLAY_KHR => Some("DISPLAY_KHR"),
+            Self::DISPLAY_MODE_KHR => Some("DISPLAY_MODE_KHR"),
+            Self::DEBUG_REPORT_CALLBACK_EXT => Some("DEBUG_REPORT_CALLBACK_EXT"),
+            Self::OBJECT_TABLE_NVX => Some("OBJECT_TABLE_NVX"),
+            Self::INDIRECT_COMMANDS_LAYOUT_NVX => Some("INDIRECT_COMMANDS_LAYOUT_NVX"),
+            Self::DEBUG_UTILS_MESSENGER_EXT => Some("DEBUG_UTILS_MESSENGER_EXT"),
+            Self::VALIDATION_CACHE_EXT => Some("VALIDATION_CACHE_EXT"),
+            Self::ACCELERATION_STRUCTURE_NV => Some("ACCELERATION_STRUCTURE_NV"),
+            Self::SAMPLER_YCBCR_CONVERSION => Some("SAMPLER_YCBCR_CONVERSION"),
+            Self::DESCRIPTOR_UPDATE_TEMPLATE => Some("DESCRIPTOR_UPDATE_TEMPLATE"),
+            _ => None,
+        };
+        if let Some(x) = name {
+            f.write_str(x)
+        } else {
+            write!(f, "{}", self.0)
+        }
+    }
+}
+impl fmt::Display for PointClippingBehavior {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        let name = match *self {
+            Self::ALL_CLIP_PLANES => Some("ALL_CLIP_PLANES"),
+            Self::USER_CLIP_PLANES_ONLY => Some("USER_CLIP_PLANES_ONLY"),
+            _ => None,
+        };
+        if let Some(x) = name {
+            f.write_str(x)
+        } else {
+            write!(f, "{}", self.0)
+        }
+    }
+}
+impl fmt::Display for SamplerYcbcrRange {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        let name = match *self {
+            Self::ITU_FULL => Some("ITU_FULL"),
+            Self::ITU_NARROW => Some("ITU_NARROW"),
+            _ => None,
+        };
+        if let Some(x) = name {
+            f.write_str(x)
+        } else {
+            write!(f, "{}", self.0)
+        }
+    }
+}
+impl fmt::Display for ImageAspectFlags {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        const KNOWN: &[(Flags, &str)] = &[
+            (ImageAspectFlags::COLOR.0, "COLOR"),
+            (ImageAspectFlags::DEPTH.0, "DEPTH"),
+            (ImageAspectFlags::STENCIL.0, "STENCIL"),
+            (ImageAspectFlags::METADATA.0, "METADATA"),
+            (ImageAspectFlags::MEMORY_PLANE_0_EXT.0, "MEMORY_PLANE_0_EXT"),
+            (ImageAspectFlags::MEMORY_PLANE_1_EXT.0, "MEMORY_PLANE_1_EXT"),
+            (ImageAspectFlags::MEMORY_PLANE_2_EXT.0, "MEMORY_PLANE_2_EXT"),
+            (ImageAspectFlags::MEMORY_PLANE_3_EXT.0, "MEMORY_PLANE_3_EXT"),
+            (ImageAspectFlags::PLANE_0.0, "PLANE_0"),
+            (ImageAspectFlags::PLANE_1.0, "PLANE_1"),
+            (ImageAspectFlags::PLANE_2.0, "PLANE_2"),
+        ];
+        display_flags(f, KNOWN, self.0)
+    }
+}
+impl fmt::Display for SurfaceCounterFlagsEXT {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        const KNOWN: &[(Flags, &str)] = &[(SurfaceCounterFlagsEXT::VBLANK.0, "VBLANK")];
+        display_flags(f, KNOWN, self.0)
+    }
+}
+impl fmt::Display for CommandBufferUsageFlags {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        const KNOWN: &[(Flags, &str)] = &[
+            (
+                CommandBufferUsageFlags::ONE_TIME_SUBMIT.0,
+                "ONE_TIME_SUBMIT",
+            ),
+            (
+                CommandBufferUsageFlags::RENDER_PASS_CONTINUE.0,
+                "RENDER_PASS_CONTINUE",
+            ),
+            (
+                CommandBufferUsageFlags::SIMULTANEOUS_USE.0,
+                "SIMULTANEOUS_USE",
+            ),
+        ];
+        display_flags(f, KNOWN, self.0)
+    }
+}
+impl fmt::Display for SampleCountFlags {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        const KNOWN: &[(Flags, &str)] = &[
+            (SampleCountFlags::TYPE_1.0, "TYPE_1"),
+            (SampleCountFlags::TYPE_2.0, "TYPE_2"),
+            (SampleCountFlags::TYPE_4.0, "TYPE_4"),
+            (SampleCountFlags::TYPE_8.0, "TYPE_8"),
+            (SampleCountFlags::TYPE_16.0, "TYPE_16"),
+            (SampleCountFlags::TYPE_32.0, "TYPE_32"),
+            (SampleCountFlags::TYPE_64.0, "TYPE_64"),
+        ];
+        display_flags(f, KNOWN, self.0)
+    }
+}
+impl fmt::Display for LogicOp {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        let name = match *self {
+            Self::CLEAR => Some("CLEAR"),
+            Self::AND => Some("AND"),
+            Self::AND_REVERSE => Some("AND_REVERSE"),
+            Self::COPY => Some("COPY"),
+            Self::AND_INVERTED => Some("AND_INVERTED"),
+            Self::NO_OP => Some("NO_OP"),
+            Self::XOR => Some("XOR"),
+            Self::OR => Some("OR"),
+            Self::NOR => Some("NOR"),
+            Self::EQUIVALENT => Some("EQUIVALENT"),
+            Self::INVERT => Some("INVERT"),
+            Self::OR_REVERSE => Some("OR_REVERSE"),
+            Self::COPY_INVERTED => Some("COPY_INVERTED"),
+            Self::OR_INVERTED => Some("OR_INVERTED"),
+            Self::NAND => Some("NAND"),
+            Self::SET => Some("SET"),
+            _ => None,
+        };
+        if let Some(x) = name {
+            f.write_str(x)
+        } else {
+            write!(f, "{}", self.0)
+        }
+    }
+}
+impl fmt::Display for AttachmentLoadOp {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        let name = match *self {
+            Self::LOAD => Some("LOAD"),
+            Self::CLEAR => Some("CLEAR"),
+            Self::DONT_CARE => Some("DONT_CARE"),
+            _ => None,
+        };
+        if let Some(x) = name {
+            f.write_str(x)
+        } else {
+            write!(f, "{}", self.0)
+        }
+    }
+}
+impl fmt::Display for PhysicalDeviceType {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        let name = match *self {
+            Self::OTHER => Some("OTHER"),
+            Self::INTEGRATED_GPU => Some("INTEGRATED_GPU"),
+            Self::DISCRETE_GPU => Some("DISCRETE_GPU"),
+            Self::VIRTUAL_GPU => Some("VIRTUAL_GPU"),
+            Self::CPU => Some("CPU"),
+            _ => None,
+        };
+        if let Some(x) = name {
+            f.write_str(x)
+        } else {
+            write!(f, "{}", self.0)
+        }
+    }
+}
+impl fmt::Display for IndirectCommandsTokenTypeNVX {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        let name = match *self {
+            Self::PIPELINE => Some("PIPELINE"),
+            Self::DESCRIPTOR_SET => Some("DESCRIPTOR_SET"),
+            Self::INDEX_BUFFER => Some("INDEX_BUFFER"),
+            Self::VERTEX_BUFFER => Some("VERTEX_BUFFER"),
+            Self::PUSH_CONSTANT => Some("PUSH_CONSTANT"),
+            Self::DRAW_INDEXED => Some("DRAW_INDEXED"),
+            Self::DRAW => Some("DRAW"),
+            Self::DISPATCH => Some("DISPATCH"),
+            _ => None,
+        };
+        if let Some(x) = name {
+            f.write_str(x)
+        } else {
+            write!(f, "{}", self.0)
+        }
+    }
+}
+impl fmt::Display for DeviceQueueCreateFlags {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        const KNOWN: &[(Flags, &str)] = &[(DeviceQueueCreateFlags::PROTECTED.0, "PROTECTED")];
+        display_flags(f, KNOWN, self.0)
+    }
+}
+impl fmt::Display for VendorId {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        let name = match *self {
+            Self::VIV => Some("VIV"),
+            Self::VSI => Some("VSI"),
+            Self::KAZAN => Some("KAZAN"),
+            _ => None,
+        };
+        if let Some(x) = name {
+            f.write_str(x)
+        } else {
+            write!(f, "{}", self.0)
+        }
+    }
+}
+impl fmt::Display for AccelerationStructureMemoryRequirementsTypeNV {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        let name = match *self {
+            Self::OBJECT => Some("OBJECT"),
+            Self::BUILD_SCRATCH => Some("BUILD_SCRATCH"),
+            Self::UPDATE_SCRATCH => Some("UPDATE_SCRATCH"),
+            _ => None,
+        };
+        if let Some(x) = name {
+            f.write_str(x)
+        } else {
+            write!(f, "{}", self.0)
+        }
+    }
+}
+impl fmt::Display for SamplerAddressMode {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        let name = match *self {
+            Self::REPEAT => Some("REPEAT"),
+            Self::MIRRORED_REPEAT => Some("MIRRORED_REPEAT"),
+            Self::CLAMP_TO_EDGE => Some("CLAMP_TO_EDGE"),
+            Self::CLAMP_TO_BORDER => Some("CLAMP_TO_BORDER"),
+            _ => None,
+        };
+        if let Some(x) = name {
+            f.write_str(x)
+        } else {
+            write!(f, "{}", self.0)
+        }
+    }
+}
+impl fmt::Display for ConservativeRasterizationModeEXT {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        let name = match *self {
+            Self::DISABLED => Some("DISABLED"),
+            Self::OVERESTIMATE => Some("OVERESTIMATE"),
+            Self::UNDERESTIMATE => Some("UNDERESTIMATE"),
+            _ => None,
+        };
+        if let Some(x) = name {
+            f.write_str(x)
+        } else {
+            write!(f, "{}", self.0)
+        }
+    }
+}
+impl fmt::Display for BuildAccelerationStructureFlagsNV {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        const KNOWN: &[(Flags, &str)] = &[
+            (
+                BuildAccelerationStructureFlagsNV::ALLOW_UPDATE.0,
+                "ALLOW_UPDATE",
+            ),
+            (
+                BuildAccelerationStructureFlagsNV::ALLOW_COMPACTION.0,
+                "ALLOW_COMPACTION",
+            ),
+            (
+                BuildAccelerationStructureFlagsNV::PREFER_FAST_TRACE.0,
+                "PREFER_FAST_TRACE",
+            ),
+            (
+                BuildAccelerationStructureFlagsNV::PREFER_FAST_BUILD.0,
+                "PREFER_FAST_BUILD",
+            ),
+            (
+                BuildAccelerationStructureFlagsNV::LOW_MEMORY.0,
+                "LOW_MEMORY",
+            ),
+        ];
+        display_flags(f, KNOWN, self.0)
+    }
+}
+impl fmt::Display for PeerMemoryFeatureFlags {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        const KNOWN: &[(Flags, &str)] = &[
+            (PeerMemoryFeatureFlags::COPY_SRC.0, "COPY_SRC"),
+            (PeerMemoryFeatureFlags::COPY_DST.0, "COPY_DST"),
+            (PeerMemoryFeatureFlags::GENERIC_SRC.0, "GENERIC_SRC"),
+            (PeerMemoryFeatureFlags::GENERIC_DST.0, "GENERIC_DST"),
+        ];
+        display_flags(f, KNOWN, self.0)
+    }
+}
+impl fmt::Display for PrimitiveTopology {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        let name = match *self {
+            Self::POINT_LIST => Some("POINT_LIST"),
+            Self::LINE_LIST => Some("LINE_LIST"),
+            Self::LINE_STRIP => Some("LINE_STRIP"),
+            Self::TRIANGLE_LIST => Some("TRIANGLE_LIST"),
+            Self::TRIANGLE_STRIP => Some("TRIANGLE_STRIP"),
+            Self::TRIANGLE_FAN => Some("TRIANGLE_FAN"),
+            Self::LINE_LIST_WITH_ADJACENCY => Some("LINE_LIST_WITH_ADJACENCY"),
+            Self::LINE_STRIP_WITH_ADJACENCY => Some("LINE_STRIP_WITH_ADJACENCY"),
+            Self::TRIANGLE_LIST_WITH_ADJACENCY => Some("TRIANGLE_LIST_WITH_ADJACENCY"),
+            Self::TRIANGLE_STRIP_WITH_ADJACENCY => Some("TRIANGLE_STRIP_WITH_ADJACENCY"),
+            Self::PATCH_LIST => Some("PATCH_LIST"),
+            _ => None,
+        };
+        if let Some(x) = name {
+            f.write_str(x)
+        } else {
+            write!(f, "{}", self.0)
+        }
+    }
+}
+impl fmt::Display for AccessFlags {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        const KNOWN: &[(Flags, &str)] = &[
+            (
+                AccessFlags::INDIRECT_COMMAND_READ.0,
+                "INDIRECT_COMMAND_READ",
+            ),
+            (AccessFlags::INDEX_READ.0, "INDEX_READ"),
+            (
+                AccessFlags::VERTEX_ATTRIBUTE_READ.0,
+                "VERTEX_ATTRIBUTE_READ",
+            ),
+            (AccessFlags::UNIFORM_READ.0, "UNIFORM_READ"),
+            (
+                AccessFlags::INPUT_ATTACHMENT_READ.0,
+                "INPUT_ATTACHMENT_READ",
+            ),
+            (AccessFlags::SHADER_READ.0, "SHADER_READ"),
+            (AccessFlags::SHADER_WRITE.0, "SHADER_WRITE"),
+            (
+                AccessFlags::COLOR_ATTACHMENT_READ.0,
+                "COLOR_ATTACHMENT_READ",
+            ),
+            (
+                AccessFlags::COLOR_ATTACHMENT_WRITE.0,
+                "COLOR_ATTACHMENT_WRITE",
+            ),
+            (
+                AccessFlags::DEPTH_STENCIL_ATTACHMENT_READ.0,
+                "DEPTH_STENCIL_ATTACHMENT_READ",
+            ),
+            (
+                AccessFlags::DEPTH_STENCIL_ATTACHMENT_WRITE.0,
+                "DEPTH_STENCIL_ATTACHMENT_WRITE",
+            ),
+            (AccessFlags::TRANSFER_READ.0, "TRANSFER_READ"),
+            (AccessFlags::TRANSFER_WRITE.0, "TRANSFER_WRITE"),
+            (AccessFlags::HOST_READ.0, "HOST_READ"),
+            (AccessFlags::HOST_WRITE.0, "HOST_WRITE"),
+            (AccessFlags::MEMORY_READ.0, "MEMORY_READ"),
+            (AccessFlags::MEMORY_WRITE.0, "MEMORY_WRITE"),
+            (
+                AccessFlags::TRANSFORM_FEEDBACK_WRITE_EXT.0,
+                "TRANSFORM_FEEDBACK_WRITE_EXT",
+            ),
+            (
+                AccessFlags::TRANSFORM_FEEDBACK_COUNTER_READ_EXT.0,
+                "TRANSFORM_FEEDBACK_COUNTER_READ_EXT",
+            ),
+            (
+                AccessFlags::TRANSFORM_FEEDBACK_COUNTER_WRITE_EXT.0,
+                "TRANSFORM_FEEDBACK_COUNTER_WRITE_EXT",
+            ),
+            (
+                AccessFlags::CONDITIONAL_RENDERING_READ_EXT.0,
+                "CONDITIONAL_RENDERING_READ_EXT",
+            ),
+            (
+                AccessFlags::COMMAND_PROCESS_READ_NVX.0,
+                "COMMAND_PROCESS_READ_NVX",
+            ),
+            (
+                AccessFlags::COMMAND_PROCESS_WRITE_NVX.0,
+                "COMMAND_PROCESS_WRITE_NVX",
+            ),
+            (
+                AccessFlags::COLOR_ATTACHMENT_READ_NONCOHERENT_EXT.0,
+                "COLOR_ATTACHMENT_READ_NONCOHERENT_EXT",
+            ),
+            (
+                AccessFlags::SHADING_RATE_IMAGE_READ_NV.0,
+                "SHADING_RATE_IMAGE_READ_NV",
+            ),
+            (
+                AccessFlags::ACCELERATION_STRUCTURE_READ_NV.0,
+                "ACCELERATION_STRUCTURE_READ_NV",
+            ),
+            (
+                AccessFlags::ACCELERATION_STRUCTURE_WRITE_NV.0,
+                "ACCELERATION_STRUCTURE_WRITE_NV",
+            ),
+            (AccessFlags::RESERVED_24_EXT.0, "RESERVED_24_EXT"),
+        ];
+        display_flags(f, KNOWN, self.0)
+    }
+}
+impl fmt::Display for IndirectCommandsLayoutUsageFlagsNVX {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        const KNOWN: &[(Flags, &str)] = &[
+            (
+                IndirectCommandsLayoutUsageFlagsNVX::UNORDERED_SEQUENCES.0,
+                "UNORDERED_SEQUENCES",
+            ),
+            (
+                IndirectCommandsLayoutUsageFlagsNVX::SPARSE_SEQUENCES.0,
+                "SPARSE_SEQUENCES",
+            ),
+            (
+                IndirectCommandsLayoutUsageFlagsNVX::EMPTY_EXECUTIONS.0,
+                "EMPTY_EXECUTIONS",
+            ),
+            (
+                IndirectCommandsLayoutUsageFlagsNVX::INDEXED_SEQUENCES.0,
+                "INDEXED_SEQUENCES",
+            ),
+        ];
+        display_flags(f, KNOWN, self.0)
+    }
+}
+impl fmt::Display for Format {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        let name = match *self {
+            Self::UNDEFINED => Some("UNDEFINED"),
+            Self::R4G4_UNORM_PACK8 => Some("R4G4_UNORM_PACK8"),
+            Self::R4G4B4A4_UNORM_PACK16 => Some("R4G4B4A4_UNORM_PACK16"),
+            Self::B4G4R4A4_UNORM_PACK16 => Some("B4G4R4A4_UNORM_PACK16"),
+            Self::R5G6B5_UNORM_PACK16 => Some("R5G6B5_UNORM_PACK16"),
+            Self::B5G6R5_UNORM_PACK16 => Some("B5G6R5_UNORM_PACK16"),
+            Self::R5G5B5A1_UNORM_PACK16 => Some("R5G5B5A1_UNORM_PACK16"),
+            Self::B5G5R5A1_UNORM_PACK16 => Some("B5G5R5A1_UNORM_PACK16"),
+            Self::A1R5G5B5_UNORM_PACK16 => Some("A1R5G5B5_UNORM_PACK16"),
+            Self::R8_UNORM => Some("R8_UNORM"),
+            Self::R8_SNORM => Some("R8_SNORM"),
+            Self::R8_USCALED => Some("R8_USCALED"),
+            Self::R8_SSCALED => Some("R8_SSCALED"),
+            Self::R8_UINT => Some("R8_UINT"),
+            Self::R8_SINT => Some("R8_SINT"),
+            Self::R8_SRGB => Some("R8_SRGB"),
+            Self::R8G8_UNORM => Some("R8G8_UNORM"),
+            Self::R8G8_SNORM => Some("R8G8_SNORM"),
+            Self::R8G8_USCALED => Some("R8G8_USCALED"),
+            Self::R8G8_SSCALED => Some("R8G8_SSCALED"),
+            Self::R8G8_UINT => Some("R8G8_UINT"),
+            Self::R8G8_SINT => Some("R8G8_SINT"),
+            Self::R8G8_SRGB => Some("R8G8_SRGB"),
+            Self::R8G8B8_UNORM => Some("R8G8B8_UNORM"),
+            Self::R8G8B8_SNORM => Some("R8G8B8_SNORM"),
+            Self::R8G8B8_USCALED => Some("R8G8B8_USCALED"),
+            Self::R8G8B8_SSCALED => Some("R8G8B8_SSCALED"),
+            Self::R8G8B8_UINT => Some("R8G8B8_UINT"),
+            Self::R8G8B8_SINT => Some("R8G8B8_SINT"),
+            Self::R8G8B8_SRGB => Some("R8G8B8_SRGB"),
+            Self::B8G8R8_UNORM => Some("B8G8R8_UNORM"),
+            Self::B8G8R8_SNORM => Some("B8G8R8_SNORM"),
+            Self::B8G8R8_USCALED => Some("B8G8R8_USCALED"),
+            Self::B8G8R8_SSCALED => Some("B8G8R8_SSCALED"),
+            Self::B8G8R8_UINT => Some("B8G8R8_UINT"),
+            Self::B8G8R8_SINT => Some("B8G8R8_SINT"),
+            Self::B8G8R8_SRGB => Some("B8G8R8_SRGB"),
+            Self::R8G8B8A8_UNORM => Some("R8G8B8A8_UNORM"),
+            Self::R8G8B8A8_SNORM => Some("R8G8B8A8_SNORM"),
+            Self::R8G8B8A8_USCALED => Some("R8G8B8A8_USCALED"),
+            Self::R8G8B8A8_SSCALED => Some("R8G8B8A8_SSCALED"),
+            Self::R8G8B8A8_UINT => Some("R8G8B8A8_UINT"),
+            Self::R8G8B8A8_SINT => Some("R8G8B8A8_SINT"),
+            Self::R8G8B8A8_SRGB => Some("R8G8B8A8_SRGB"),
+            Self::B8G8R8A8_UNORM => Some("B8G8R8A8_UNORM"),
+            Self::B8G8R8A8_SNORM => Some("B8G8R8A8_SNORM"),
+            Self::B8G8R8A8_USCALED => Some("B8G8R8A8_USCALED"),
+            Self::B8G8R8A8_SSCALED => Some("B8G8R8A8_SSCALED"),
+            Self::B8G8R8A8_UINT => Some("B8G8R8A8_UINT"),
+            Self::B8G8R8A8_SINT => Some("B8G8R8A8_SINT"),
+            Self::B8G8R8A8_SRGB => Some("B8G8R8A8_SRGB"),
+            Self::A8B8G8R8_UNORM_PACK32 => Some("A8B8G8R8_UNORM_PACK32"),
+            Self::A8B8G8R8_SNORM_PACK32 => Some("A8B8G8R8_SNORM_PACK32"),
+            Self::A8B8G8R8_USCALED_PACK32 => Some("A8B8G8R8_USCALED_PACK32"),
+            Self::A8B8G8R8_SSCALED_PACK32 => Some("A8B8G8R8_SSCALED_PACK32"),
+            Self::A8B8G8R8_UINT_PACK32 => Some("A8B8G8R8_UINT_PACK32"),
+            Self::A8B8G8R8_SINT_PACK32 => Some("A8B8G8R8_SINT_PACK32"),
+            Self::A8B8G8R8_SRGB_PACK32 => Some("A8B8G8R8_SRGB_PACK32"),
+            Self::A2R10G10B10_UNORM_PACK32 => Some("A2R10G10B10_UNORM_PACK32"),
+            Self::A2R10G10B10_SNORM_PACK32 => Some("A2R10G10B10_SNORM_PACK32"),
+            Self::A2R10G10B10_USCALED_PACK32 => Some("A2R10G10B10_USCALED_PACK32"),
+            Self::A2R10G10B10_SSCALED_PACK32 => Some("A2R10G10B10_SSCALED_PACK32"),
+            Self::A2R10G10B10_UINT_PACK32 => Some("A2R10G10B10_UINT_PACK32"),
+            Self::A2R10G10B10_SINT_PACK32 => Some("A2R10G10B10_SINT_PACK32"),
+            Self::A2B10G10R10_UNORM_PACK32 => Some("A2B10G10R10_UNORM_PACK32"),
+            Self::A2B10G10R10_SNORM_PACK32 => Some("A2B10G10R10_SNORM_PACK32"),
+            Self::A2B10G10R10_USCALED_PACK32 => Some("A2B10G10R10_USCALED_PACK32"),
+            Self::A2B10G10R10_SSCALED_PACK32 => Some("A2B10G10R10_SSCALED_PACK32"),
+            Self::A2B10G10R10_UINT_PACK32 => Some("A2B10G10R10_UINT_PACK32"),
+            Self::A2B10G10R10_SINT_PACK32 => Some("A2B10G10R10_SINT_PACK32"),
+            Self::R16_UNORM => Some("R16_UNORM"),
+            Self::R16_SNORM => Some("R16_SNORM"),
+            Self::R16_USCALED => Some("R16_USCALED"),
+            Self::R16_SSCALED => Some("R16_SSCALED"),
+            Self::R16_UINT => Some("R16_UINT"),
+            Self::R16_SINT => Some("R16_SINT"),
+            Self::R16_SFLOAT => Some("R16_SFLOAT"),
+            Self::R16G16_UNORM => Some("R16G16_UNORM"),
+            Self::R16G16_SNORM => Some("R16G16_SNORM"),
+            Self::R16G16_USCALED => Some("R16G16_USCALED"),
+            Self::R16G16_SSCALED => Some("R16G16_SSCALED"),
+            Self::R16G16_UINT => Some("R16G16_UINT"),
+            Self::R16G16_SINT => Some("R16G16_SINT"),
+            Self::R16G16_SFLOAT => Some("R16G16_SFLOAT"),
+            Self::R16G16B16_UNORM => Some("R16G16B16_UNORM"),
+            Self::R16G16B16_SNORM => Some("R16G16B16_SNORM"),
+            Self::R16G16B16_USCALED => Some("R16G16B16_USCALED"),
+            Self::R16G16B16_SSCALED => Some("R16G16B16_SSCALED"),
+            Self::R16G16B16_UINT => Some("R16G16B16_UINT"),
+            Self::R16G16B16_SINT => Some("R16G16B16_SINT"),
+            Self::R16G16B16_SFLOAT => Some("R16G16B16_SFLOAT"),
+            Self::R16G16B16A16_UNORM => Some("R16G16B16A16_UNORM"),
+            Self::R16G16B16A16_SNORM => Some("R16G16B16A16_SNORM"),
+            Self::R16G16B16A16_USCALED => Some("R16G16B16A16_USCALED"),
+            Self::R16G16B16A16_SSCALED => Some("R16G16B16A16_SSCALED"),
+            Self::R16G16B16A16_UINT => Some("R16G16B16A16_UINT"),
+            Self::R16G16B16A16_SINT => Some("R16G16B16A16_SINT"),
+            Self::R16G16B16A16_SFLOAT => Some("R16G16B16A16_SFLOAT"),
+            Self::R32_UINT => Some("R32_UINT"),
+            Self::R32_SINT => Some("R32_SINT"),
+            Self::R32_SFLOAT => Some("R32_SFLOAT"),
+            Self::R32G32_UINT => Some("R32G32_UINT"),
+            Self::R32G32_SINT => Some("R32G32_SINT"),
+            Self::R32G32_SFLOAT => Some("R32G32_SFLOAT"),
+            Self::R32G32B32_UINT => Some("R32G32B32_UINT"),
+            Self::R32G32B32_SINT => Some("R32G32B32_SINT"),
+            Self::R32G32B32_SFLOAT => Some("R32G32B32_SFLOAT"),
+            Self::R32G32B32A32_UINT => Some("R32G32B32A32_UINT"),
+            Self::R32G32B32A32_SINT => Some("R32G32B32A32_SINT"),
+            Self::R32G32B32A32_SFLOAT => Some("R32G32B32A32_SFLOAT"),
+            Self::R64_UINT => Some("R64_UINT"),
+            Self::R64_SINT => Some("R64_SINT"),
+            Self::R64_SFLOAT => Some("R64_SFLOAT"),
+            Self::R64G64_UINT => Some("R64G64_UINT"),
+            Self::R64G64_SINT => Some("R64G64_SINT"),
+            Self::R64G64_SFLOAT => Some("R64G64_SFLOAT"),
+            Self::R64G64B64_UINT => Some("R64G64B64_UINT"),
+            Self::R64G64B64_SINT => Some("R64G64B64_SINT"),
+            Self::R64G64B64_SFLOAT => Some("R64G64B64_SFLOAT"),
+            Self::R64G64B64A64_UINT => Some("R64G64B64A64_UINT"),
+            Self::R64G64B64A64_SINT => Some("R64G64B64A64_SINT"),
+            Self::R64G64B64A64_SFLOAT => Some("R64G64B64A64_SFLOAT"),
+            Self::B10G11R11_UFLOAT_PACK32 => Some("B10G11R11_UFLOAT_PACK32"),
+            Self::E5B9G9R9_UFLOAT_PACK32 => Some("E5B9G9R9_UFLOAT_PACK32"),
+            Self::D16_UNORM => Some("D16_UNORM"),
+            Self::X8_D24_UNORM_PACK32 => Some("X8_D24_UNORM_PACK32"),
+            Self::D32_SFLOAT => Some("D32_SFLOAT"),
+            Self::S8_UINT => Some("S8_UINT"),
+            Self::D16_UNORM_S8_UINT => Some("D16_UNORM_S8_UINT"),
+            Self::D24_UNORM_S8_UINT => Some("D24_UNORM_S8_UINT"),
+            Self::D32_SFLOAT_S8_UINT => Some("D32_SFLOAT_S8_UINT"),
+            Self::BC1_RGB_UNORM_BLOCK => Some("BC1_RGB_UNORM_BLOCK"),
+            Self::BC1_RGB_SRGB_BLOCK => Some("BC1_RGB_SRGB_BLOCK"),
+            Self::BC1_RGBA_UNORM_BLOCK => Some("BC1_RGBA_UNORM_BLOCK"),
+            Self::BC1_RGBA_SRGB_BLOCK => Some("BC1_RGBA_SRGB_BLOCK"),
+            Self::BC2_UNORM_BLOCK => Some("BC2_UNORM_BLOCK"),
+            Self::BC2_SRGB_BLOCK => Some("BC2_SRGB_BLOCK"),
+            Self::BC3_UNORM_BLOCK => Some("BC3_UNORM_BLOCK"),
+            Self::BC3_SRGB_BLOCK => Some("BC3_SRGB_BLOCK"),
+            Self::BC4_UNORM_BLOCK => Some("BC4_UNORM_BLOCK"),
+            Self::BC4_SNORM_BLOCK => Some("BC4_SNORM_BLOCK"),
+            Self::BC5_UNORM_BLOCK => Some("BC5_UNORM_BLOCK"),
+            Self::BC5_SNORM_BLOCK => Some("BC5_SNORM_BLOCK"),
+            Self::BC6H_UFLOAT_BLOCK => Some("BC6H_UFLOAT_BLOCK"),
+            Self::BC6H_SFLOAT_BLOCK => Some("BC6H_SFLOAT_BLOCK"),
+            Self::BC7_UNORM_BLOCK => Some("BC7_UNORM_BLOCK"),
+            Self::BC7_SRGB_BLOCK => Some("BC7_SRGB_BLOCK"),
+            Self::ETC2_R8G8B8_UNORM_BLOCK => Some("ETC2_R8G8B8_UNORM_BLOCK"),
+            Self::ETC2_R8G8B8_SRGB_BLOCK => Some("ETC2_R8G8B8_SRGB_BLOCK"),
+            Self::ETC2_R8G8B8A1_UNORM_BLOCK => Some("ETC2_R8G8B8A1_UNORM_BLOCK"),
+            Self::ETC2_R8G8B8A1_SRGB_BLOCK => Some("ETC2_R8G8B8A1_SRGB_BLOCK"),
+            Self::ETC2_R8G8B8A8_UNORM_BLOCK => Some("ETC2_R8G8B8A8_UNORM_BLOCK"),
+            Self::ETC2_R8G8B8A8_SRGB_BLOCK => Some("ETC2_R8G8B8A8_SRGB_BLOCK"),
+            Self::EAC_R11_UNORM_BLOCK => Some("EAC_R11_UNORM_BLOCK"),
+            Self::EAC_R11_SNORM_BLOCK => Some("EAC_R11_SNORM_BLOCK"),
+            Self::EAC_R11G11_UNORM_BLOCK => Some("EAC_R11G11_UNORM_BLOCK"),
+            Self::EAC_R11G11_SNORM_BLOCK => Some("EAC_R11G11_SNORM_BLOCK"),
+            Self::ASTC_4X4_UNORM_BLOCK => Some("ASTC_4X4_UNORM_BLOCK"),
+            Self::ASTC_4X4_SRGB_BLOCK => Some("ASTC_4X4_SRGB_BLOCK"),
+            Self::ASTC_5X4_UNORM_BLOCK => Some("ASTC_5X4_UNORM_BLOCK"),
+            Self::ASTC_5X4_SRGB_BLOCK => Some("ASTC_5X4_SRGB_BLOCK"),
+            Self::ASTC_5X5_UNORM_BLOCK => Some("ASTC_5X5_UNORM_BLOCK"),
+            Self::ASTC_5X5_SRGB_BLOCK => Some("ASTC_5X5_SRGB_BLOCK"),
+            Self::ASTC_6X5_UNORM_BLOCK => Some("ASTC_6X5_UNORM_BLOCK"),
+            Self::ASTC_6X5_SRGB_BLOCK => Some("ASTC_6X5_SRGB_BLOCK"),
+            Self::ASTC_6X6_UNORM_BLOCK => Some("ASTC_6X6_UNORM_BLOCK"),
+            Self::ASTC_6X6_SRGB_BLOCK => Some("ASTC_6X6_SRGB_BLOCK"),
+            Self::ASTC_8X5_UNORM_BLOCK => Some("ASTC_8X5_UNORM_BLOCK"),
+            Self::ASTC_8X5_SRGB_BLOCK => Some("ASTC_8X5_SRGB_BLOCK"),
+            Self::ASTC_8X6_UNORM_BLOCK => Some("ASTC_8X6_UNORM_BLOCK"),
+            Self::ASTC_8X6_SRGB_BLOCK => Some("ASTC_8X6_SRGB_BLOCK"),
+            Self::ASTC_8X8_UNORM_BLOCK => Some("ASTC_8X8_UNORM_BLOCK"),
+            Self::ASTC_8X8_SRGB_BLOCK => Some("ASTC_8X8_SRGB_BLOCK"),
+            Self::ASTC_10X5_UNORM_BLOCK => Some("ASTC_10X5_UNORM_BLOCK"),
+            Self::ASTC_10X5_SRGB_BLOCK => Some("ASTC_10X5_SRGB_BLOCK"),
+            Self::ASTC_10X6_UNORM_BLOCK => Some("ASTC_10X6_UNORM_BLOCK"),
+            Self::ASTC_10X6_SRGB_BLOCK => Some("ASTC_10X6_SRGB_BLOCK"),
+            Self::ASTC_10X8_UNORM_BLOCK => Some("ASTC_10X8_UNORM_BLOCK"),
+            Self::ASTC_10X8_SRGB_BLOCK => Some("ASTC_10X8_SRGB_BLOCK"),
+            Self::ASTC_10X10_UNORM_BLOCK => Some("ASTC_10X10_UNORM_BLOCK"),
+            Self::ASTC_10X10_SRGB_BLOCK => Some("ASTC_10X10_SRGB_BLOCK"),
+            Self::ASTC_12X10_UNORM_BLOCK => Some("ASTC_12X10_UNORM_BLOCK"),
+            Self::ASTC_12X10_SRGB_BLOCK => Some("ASTC_12X10_SRGB_BLOCK"),
+            Self::ASTC_12X12_UNORM_BLOCK => Some("ASTC_12X12_UNORM_BLOCK"),
+            Self::ASTC_12X12_SRGB_BLOCK => Some("ASTC_12X12_SRGB_BLOCK"),
+            Self::PVRTC1_2BPP_UNORM_BLOCK_IMG => Some("PVRTC1_2BPP_UNORM_BLOCK_IMG"),
+            Self::PVRTC1_4BPP_UNORM_BLOCK_IMG => Some("PVRTC1_4BPP_UNORM_BLOCK_IMG"),
+            Self::PVRTC2_2BPP_UNORM_BLOCK_IMG => Some("PVRTC2_2BPP_UNORM_BLOCK_IMG"),
+            Self::PVRTC2_4BPP_UNORM_BLOCK_IMG => Some("PVRTC2_4BPP_UNORM_BLOCK_IMG"),
+            Self::PVRTC1_2BPP_SRGB_BLOCK_IMG => Some("PVRTC1_2BPP_SRGB_BLOCK_IMG"),
+            Self::PVRTC1_4BPP_SRGB_BLOCK_IMG => Some("PVRTC1_4BPP_SRGB_BLOCK_IMG"),
+            Self::PVRTC2_2BPP_SRGB_BLOCK_IMG => Some("PVRTC2_2BPP_SRGB_BLOCK_IMG"),
+            Self::PVRTC2_4BPP_SRGB_BLOCK_IMG => Some("PVRTC2_4BPP_SRGB_BLOCK_IMG"),
+            Self::G8B8G8R8_422_UNORM => Some("G8B8G8R8_422_UNORM"),
+            Self::B8G8R8G8_422_UNORM => Some("B8G8R8G8_422_UNORM"),
+            Self::G8_B8_R8_3PLANE_420_UNORM => Some("G8_B8_R8_3PLANE_420_UNORM"),
+            Self::G8_B8R8_2PLANE_420_UNORM => Some("G8_B8R8_2PLANE_420_UNORM"),
+            Self::G8_B8_R8_3PLANE_422_UNORM => Some("G8_B8_R8_3PLANE_422_UNORM"),
+            Self::G8_B8R8_2PLANE_422_UNORM => Some("G8_B8R8_2PLANE_422_UNORM"),
+            Self::G8_B8_R8_3PLANE_444_UNORM => Some("G8_B8_R8_3PLANE_444_UNORM"),
+            Self::R10X6_UNORM_PACK16 => Some("R10X6_UNORM_PACK16"),
+            Self::R10X6G10X6_UNORM_2PACK16 => Some("R10X6G10X6_UNORM_2PACK16"),
+            Self::R10X6G10X6B10X6A10X6_UNORM_4PACK16 => Some("R10X6G10X6B10X6A10X6_UNORM_4PACK16"),
+            Self::G10X6B10X6G10X6R10X6_422_UNORM_4PACK16 => {
+                Some("G10X6B10X6G10X6R10X6_422_UNORM_4PACK16")
+            }
+            Self::B10X6G10X6R10X6G10X6_422_UNORM_4PACK16 => {
+                Some("B10X6G10X6R10X6G10X6_422_UNORM_4PACK16")
+            }
+            Self::G10X6_B10X6_R10X6_3PLANE_420_UNORM_3PACK16 => {
+                Some("G10X6_B10X6_R10X6_3PLANE_420_UNORM_3PACK16")
+            }
+            Self::G10X6_B10X6R10X6_2PLANE_420_UNORM_3PACK16 => {
+                Some("G10X6_B10X6R10X6_2PLANE_420_UNORM_3PACK16")
+            }
+            Self::G10X6_B10X6_R10X6_3PLANE_422_UNORM_3PACK16 => {
+                Some("G10X6_B10X6_R10X6_3PLANE_422_UNORM_3PACK16")
+            }
+            Self::G10X6_B10X6R10X6_2PLANE_422_UNORM_3PACK16 => {
+                Some("G10X6_B10X6R10X6_2PLANE_422_UNORM_3PACK16")
+            }
+            Self::G10X6_B10X6_R10X6_3PLANE_444_UNORM_3PACK16 => {
+                Some("G10X6_B10X6_R10X6_3PLANE_444_UNORM_3PACK16")
+            }
+            Self::R12X4_UNORM_PACK16 => Some("R12X4_UNORM_PACK16"),
+            Self::R12X4G12X4_UNORM_2PACK16 => Some("R12X4G12X4_UNORM_2PACK16"),
+            Self::R12X4G12X4B12X4A12X4_UNORM_4PACK16 => Some("R12X4G12X4B12X4A12X4_UNORM_4PACK16"),
+            Self::G12X4B12X4G12X4R12X4_422_UNORM_4PACK16 => {
+                Some("G12X4B12X4G12X4R12X4_422_UNORM_4PACK16")
+            }
+            Self::B12X4G12X4R12X4G12X4_422_UNORM_4PACK16 => {
+                Some("B12X4G12X4R12X4G12X4_422_UNORM_4PACK16")
+            }
+            Self::G12X4_B12X4_R12X4_3PLANE_420_UNORM_3PACK16 => {
+                Some("G12X4_B12X4_R12X4_3PLANE_420_UNORM_3PACK16")
+            }
+            Self::G12X4_B12X4R12X4_2PLANE_420_UNORM_3PACK16 => {
+                Some("G12X4_B12X4R12X4_2PLANE_420_UNORM_3PACK16")
+            }
+            Self::G12X4_B12X4_R12X4_3PLANE_422_UNORM_3PACK16 => {
+                Some("G12X4_B12X4_R12X4_3PLANE_422_UNORM_3PACK16")
+            }
+            Self::G12X4_B12X4R12X4_2PLANE_422_UNORM_3PACK16 => {
+                Some("G12X4_B12X4R12X4_2PLANE_422_UNORM_3PACK16")
+            }
+            Self::G12X4_B12X4_R12X4_3PLANE_444_UNORM_3PACK16 => {
+                Some("G12X4_B12X4_R12X4_3PLANE_444_UNORM_3PACK16")
+            }
+            Self::G16B16G16R16_422_UNORM => Some("G16B16G16R16_422_UNORM"),
+            Self::B16G16R16G16_422_UNORM => Some("B16G16R16G16_422_UNORM"),
+            Self::G16_B16_R16_3PLANE_420_UNORM => Some("G16_B16_R16_3PLANE_420_UNORM"),
+            Self::G16_B16R16_2PLANE_420_UNORM => Some("G16_B16R16_2PLANE_420_UNORM"),
+            Self::G16_B16_R16_3PLANE_422_UNORM => Some("G16_B16_R16_3PLANE_422_UNORM"),
+            Self::G16_B16R16_2PLANE_422_UNORM => Some("G16_B16R16_2PLANE_422_UNORM"),
+            Self::G16_B16_R16_3PLANE_444_UNORM => Some("G16_B16_R16_3PLANE_444_UNORM"),
+            _ => None,
+        };
+        if let Some(x) = name {
+            f.write_str(x)
+        } else {
+            write!(f, "{}", self.0)
+        }
+    }
+}
+impl fmt::Display for IndexType {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        let name = match *self {
+            Self::UINT16 => Some("UINT16"),
+            Self::UINT32 => Some("UINT32"),
+            Self::NONE_NV => Some("NONE_NV"),
+            _ => None,
+        };
+        if let Some(x) = name {
+            f.write_str(x)
+        } else {
+            write!(f, "{}", self.0)
+        }
+    }
+}
+impl fmt::Display for ValidationCheckEXT {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        let name = match *self {
+            Self::ALL => Some("ALL"),
+            Self::SHADERS => Some("SHADERS"),
+            _ => None,
+        };
+        if let Some(x) = name {
+            f.write_str(x)
+        } else {
+            write!(f, "{}", self.0)
+        }
+    }
+}
+impl fmt::Display for GeometryFlagsNV {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        const KNOWN: &[(Flags, &str)] = &[
+            (GeometryFlagsNV::OPAQUE.0, "OPAQUE"),
+            (
+                GeometryFlagsNV::NO_DUPLICATE_ANY_HIT_INVOCATION.0,
+                "NO_DUPLICATE_ANY_HIT_INVOCATION",
+            ),
+        ];
+        display_flags(f, KNOWN, self.0)
+    }
+}
+impl fmt::Display for CopyAccelerationStructureModeNV {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        let name = match *self {
+            Self::CLONE => Some("CLONE"),
+            Self::COMPACT => Some("COMPACT"),
+            _ => None,
+        };
+        if let Some(x) = name {
+            f.write_str(x)
+        } else {
+            write!(f, "{}", self.0)
+        }
+    }
+}
+impl fmt::Display for SamplerReductionModeEXT {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        let name = match *self {
+            Self::WEIGHTED_AVERAGE => Some("WEIGHTED_AVERAGE"),
+            Self::MIN => Some("MIN"),
+            Self::MAX => Some("MAX"),
+            _ => None,
+        };
+        if let Some(x) = name {
+            f.write_str(x)
+        } else {
+            write!(f, "{}", self.0)
+        }
+    }
+}
+impl fmt::Display for ShaderInfoTypeAMD {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        let name = match *self {
+            Self::STATISTICS => Some("STATISTICS"),
+            Self::BINARY => Some("BINARY"),
+            Self::DISASSEMBLY => Some("DISASSEMBLY"),
+            _ => None,
+        };
+        if let Some(x) = name {
+            f.write_str(x)
+        } else {
+            write!(f, "{}", self.0)
+        }
+    }
+}
+impl fmt::Display for CommandPoolCreateFlags {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        const KNOWN: &[(Flags, &str)] = &[
+            (CommandPoolCreateFlags::TRANSIENT.0, "TRANSIENT"),
+            (
+                CommandPoolCreateFlags::RESET_COMMAND_BUFFER.0,
+                "RESET_COMMAND_BUFFER",
+            ),
+            (CommandPoolCreateFlags::PROTECTED.0, "PROTECTED"),
+        ];
+        display_flags(f, KNOWN, self.0)
     }
 }
 pub type DescriptorUpdateTemplateCreateFlagsKHR = DescriptorUpdateTemplateCreateFlags;

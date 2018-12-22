@@ -14,3 +14,11 @@ fn display_flags() {
 fn display_enum() {
     assert_eq!(vk::ChromaLocation::MIDPOINT.to_string(), "MIDPOINT");
 }
+
+#[test]
+fn next_chaining() {
+    // PhysicalDeviceFeatures2
+    // PhysicalDeviceVariablePointerFeatures
+    // PhysicalDeviceMultiviewFeatures
+    // PhysicalDevice16BitStorageFeatures
+}

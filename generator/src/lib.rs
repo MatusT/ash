@@ -1587,6 +1587,13 @@ pub fn derive_setters(_struct: &vkxml::Struct) -> Option<Tokens> {
             quote! {
                 pub fn next<T>(mut self, next: &'a T) -> #name_builder<'a> where T: #extends_name {
                     self.inner.p_next = next as *const T as *const c_void;
+                    unsafe {
+                        let mut raw = &mut self.inner as *mut #name as *mut BaseInStructure;
+                        while (*raw).p_next != ::std::ptr::null() {
+                            raw = (*raw).p_next as *mut BaseInStructure;
+                        }
+                        (*raw).p_next = next as *const T as *const BaseInStructure;
+                    }
                     self
                 }
             }
